@@ -1,6 +1,8 @@
+import HoverDots from "./ui/dots-hover";
+
 const HeroSection = () => {
   return (
-    <div className="my-0 bg-[url('/mesh.svg')] h-[130vh] bg-cover bg-no-repeat">
+    <div className="relative my-0 bg-[url('/mesh.svg')] h-[130vh] bg-cover bg-no-repeat">
       <div className="relative flex flex-col items-center justify-center h-64 text-white">
         <div className="text-center mt-48">
           <h1 className="text-7xl font-bold bg-gradient-to-r from-blue from-0% via-primary via-60%  to-white bg-clip-text text-transparent ">
@@ -25,6 +27,7 @@ const HeroSection = () => {
           </svg>
         </button>
       </div>
+      <HoverDots />
     </div>
   );
 };
