@@ -9,11 +9,11 @@ const HeroSection = () => {
             Transforming Business <br /> with Intelligence.
           </h1>
         </div>
-        <button className="cursor-pointer bg-gradient-to-r from-blue from-0% via-primary to-primary-dark mt-6 px-6 py-3 text-lg  text-white  rounded-lg transition flex items-center gap-2">
+        <button className="cursor-pointer text-md bg-gradient-to-r from-blue from-0% via-primary to-primary-dark mt-6 px-6 py-2   text-white  rounded-lg transition flex items-center gap-2">
           Talk To Us
           <svg
-            width="30"
-            height="30"
+            width="15"
+            height="15"
             viewBox="0 0 15 15"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
