@@ -21,6 +21,7 @@
   --color-secondary: #3ab7bf;
   --color-white: #f5f5f5;
   --color-blue: #5025ff;
+  --color-background: #0a0a0a;
 }
 
 @media (prefers-color-scheme: dark) {
