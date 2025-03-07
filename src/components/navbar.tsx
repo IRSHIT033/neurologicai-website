@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 const Navbar = () => {
   return (
-    <div className="flex bg-transparent justify-evenly items-center space-x-2 w-[100%] h-[15vh]  text-base  md:text-base lg:text-2xl text-white font-bold">
+    <div className="flex bg-transparent justify-evenly items-center space-x-2 w-[100%] h-[15vh]  text-base   text-white font-bold">
       <Link href="/about" className="nav-link">
         About Us
       </Link>

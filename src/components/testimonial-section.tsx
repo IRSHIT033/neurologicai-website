@@ -12,9 +12,9 @@ import { Card, CardContent } from "./ui/card";
 import { cn } from "@/lib/utils";
 
 const testimonialsImages = [
-  "/testimonial-1.png",
-  "/testimonial-2.png",
-  "/testimonial-3.png",
+  "/testimonials-1.svg",
+  "/testimonials-2.svg",
+  "/testimonials-3.svg",
 ];
 
 const TestimonialSection = () => {
@@ -43,8 +43,8 @@ const TestimonialSection = () => {
         Clients Who Trust Us, Heres Why
       </h1>
       <p className="text-sm text-center max-w-5xl mx-auto mb-16">
-        Client satisfaction is the backbone of our business. It's not just about
-        providing a satisfactory experience, but going above and beyond to
+        Client satisfaction is the backbone of our business. It&apos;not just
+        about providing a satisfactory experience, but going above and beyond to
         exceed the expectations of our clients. This requires having a deep
         understanding of their needs and providing personalized solutions to
         meet them.
@@ -52,37 +52,39 @@ const TestimonialSection = () => {
 
       <Carousel
         plugins={[plugin.current]}
-        className="relative w-full h-[40vh]"
+        className="max-w-5xl"
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
         setApi={setApi} // Set the API reference
       >
         <CarouselContent>
           {testimonialsImages.map((image, index) => (
-            <CarouselItem key={index}>
-              <Card className="border-0">
-                <CardContent className="flex items-center justify-center p-6">
-                  <Image
-                    src={image}
-                    alt={`Testimonial ${index + 1}`}
-                    width={850}
-                    height={800}
-                  />
-                </CardContent>
-              </Card>
+            <CarouselItem key={index} className="h-[40vh]">
+              <div className="p-1">
+                <Card className="border-0">
+                  <CardContent className="flex items-center justify-center px-6">
+                    <Image
+                      src={image}
+                      alt={`Testimonial ${index + 1}`}
+                      width={850}
+                      height={800}
+                    />
+                  </CardContent>
+                </Card>
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>
       </Carousel>
 
       {/* Dots Indicator */}
-      <div className="flex justify-center items-center space-x-4 mt-4">
+      <div className="flex justify-center items-center z-10 space-x-4 ">
         {testimonialsImages.map((_, index) => (
           <div
             key={`dot-${index}`}
             className={cn(
               "w-4 h-4 rounded-full cursor-pointer transition-all",
-              currentIndex === index ? "bg-primary" : "bg-primary-light"
+              currentIndex === index ? "bg-blue" : "bg-primary-light"
             )}
             onClick={() => api?.scrollTo(index)}
           ></div>
