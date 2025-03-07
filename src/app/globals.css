@@ -19,10 +19,21 @@
   --color-primary-dark: #170226;
   --color-primary-light: #9568c0;
   --color-primary-bright: #a400ff;
+
   --color-secondary: #3ab7bf;
+
   --color-white: #f5f5f5;
+
   --color-blue: #5025ff;
+
   --color-background: #0a0a0a;
+
+  --color-black: #000000;
+
+  --color-purple-dark: #260041;
+  --color-purple-light: #4b0082;
+  --color-purple-lighter: #8a71f0;
+  --color-purple-lightest: #ead2ff;
 }
 
 @media (prefers-color-scheme: dark) {
