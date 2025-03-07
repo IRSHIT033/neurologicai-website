@@ -1,6 +1,7 @@
 import ExecutiveTeam from "@/components/executive-team-section";
 import HeroSection from "@/components/hero-section";
 import PartnerSection from "@/components/partners-section";
+import StackingCards from "@/components/stacking-card";
 import VerticalsSection from "@/components/verticals-sections";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <PartnerSection />
       <VerticalsSection />
       <ExecutiveTeam />
+      <StackingCards />
     </div>
   );
 }
