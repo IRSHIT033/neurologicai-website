@@ -3,6 +3,7 @@ import CounterSection from "@/components/counter-section";
 import ExecutiveTeam from "@/components/executive-team-section";
 import HeroSection from "@/components/hero-section";
 import PartnerSection from "@/components/partners-section";
+import TestimonialSection from "@/components/testimonial-section";
 import VerticalsSection from "@/components/verticals-sections";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <ExecutiveTeam />
       <CounterSection />
       <BusinessHelpSection />
+      <TestimonialSection />
     </div>
   );
 }
