@@ -46,7 +46,7 @@ const FlipCard = ({
           </div>
           <div className="flex-3 flex flex-col items-start justify-around">
             <p className="text-2xl flex-1 text-left font-bold px-4">{title}</p>
-            <p className="text-xs  flex-1 text-left px-4">{description}</p>
+            <p className="text-xs flex-1 text-left px-4">{description}</p>
           </div>
         </div>
       </motion.div>
