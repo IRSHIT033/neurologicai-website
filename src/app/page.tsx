@@ -6,6 +6,7 @@ import PartnerSection from "@/components/partners-section";
 import PartnershipSection from "@/components/partnership-section";
 import TestimonialSection from "@/components/testimonial-section";
 import VerticalsSection from "@/components/verticals-sections";
+import ServicesSection from "@/components/services-section";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <PartnerSection />
       <VerticalsSection />
       <ExecutiveTeam />
+      <ServicesSection />
       <CounterSection />
       <BusinessHelpSection />
       <TestimonialSection />
