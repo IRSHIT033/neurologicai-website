@@ -5,7 +5,6 @@ import HeroSection from "@/components/hero-section";
 import PartnerSection from "@/components/partners-section";
 import PartnershipSection from "@/components/partnership-section";
 import TestimonialSection from "@/components/testimonial-section";
-import Footer from "@/components/ui/footer";
 import VerticalsSection from "@/components/verticals-sections";
 
 export default function Home() {
@@ -19,7 +18,6 @@ export default function Home() {
       <BusinessHelpSection />
       <TestimonialSection />
       <PartnershipSection />
-      <Footer />
     </div>
   );
 }

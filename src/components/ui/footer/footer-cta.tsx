@@ -1,6 +1,6 @@
 export default function FooterCTA() {
   return (
-    <div className="w-[549px] h-[115px] p-[10px] flex flex-col justify-center items-center bg-black text-white flex-shrink-0">
+    <div className=" w-[549px] h-[115px]  p-[10px] flex flex-col justify-center items-center  text-white flex-shrink-0">
       <h2 className="text-[48px] font-medium  text-white opacity-70 leading-[120%] mb-4">
         Looking to Push Boundaries with Us?
       </h2>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 const Navbar = () => {
   return (
-    <div className="flex bg-transparent justify-evenly items-center space-x-2 w-[100%] h-[15vh]  text-base   text-white font-bold">
+    <div className="flex z-1000 relative bg-transparent gap-32 justify-center items-center  w-full h-[15vh]  text-lg   text-white font-bold">
       <Link href="/about" className="nav-link">
         About Us
       </Link>
@@ -16,8 +16,8 @@ const Navbar = () => {
         <Image
           src="/Logo.svg"
           alt="Neurologicai logo"
-          width={300}
-          height={300}
+          width={250}
+          height={250}
         />
       </Link>
       <Link href="/resources" className="nav-link">

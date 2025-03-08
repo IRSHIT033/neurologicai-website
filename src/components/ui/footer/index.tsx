@@ -7,9 +7,9 @@ import FooterBottomBar from "./footer-bottom-bar";
 export default function Footer() {
   return (
     <footer className=" text-white py-12 px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-24">
         {/* Left Side: CTA and Contact */}
-        <div className="col-span-1 md:col-span-2 flex flex-col justify-between">
+        <div className="col-span-2 flex flex-col justify-between gap-30">
           <FooterCTA />
           <FooterContact />
         </div>
