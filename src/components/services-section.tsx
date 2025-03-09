@@ -53,6 +53,13 @@ export default function ServicesSection() {
     target: sectionRef,
     offset: ["start start", "end end"],
   });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const motionY:any = [];
+
+  for (let i = 0; i < cards.length; i++) {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    motionY.push(useTransform(scrollYProgress, [0, 1], [0, -i * 300]));
+  }
   
   return (
     <section>
@@ -60,16 +67,14 @@ export default function ServicesSection() {
         <h1 className="text-gradient text-6xl mb-6">Services</h1>
         <ul className="sticky top-0 min-h-screen">
           {cards.map((item, index) => {
-            const translateY = useTransform(
-                scrollYProgress,
-                [index / cards.length, 1], // Full stacking effect over the scroll
-            [index * -20, -120 * cards.length] // Adjusts how they stack
-              );
+           
             return (
             <motion.li
               key={index}
               className={`px-12 py-14 border border-[#EAD2FF] rounded-2xl relative bg-black`}
-              style={{ y: index === 0? 0 : translateY, zIndex: index + 1 }}
+              style={{ 
+                y: motionY[index],
+               }}
             >
               <h3 className="text-4xl font-medium">{item.title}</h3>
               <p className="my-12">{item.description}</p>
