@@ -1,7 +1,7 @@
-'use client'
-import React, { useState, useRef } from "react";
-import { motion, useScroll, useInView, useTransform } from "framer-motion";
-import { twMerge } from "tailwind-merge";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
+import React, { useRef, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 const cards = [
   {
     title: "Generative AI",
@@ -48,63 +48,81 @@ const cards = [
 ];
 
 export default function ServicesSection() {
-    const sectionRef = useRef(null);
+  const sectionRef = useRef(null);
+  const ulRef = useRef<HTMLUListElement | null>(null); // <ul>
+  const liRefs = useRef<(HTMLLIElement | null)[]>([]);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end end"],
   });
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const motionY:any = [];
 
-  for (let i = 0; i < cards.length; i++) {
+  // const motionY: any = [];
+
+  const motionY = cards.map((_, i) => {
+    const start = (i*0.3) / cards.length; // Start when previous card stops
+    const end = (i + 0.5) / cards.length; // End before next starts
+
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    motionY.push(useTransform(scrollYProgress, [0, 1], [0, -i * 300]));
-  }
-  
+    return useTransform(scrollYProgress, [start, end], [0, -i * 300]);
+  });
+
   return (
     <section>
-      <div className="max-w-[1537px] mx-auto relative h-[600vh]" ref={sectionRef}>
+      <div
+        className="max-w-[1537px] mx-auto relative h-[1500vh]"
+        ref={sectionRef}
+      >
         <h1 className="text-gradient text-6xl mb-6">Services</h1>
-        <ul className="sticky top-0 min-h-screen">
+        <ul className="sticky top-0 min-h-screen" ref={ulRef}>
           {cards.map((item, index) => {
-           
+            // Dynamic staggered offsets for controlled delay effect
+            // const start = index / cards.length; // When to start this card's animation
+            // const end = (index + 1) / cards.length; // When this card's animation fully completes
+
+            // const translateY = useTransform(
+            //   scrollYProgress,
+            //   [start, end], // Adjust so each card only starts after previous finishes
+            //   [0, -120 * (index + 1)] // Moves up progressively
+            // );
             return (
-            <motion.li
-              key={index}
-              className={`px-12 py-14 border border-[#EAD2FF] rounded-2xl relative bg-black`}
-              style={{ 
-                y: motionY[index],
-               }}
-            >
-              <h3 className="text-4xl font-medium">{item.title}</h3>
-              <p className="my-12">{item.description}</p>
-              <a
-                href={item.buttonLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex gap-4 items-center justify-center max-w-max 
+              <motion.li
+                key={index}
+                className={`px-12 py-14 border border-[#EAD2FF] rounded-2xl relative bg-black`}
+                style={{ y: motionY[index], zIndex: index }}
+                ref={(el) => {
+                  liRefs.current[index] = el;
+                }}
+              >
+                <h3 className="text-4xl font-medium">{item.title}</h3>
+                <p className="my-12">{item.description}</p>
+                <a
+                  href={item.buttonLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex gap-4 items-center justify-center max-w-max 
                 px-5 py-3  rounded-lg text-white
              bg-gradient-to-r from-[#5323EC] via-[#4B0082] to-[#170226] shadow-lg"
-              >
-                {item.button}
-                <svg
-                  width={14}
-                  height={13}
-                  viewBox="0 0 14 13"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M1.58838 1.13625L12.5527 1.13623M12.5527 1.13623L12.5527 11.5775M12.5527 1.13623L1.58839 11.5774"
-                    stroke="white"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </a>
-            </motion.li>
-          )})}
+                  {item.button}
+                  <svg
+                    width={14}
+                    height={13}
+                    viewBox="0 0 14 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.58838 1.13625L12.5527 1.13623M12.5527 1.13623L12.5527 11.5775M12.5527 1.13623L1.58839 11.5774"
+                      stroke="white"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </a>
+              </motion.li>
+            );
+          })}
         </ul>
       </div>
     </section>
