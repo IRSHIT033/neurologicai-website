@@ -59,3 +59,8 @@ body {
   animation: scroll var(--animation-duration) var(--animation-direction) linear
     infinite;
 }
+
+.text-gradient {
+  @apply  bg-gradient-to-r from-blue from-40% via-primary via-60%  to-white bg-clip-text text-transparent
+          
+}

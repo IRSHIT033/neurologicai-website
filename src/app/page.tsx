@@ -7,6 +7,7 @@ import PartnershipSection from "@/components/partnership-section";
 import ServicesSection from "@/components/services";
 import TestimonialSection from "@/components/testimonial-section";
 import VerticalsSection from "@/components/verticals-sections";
+import ServicesSection from "@/components/services-section";
 
 export default function Home() {
   return (
