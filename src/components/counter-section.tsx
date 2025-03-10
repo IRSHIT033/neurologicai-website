@@ -72,7 +72,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
   return (
     <h2
       ref={ref}
-      className="text-4xl flex justify-center items-center tracking-wider text-primary-light"
+      className="text-4xl mt-20 flex justify-center items-center tracking-wider text-primary-light"
     >
       {count}
       <span className="ml-1 text-2xl">{suffix}</span>
