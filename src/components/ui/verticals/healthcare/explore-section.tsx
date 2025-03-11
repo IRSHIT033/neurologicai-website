@@ -110,12 +110,13 @@ export default function ExploreSectionHealthcare(){
             </div>
             <div className="">
                 <div>
-                    <div className="grid grid-cols-3 gap-4 px-[10vw] py-[5vh]">
+                    <div className="grid grid-cols-3 gap-4 px-[10vw]">
                     {cards.map((card) => (
-                        <div key={card.id} className="w-full bg-gradient-to-r from-purple-800 via-blue-800 to-white p-0.25 rounded">
+                        <div key={card.id} className={`w-full bg-gradient-to-r from-purple-800 via-[#4116CE] to-white p-0.25 rounded transition-all duration-100
+                        ${selectedCard === card.id ? "h-[calc(100%+1rem)] rounded-b-none" : ""}`}>
                             <Card 
-                                className={`relative p-4 flex h-full transition-all duration-300
-                                rounded-sm border-none ${selectedCard === card.id ?"bg-white text-purple-700" : "bg-black text-white"}`}>
+                                className={`relative p-3.5 flex h-full 
+                                rounded-sm border-none ${selectedCard === card.id ?"bg-white rounded-b-none  text-[#4116CE]" : "bg-black text-white"}`}>
                                 <h3 className="text-sm font-semibold w-75">{card.title}</h3>
                                 <button
                                 className="absolute flex align-middle right-2 text-gray-500 hover:text-black"
@@ -128,7 +129,7 @@ export default function ExploreSectionHealthcare(){
                         <div className="w-full"> 
                         {/* <div className="absolute">{card.title}</div> */}
                             <div className="flex gap-10 z-20 ml-[10vw] mr-[10vw] rounded-b-lg min-h-88
-                            absolute left-0 bg-white px-14 pt-18 pb-15 shadow-lg border text-black justify-between transition-all duration-100">
+                            absolute left-0 bg-white px-14 pt-18 pb-15 shadow-lg text-black justify-between border-none">
                                 <div className="flex flex-1 flex-col justify-between">
                                     <p className="leading-tight text-[17px]" >{card.content}</p>
                                     <button className="self-start mt-4" onClick={() => toggleCard(card.id)}
