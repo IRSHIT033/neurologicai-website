@@ -127,16 +127,20 @@ export default function HealthcareAICarousel() {
         </div>
 
         <button
+          onMouseEnter={() => setIsAutoPlaying(false)}
+          onMouseLeave={() => setIsAutoPlaying(true)}
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 z-40 -translate-y-1/2 rounded-full bg-purple-600/20 p-3 text-white backdrop-blur-sm hover:bg-purple-600/40"
+          className="absolute left-4 top-1/2 z-40 -translate-y-1/2 rounded-full bg-primary p-3 text-white backdrop-blur-sm hover:bg-primary-light"
           aria-label="Previous slide"
         >
           <ChevronLeft className="h-6 w-6" />
         </button>
 
         <button
+          onMouseEnter={() => setIsAutoPlaying(false)}
+          onMouseLeave={() => setIsAutoPlaying(true)}
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 z-40 -translate-y-1/2 rounded-full bg-purple-600/20 p-3 text-white backdrop-blur-sm hover:bg-purple-600/40"
+          className="absolute right-4 top-1/2 z-40 -translate-y-1/2 rounded-full bg-primary p-3 text-white backdrop-blur-sm hover:bg-primary-light"
           aria-label="Next slide"
         >
           <ChevronRight className="h-6 w-6" />
