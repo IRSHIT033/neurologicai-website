@@ -1,11 +1,11 @@
 export default function Header() {
   return (
-    <div className="w-full min-h-[80vh]  flex items-center justify-center p-4 md:p-8">
+    <div className="w-full min-h-[25vh]  flex flex-col items-center justify-center p-4 md:p-8">
       {/* Gradient border container using pseudo-elements */}
-      <div className="relative w-full max-w-5xl rounded-3xl overflow-hidden">
+      <div className="relative w-full max-w-6xl h-[30vh] flex justify-center items-center rounded-4xl overflow-hidden">
         {/* Gradient border using padding + pseudo-element */}
         <div
-          className="absolute inset-0 rounded-3xl bg-linear-to-b from-primary via-white to-primary"
+          className="absolute inset-0 rounded-4xl bg-linear-to-b from-primary via-white to-primary"
           style={{
             padding: "2px",
 
@@ -16,10 +16,10 @@ export default function Header() {
         />
 
         {/* Content container */}
-        <div className="relative rounded-3xl overflow-hidden  z-10">
+        <div className="relative w-full h-full rounded-4xl overflow-hidden z-10">
           {/* Background video */}
           <video
-            className="absolute inset-0 w-full h-full object-cover opacity-40"
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-40"
             autoPlay
             muted
             loop
@@ -30,25 +30,24 @@ export default function Header() {
           </video>
 
           {/* Content overlay */}
-          <div className="relative z-10 text-center">
-            <div className="max-w-3xl mx-auto  py-12 md:py-16 mt-20">
-              <h2 className="text-gray-300 text-3xl  font-medium">
+          <div className="relative z-10 text-center h-full">
+            <div className=" mx-auto h-full flex flex-col justify-center items-center ">
+              <h2 className="text-gray-300 text-3xl  font-bold">
                 Redefining Healthcare by Integrating
               </h2>
-              <h1 className="text-white text-5xl  font-bold tracking-tight">
+              <h1 className="text-white text-7xl mt-2 font-bold tracking-tight">
                 Cutting-Edge AI Models
               </h1>
-              <p className="text-gray-300 text-xs md:text-base leading-relaxed max-w-3xl mx-auto mt-8">
-                Large-Scale Automation, And Real-Time Intelligence Into
-                Mission-Critical Applications. Our Expertise Spans Health
-                Insurance, Life Sciences, And Radiology, Enabling Data-Driven
-                Decision-Making, Faster Diagnostics, And Seamless Automation
-                While Ensuring Full Compliance With HIPAA & FHIR.
-              </p>
             </div>
           </div>
         </div>
       </div>
+      <p className="text-gray-300 text-xs md:text-base leading-relaxed max-w-3xl mx-auto mt-8 text-center">
+        Large-Scale Automation, And Real-Time Intelligence Into Mission-Critical
+        Applications. Our Expertise Spans Health Insurance, Life Sciences, And
+        Radiology, Enabling Data-Driven Decision-Making, Faster Diagnostics, And
+        Seamless Automation While Ensuring Full Compliance With HIPAA & FHIR.
+      </p>
     </div>
   );
 }

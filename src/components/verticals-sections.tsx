@@ -94,7 +94,7 @@ export default function VerticalsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-72">
           {/* Left side content */}
           <div className="lg:col-span-2">
-            <div className="text-white">
+            <div className="text-white h-44">
               {verticals[selectedVertical as keyof typeof verticals].content}
             </div>
             <div className="mt-8 flex h-[10vh] items-center gap-4 font-bold text-white py-2 rounded-md">
