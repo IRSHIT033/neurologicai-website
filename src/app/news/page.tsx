@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-const events = [
+const featuredJourney = [
   {
     image: "/featured-journey-1.png?height=300&width=500",
     alt: "Lenovo Tech World event",
@@ -22,6 +22,23 @@ const events = [
     title: "Times Business Award 2024",
     description:
       "We are thrilled and honored to announce that Neurologic AI has been recognized with the Times Business Award 2024!",
+  },
+];
+
+const weeklyHighlights = [
+  {
+    image: "/weekly-highlight-1.png?height=400&width=600",
+    alt: "Lenovo Tech World 2025 event",
+    title: "Lenovo Tech World 2025",
+    description:
+      "This event promises groundbreaking discussions on AI advancements, community engagement, and intelligent transformations.",
+  },
+  {
+    image: "/weekly-highlight-2.png?height=400&width=600",
+    alt: "Group photo of startup event",
+    title: "Honored to be invited among the 50 startups",
+    description:
+      "We feel delighted to receive an invitation among the top 50 startups on the forefront of AI innovation. This recognition highlights our commitment to advancing neurological research and market penetration.",
   },
 ];
 
@@ -59,48 +76,24 @@ export default function News() {
           Weekly Highlights
         </h2>
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className=" rounded-lg overflow-hidden">
-            <div className="relative h-64">
-              <Image
-                src="/weekly-highlight-1.png?height=400&width=600"
-                alt="Lenovo Tech World 2025 event"
-                fill
-                className="object-cover rounded-3xl"
-              />
+          {weeklyHighlights.map((event, index) => (
+            <div key={index} className="rounded-lg overflow-hidden">
+              <div className="relative h-64">
+                <Image
+                  src={event.image}
+                  alt={event.alt}
+                  fill
+                  className="object-cover rounded-3xl"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl h-12 text-center font-semibold mb-4 text-yellow-500">
+                  {event.title}
+                </h3>
+                <p className="text-gray-300 text-center">{event.description}</p>
+              </div>
             </div>
-            <div className="p-6">
-              <h3 className="text-2xl h-12 text-center font-semibold mb-4 text-yellow-500">
-                Lenovo Tech World 2025
-              </h3>
-              <p className="text-gray-300 text-center">
-                This event promises groundbreaking discussions on AI
-                advancements, community engagement, and intelligent
-                transformations.
-              </p>
-            </div>
-          </div>
-
-          <div className="rounded-lg overflow-hidden">
-            <div className="relative h-64">
-              <Image
-                src="/weekly-highlight-2.png?height=400&width=600"
-                alt="Group photo of startup event"
-                fill
-                className="object-cover rounded-3xl"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-2xl h-12 text-center font-semibold mb-4 text-yellow-500">
-                Honored to be invited among the 50 startups
-              </h3>
-              <p className="text-gray-300 text-center">
-                We feel delighted to receive an invitation among the top 50
-                startups on the forefront of AI innovation. This recognition
-                highlights our commitment to advancing neurological research and
-                market penetration.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -110,7 +103,7 @@ export default function News() {
           Featured Journeys
         </h2>
         <div className="grid md:grid-cols-3 w-6xl mx-auto gap-6">
-          {events.map((event, index) => (
+          {featuredJourney.map((event, index) => (
             <div key={index} className=" rounded-lg overflow-hidden">
               <div className="relative h-64">
                 <Image
