@@ -59,20 +59,21 @@ export default function ServicesSection() {
 
   const motionY = cards.map((_, i) => {
     const start = (i * 0.3) / cards.length; // Start when previous card stops
-    const end = (i * 0.5) / cards.length; // End before next starts
+    const end = (i + 0.5) / cards.length; // End before next starts
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     return useTransform(scrollYProgress, [start, end], [1, -i * 300]);
   });
 
   return (
-    <section>
+    <section className="h-[1050vh]">
       <div
-        className="max-w-[1537px] mx-auto relative h-[1000vh]"
+        className="max-w-[1537px] mx-auto relative"
+        style={{ height: `${cards.length * 200}vh` }}
         ref={sectionRef}
       >
         <h1 className="text-gradient text-6xl mb-6">Services</h1>
-        <ul className="sticky top-0 " ref={ulRef}>
+        <ul className="sticky top-0" ref={ulRef}>
           {cards.map((item, index) => {
             // Dynamic staggered offsets for controlled delay effect
             // const start = index / cards.length; // When to start this card's animation
