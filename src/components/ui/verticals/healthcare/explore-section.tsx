@@ -122,16 +122,17 @@ export default function ExploreSectionHealthcare(){
                                 className="absolute flex align-middle right-2 text-gray-500 hover:text-black"
                                 onClick={() => toggleCard(card.id)}
                                 >
-                                <img className="h-6 w-6" src={selectedCard === card.id ? '/minus-circle.png' : '/plus-circle.png'}/>
+                                <img className="h-7 w-7" src={selectedCard === card.id ? '/minus-circle.png' : '/plus-circle.png'}/>
                                 </button>
                             </Card> 
                         {selectedCard === card.id && (
                         <div className="w-full"> 
                         {/* <div className="absolute">{card.title}</div> */}
-                            <div className="flex gap-10 z-20 ml-[10vw] mr-[10vw] rounded-b-lg min-h-88
-                            absolute left-0 bg-white px-14 pt-18 pb-15 shadow-lg text-black justify-between border-none">
+                            <div className="flex gap-8 z-20 ml-[10vw] mr-[10vw] rounded-b-lg h-84 max-h-85
+                            absolute left-0 bg-white px-14 pt-15 pb-14 shadow-lg text-black justify-between border-none">
                                 <div className="flex flex-1 flex-col justify-between">
-                                    <p className="leading-tight text-[17px]" >{card.content}</p>
+                                    <p className={`leading-tight text-[17px]
+                                     ${selectedCard === cards.length-1 ? "!text-[15px]" : ""} `}>{card.content}</p>
                                     <button className="self-start mt-4" onClick={() => toggleCard(card.id)}
                                     style={{color: '#602EEF' }}  >
                                     Read Case Studies {'>'}

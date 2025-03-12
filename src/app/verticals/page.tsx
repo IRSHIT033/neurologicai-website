@@ -2,6 +2,7 @@
 import ExploreSectionHealthcare from "@/components/ui/verticals/healthcare/explore-section";
 import HealthcareAICarousel from "@/components/ui/verticals/healthcare/healthcare";
 import HeroSection from "@/components/ui/verticals/healthcare/hero";
+import RelatedResources from "@/components/ui/verticals/healthcare/related-resource";
 
 export default function Contact() {
   return (
@@ -9,6 +10,7 @@ export default function Contact() {
       <HeroSection />
       <HealthcareAICarousel />
       <ExploreSectionHealthcare/>
+      <RelatedResources/>
     </div>
   );
 }
