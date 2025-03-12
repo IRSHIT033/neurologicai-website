@@ -1,9 +1,8 @@
-"use client";
 export default function Partnership() {
   return (
     <section className=" text-white py-16 px-24 text-center">
       <h2
-        className="text-center text-[36px] font-semibold leading-[65px] font-[Inter] mb-1"
+        className="text-center text-[36px] font-semibold leading-[65px]  mb-1"
         style={{
           background: "linear-gradient(90deg, #5323EC 56.37%, #7F36F5 78.53%)",
           backgroundClip: "text",
@@ -16,7 +15,7 @@ export default function Partnership() {
       </h2>
 
       <p
-        className="text-[#B3B3B3] text-[16px] font-normal leading-[31px] font-[Inter] mb-8 max-w-2xl mx-auto text-center"
+        className="text-[#B3B3B3] text-[16px] font-normal leading-[31px]  mb-8 max-w-2xl mx-auto text-center"
         style={{
           width: "619px",
           height: "38px",

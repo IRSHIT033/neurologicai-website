@@ -34,7 +34,7 @@ const timelineData = [
 
 const Timeline = () => {
   return (
-    <div className="flex items-center justify-between max-w-5xl mx-auto h-screen">
+    <div className="flex items-center justify-between max-w-5xl mx-auto h-[60vh]">
       <h1 className="text-gradient text-5xl ">Timeline</h1>
       <div className="w-[766px] relative flex">
         <div className="relative w-full flex justify-center items-center text-white">

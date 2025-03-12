@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const images = ["/whoweare1.png", "/whoweare2.png"];
 
 export default function ImageSlider() {
-  const [activeIndex, setActiveIndex] = useState(3);
+  const [activeIndex, setActiveIndex] = useState(2);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const handlePrev = () => {
@@ -37,7 +37,7 @@ export default function ImageSlider() {
 
   return (
     <div className="relative flex flex-col items-center mb-8">
-      <div className="relative border-[2px] border-[#7F36F5] rounded-[20px] w-[820px] h-[520px] flex items-center justify-center overflow-hidden bg-black">
+      <div className="relative border-[2px] border-[#7F36F5] rounded-[20px] w-[820px] h-[520px] flex items-center justify-center overflow-hidden ">
         <button
           onClick={handlePrev}
           onMouseEnter={() => setIsAutoPlaying(false)}
@@ -48,13 +48,16 @@ export default function ImageSlider() {
         </button>
 
         <div className="border-[1px] border-[#7F36F5] rounded-[20px] overflow-hidden w-[612px] h-[370px]">
-          <Image
-            src={images[activeIndex]}
-            alt="Award Image"
-            width={816}
-            height={490}
-            className="object-cover w-full h-full"
-          />
+          {images[activeIndex] && (
+            <Image
+              src={images[activeIndex]}
+              alt="Award Image"
+              priority
+              width={816}
+              height={490}
+              className="object-cover w-full h-full"
+            />
+          )}
         </div>
 
         <button
