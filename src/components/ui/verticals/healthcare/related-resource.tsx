@@ -31,15 +31,14 @@ export default function RelatedResources() {
           <h2 className="text-5xl z-10 ">Related Resource</h2>
         </div>
   
-        <div className="flex flex-col items-center mt-12 mb-6">
-            <div>
+        <div className="mt-12 mb-6">
+            <div className="flex flex-col items-center">
                 <div className="relative flex gap-6">
                     <button
                     className={`px-4 py-1 transition font-medium relative ${
                         selected === "Popular" ? "text-white" : "text-gray-500"
                     }`}
-                    onClick={() => setSelected("Popular")}
-    >
+                    onClick={() => setSelected("Popular")}>
                     Popular
                     </button>
 
@@ -59,42 +58,56 @@ export default function RelatedResources() {
                     />
                 </div>
             </div>
+            <div className="flex justify-end items-center pr-[10vw] mt-[-70]">
+                <div className="flex flex-col gap-4 mb-2">
+                    <span className="text-gray-300">14 results</span>
+                    <label className="relative inline-flex items-center cursor-pointer mt-2">
+                        <input
+                        type="checkbox"
+                        checked={isToggled}
+                        onChange={() => setIsToggled(!isToggled)}
+                        className="sr-only peer"
+                        />
+                        <div className="w-17 h-7 bg-gray-300 rounded-full peer peer-checked:bg-white transition-all"></div>
+                        <div
+                        className={`absolute left-1 w-6 h-6 bg-transparent border-[#460CFF] border-3 rounded-full transition ${
+                            isToggled ? "translate-x-9" : ""
+                        }`}
+                        >
+                        <div className="absolute inset-0 flex items-center justify-center ">
+                            <div
+                            className={`w-3 h-3 rounded-full transition bg-[#460CFF] ${
+                                isToggled ? "" : ""
+                            }`}
+                            ></div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+            </div>
         </div>
   
         {/* Toggle Switch */}
-        <div className="flex justify-end items-center gap-2 mb-2 pr-[10vw]">
-          <span className="text-gray-400">14 results</span>
-          <label className="relative inline-flex items-center cursor-pointer">
-            <input
-              type="checkbox"
-              checked={isToggled}
-              onChange={() => setIsToggled(!isToggled)}
-              className="sr-only peer"
-            />
-            <div className="w-11 h-6 bg-gray-500 peer-focus:ring-2 peer-focus:ring-purple-300 rounded-full peer peer-checked:bg-purple-600 transition-all"></div>
-            <div
-              className={`absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition ${
-                isToggled ? "translate-x-5" : ""
-              }`}
-            ></div>
-          </label>
-        </div>
+      
 
-        <div className="flex justify-center gap-6 mt-6 px-[10vw] min-h-125 h-auto rounded-6xl">
+        <div className="flex justify-center gap-6 mt-15 px-[10vw] min-h-125 h-auto rounded-6xl">
         {resources.map((resource, index) => (
-          <Card key={index} className="bg-white text-black rounded-xl shadow-lg overflow-hidden w-[26vw]">
+          <Card key={index} className="bg-white text-black rounded-3xl shadow-lg overflow-hidden w-[26vw] flex flex-col">
             <img src={resource.image} alt={resource.title} className="h-74 object-cover" />
             <CardContent className="p-4 flex flex-col flex-1">
-            <div className="flex-grow">
-              <p className="text-xs font-semibold">Case Study</p>
-              <h3 className="font-extrabold text-2xl">{resource.title}</h3>
-              <p className="text-gray-700 text-sm mt-2">
-                {resource.desc}
-              </p>
-              <Button variant="outline" className="mt-3 px-5 py-3 bg-white">
-                View Now
-              </Button>
-              </div>
+            <div className="flex flex-col justify-between h-full">
+                <div>
+                    <p className="text-xs font-semibold">Case Study</p>
+                    <h3 className="font-extrabold text-2xl">{resource.title}</h3>
+                    <p className="text-gray-700 text-sm mt-2">
+                        {resource.desc}
+                    </p>
+                </div>
+                <Button variant="outline" className="mt-3 px-5 py-3 bg-white w-25 mb-1">
+                    View Now
+                </Button>
+            </div>
             </CardContent>
           </Card>
         ))}
