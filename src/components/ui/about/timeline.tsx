@@ -1,7 +1,7 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { twMerge } from "tailwind-merge";
 
 const timelineData = [
   {
@@ -34,15 +34,17 @@ const timelineData = [
 
 const Timeline = () => {
   return (
-    <div className="flex items-center justify-between max-w-5xl mx-auto h-[60vh]">
-      <h1 className="text-gradient text-5xl ">Timeline</h1>
-      <div className="w-[766px] relative flex">
+    <div className="flex items-center justify-evenly mx-auto h-[50vh] gap-10">
+      <h1 className="text-gradient text-5xl font-bold bg-gradient-to-r from-blue from-40% to-primary  bg-clip-text text-transparent">
+        Timeline
+      </h1>
+      <div className="w-4xl relative flex">
         <div className="relative w-full flex justify-center items-center text-white">
           {/* Animated Timeline Line */}
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
-            transition={{ duration: 3, ease: "easeInOut" }}
+            transition={{ duration: 2, ease: "easeInOut" }}
             className="bg-[#3D5AF1] h-[2px] absolute top-[50%] left-0 w-full"
           />
 
@@ -55,20 +57,19 @@ const Timeline = () => {
               transition={{ duration: 1, delay: index * 0.6 }}
               className={`w-[180px] h-[300px] flex flex-col ${
                 index % 2 === 0 ? "justify-start" : "flex-col-reverse"
-              } items-center absolute left-[${index * 160}px] top-[50%] ${
+              } items-center absolute top-[50%] ${
                 index % 2 === 0
                   ? "translate-y-[-38px]"
                   : "translate-y-[calc(-100%+42px)]"
               }`}
+              style={{ left: `${index * 180}px` }} // ✅ Fix: Dynamically set `left` inline
             >
               <h3 className="text-lg font-semibold">{item.year}</h3>
               <div>{circle}</div>
-              <div
-                className={twMerge("py-2", index % 2 === 0 ? "rotate-180" : "")}
-              >
+              <div className={cn("py-2", index % 2 === 0 ? "rotate-180" : "")}>
                 {svgDown}
               </div>
-              <div className={`text-center mt-2`}>
+              <div className="text-center mt-2">
                 <ul className="list-disc text-sm text-gray-300">
                   {item.details.map((detail, i) => (
                     <li key={i}>{detail}</li>
