@@ -3,7 +3,8 @@ import { cn } from "@/lib/utils";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 const NavItems = [
   {
@@ -165,18 +166,34 @@ const NavItems = [
 
 const Navbar = () => {
   const [activeNavItem, setActiveNavItem] = useState<string | null>();
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+
   const toggleActiveNavitem = (title: string) => {
-    if (title === activeNavItem) {
-      setActiveNavItem(null);
-    } else {
-      setActiveNavItem(title);
-    }
+    setActiveNavItem((prev) => (prev === title ? null : title));
   };
   const getCurrentNavServiceDetails = (title: string) => {
     return (
       NavItems.find((navitem) => navitem.navtitle === title)?.services || []
     );
   };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setActiveNavItem(null);
+      }
+    };
+
+    if (activeNavItem) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [activeNavItem]);
 
   return (
     <>
@@ -200,7 +217,9 @@ const Navbar = () => {
                   ? " bg-linear-to-r from-blue via-primary to-primary"
                   : " bg-transparent"
               )}
-              onClick={() => toggleActiveNavitem(navitem.navtitle)}
+              onMouseDown={() => {
+                toggleActiveNavitem(navitem.navtitle);
+              }}
             >
               {" "}
               {navitem.navtitle}
@@ -208,62 +227,65 @@ const Navbar = () => {
           )
         )}
       </div>
-      <div
-        className={cn(
-          "bg-background  absolute  w-full z-[999] py-12 shadow-lg ",
-          activeNavItem ? " fade-in " : " fade-out "
-        )}
-      >
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between">
-            <div className="w-3/5 pr-8">
-              <Link
-                href="/services"
-                className="text-primary-bright flex items-center mb-6 "
-              >
-                <span className="text-xl">
-                  Learn More About Neurologic AI&apos; Services
-                </span>
-                <ChevronRight className="ml-2 h-5 w-5" />
-              </Link>
-
-              <div className="grid grid-cols-2 gap-x-8 gap-y-6 w-3xl">
-                {getCurrentNavServiceDetails(activeNavItem!).map(
-                  (service, index) => (
-                    <div key={index} className="group">
-                      <Link href={service.href}>
-                        <h3 className="text-lg font-semibold mb-1 group-hover:text-primary-bright">
-                          {service.title}
-                        </h3>
-                      </Link>
-                      <p className="text-gray-400 text-sm">
-                        {service.description}
-                      </p>
-                    </div>
-                  )
-                )}
-              </div>
-            </div>
-
-            <div className="w-2/5">
-              <h3 className="text-lg font-semibold mb-4">
-                Latest in Neurologic
-              </h3>
-              <div className="grid grid-cols-2 gap-x-8 gap-y-6 ">
-                {Array.from({ length: 2 }).map((_, index) => (
-                  <div key={index} className="group ">
-                    <div className="bg-white h-36 mb-2 rounded-md"></div>
-                    <h4 className="text-sm font-medium group-hover:text-primary">
-                      About something latest in Neurologic..
-                    </h4>
-                    <p className="text-xs text-gray-500">02 March 202</p>
+      {activeNavItem &&
+        createPortal(
+          <div
+            ref={dropdownRef}
+            className="bg-background absolute top-[15vh] left-0 w-full z-50 py-12 shadow-lg"
+          >
+            <div className="container mx-auto px-4">
+              <div className="flex justify-between">
+                {/* Services Section */}
+                <div className="w-3/5 pr-8">
+                  <Link
+                    href="/services"
+                    className="text-primary-bright flex items-center mb-6"
+                  >
+                    <span className="text-xl">
+                      Learn More About Neurologic AI&apos;s Services
+                    </span>
+                    <ChevronRight className="ml-2 h-5 w-5" />
+                  </Link>
+                  <div className="grid grid-cols-2 gap-x-8 gap-y-6">
+                    {getCurrentNavServiceDetails(activeNavItem!).map(
+                      (service, index) => (
+                        <div key={index} className="group">
+                          <Link href={service.href}>
+                            <h3 className="text-lg font-semibold mb-1 group-hover:text-primary-bright">
+                              {service.title}
+                            </h3>
+                          </Link>
+                          <p className="text-gray-400 text-sm">
+                            {service.description}
+                          </p>
+                        </div>
+                      )
+                    )}
                   </div>
-                ))}
+                </div>
+
+                {/* Latest News Section */}
+                <div className="w-2/5">
+                  <h3 className="text-lg font-semibold mb-4">
+                    Latest in Neurologic
+                  </h3>
+                  <div className="grid grid-cols-2 gap-x-8 gap-y-6">
+                    {Array.from({ length: 2 }).map((_, index) => (
+                      <div key={index} className="group">
+                        <div className="bg-white h-36 mb-2 rounded-md"></div>
+                        <h4 className="text-sm font-medium group-hover:text-primary">
+                          Latest news update
+                        </h4>
+                        <p className="text-xs text-gray-500">March 02, 2025</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </div>,
+          document.body
+        )}
     </>
   );
 };
