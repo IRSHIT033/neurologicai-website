@@ -43,7 +43,7 @@ const Timeline = () => {
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{ duration: 3, ease: "easeInOut" }}
-            className="bg-[#3D5AF1] h-[2px] absolute top-[50%] left-0"
+            className="bg-[#3D5AF1] h-[2px] absolute top-[50%] left-0 w-full"
           />
 
           {/* Timeline Items */}

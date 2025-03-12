@@ -58,6 +58,7 @@ body {
 @keyframes fadeIn {
   from {
     opacity: 0;
+    display: none;
   }
   to {
     opacity: 1;
@@ -70,6 +71,7 @@ body {
   }
   to {
     opacity: 0;
+    display: none;
   }
 }
 
