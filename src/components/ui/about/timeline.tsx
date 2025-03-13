@@ -1,7 +1,8 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const timelineData = [
   {
@@ -33,8 +34,14 @@ const timelineData = [
 ];
 
 const Timeline = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" }); // Starts animation when the section is slightly in view
+
   return (
-    <div className="flex items-center justify-evenly mx-auto h-[50vh] gap-10">
+    <div
+      ref={ref}
+      className="flex items-center justify-evenly mx-auto h-[50vh] gap-10"
+    >
       <h1 className="text-gradient text-5xl font-bold bg-gradient-to-r from-blue from-40% to-primary  bg-clip-text text-transparent">
         Timeline
       </h1>
@@ -43,7 +50,7 @@ const Timeline = () => {
           {/* Animated Timeline Line */}
           <motion.div
             initial={{ width: 0 }}
-            animate={{ width: "100%" }}
+            animate={isInView ? { width: "100%" } : { width: 0 }}
             transition={{ duration: 2, ease: "easeInOut" }}
             className="bg-[#3D5AF1] h-[2px] absolute top-[50%] left-0 w-full"
           />
@@ -53,7 +60,7 @@ const Timeline = () => {
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 1, delay: index * 0.6 }}
               className={`w-[180px] h-[300px] flex flex-col ${
                 index % 2 === 0 ? "justify-start" : "flex-col-reverse"
