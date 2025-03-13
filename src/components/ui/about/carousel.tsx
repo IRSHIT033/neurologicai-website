@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 "use client";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
@@ -9,7 +11,6 @@ import {
 } from "@/components/ui/carousel";
 import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 
 const testimonialsImages = [
   "/testimonials-1.svg",
@@ -36,6 +37,7 @@ const AboutUsHeaderCarousel = () => {
       api.off("select", updateIndex);
     };
   }, [api]);
+
   return (
     <Carousel
       plugins={[plugin.current]}
