@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
@@ -165,6 +166,7 @@ const NavItems = [
 ];
 
 const Navbar = () => {
+  const router = useRouter();
   const [activeNavItem, setActiveNavItem] = useState<string | null>();
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
@@ -229,61 +231,72 @@ const Navbar = () => {
       </div>
       {activeNavItem &&
         createPortal(
-          <div
-            ref={dropdownRef}
-            className="bg-background absolute top-[15vh] left-0 w-full z-50 py-12 shadow-lg"
-          >
-            <div className="container mx-auto px-4">
-              <div className="flex justify-between">
-                {/* Services Section */}
-                <div className="w-3/5 pr-8">
-                  <Link
-                    href="/services"
-                    className="text-primary-bright flex items-center mb-6"
-                  >
-                    <span className="text-xl">
-                      Learn More About Neurologic AI&apos;s Services
-                    </span>
-                    <ChevronRight className="ml-2 h-5 w-5" />
-                  </Link>
-                  <div className="grid grid-cols-2 gap-x-8 gap-y-6">
-                    {getCurrentNavServiceDetails(activeNavItem!).map(
-                      (service, index) => (
+          <>
+            <div className="fixed inset-0 bg-black/10 backdrop-blur-sm z-40"></div>
+            <div
+              ref={dropdownRef}
+              className="bg-background absolute top-[15vh] left-0 w-full z-50 py-12 shadow-lg  border-b-1"
+            >
+              <div className="container mx-auto px-4">
+                <div className="flex justify-between">
+                  {/* Services Section */}
+                  <div className="w-3/5 pr-8">
+                    <Link
+                      href="/services"
+                      className="text-primary-bright flex items-center mb-6"
+                    >
+                      <span className="text-xl">
+                        Learn More About Neurologic AI&apos;s Services
+                      </span>
+                      <ChevronRight className="ml-2 h-5 w-5" />
+                    </Link>
+                    <div className="grid grid-cols-2 gap-x-8 gap-y-6">
+                      {getCurrentNavServiceDetails(activeNavItem!).map(
+                        (service, index) => (
+                          <div key={index} className="group">
+                            <div
+                              className="cursor-pointer"
+                              onMouseDown={() => {
+                                router.push(service.href);
+                                setActiveNavItem(null);
+                              }}
+                            >
+                              <h3 className="text-lg font-semibold mb-1 group-hover:text-primary-bright">
+                                {service.title}
+                              </h3>
+                            </div>
+                            <p className="text-gray-400 text-sm">
+                              {service.description}
+                            </p>
+                          </div>
+                        )
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Latest News Section */}
+                  <div className="w-2/5">
+                    <h3 className="text-lg font-semibold mb-4">
+                      Latest in Neurologic
+                    </h3>
+                    <div className="grid grid-cols-2 gap-x-8 gap-y-6">
+                      {Array.from({ length: 2 }).map((_, index) => (
                         <div key={index} className="group">
-                          <Link href={service.href}>
-                            <h3 className="text-lg font-semibold mb-1 group-hover:text-primary-bright">
-                              {service.title}
-                            </h3>
-                          </Link>
-                          <p className="text-gray-400 text-sm">
-                            {service.description}
+                          <div className="bg-white h-36 mb-2 rounded-md"></div>
+                          <h4 className="text-sm font-medium group-hover:text-primary">
+                            Latest news update
+                          </h4>
+                          <p className="text-xs text-gray-500">
+                            March 02, 2025
                           </p>
                         </div>
-                      )
-                    )}
-                  </div>
-                </div>
-
-                {/* Latest News Section */}
-                <div className="w-2/5">
-                  <h3 className="text-lg font-semibold mb-4">
-                    Latest in Neurologic
-                  </h3>
-                  <div className="grid grid-cols-2 gap-x-8 gap-y-6">
-                    {Array.from({ length: 2 }).map((_, index) => (
-                      <div key={index} className="group">
-                        <div className="bg-white h-36 mb-2 rounded-md"></div>
-                        <h4 className="text-sm font-medium group-hover:text-primary">
-                          Latest news update
-                        </h4>
-                        <p className="text-xs text-gray-500">March 02, 2025</p>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>,
+          </>,
           document.body
         )}
     </>

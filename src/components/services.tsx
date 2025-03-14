@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 const cards = [
   {
     title: "Generative AI",
@@ -8,6 +9,7 @@ const cards = [
       "Neurologic AI specializes in training and deploying multi-billion-parameter models, driving transformative breakthroughs in Generative AI. We leverage industry-leading platforms like GPT-3, GPT-4, LLaMA, Mixva, Qwen, BLIP-2, and domain-specific models like MedGPT and Med Image Insights to address complex challenges across industries. Our large-scale training pipelines orchestrate hundreds of top-tier GPUs (A100s, H100s) using Slurm, FSDP, and distributed optimization, ensuring unparalleled performance. We extract value in multi-turn (RLHF, LoRA), inference acceleration (speculative decoding, KV caching), and scalable deployments with SageMaker Endpoints, VLLM, TensorRT, and MLOpsDev. By integrating AI safety guardrails, multimodal fusion, synthetic data generation, and Retrieval-Augmented Generation (RAG), we deliver cutting-edge AI solutions that seamlessly transform business processes, drive innovation, and create generate meaningful significant impact.",
     button: "Deploy Now",
     buttonLink: "#",
+    logos: ["gpt.svg", "slurm.svg"],
   },
   {
     title: "Robotics & Digital Twins",
@@ -95,31 +97,17 @@ export default function ServicesSection() {
               >
                 <h3 className="text-4xl font-medium">{item.title}</h3>
                 <p className="my-12">{item.description}</p>
-                <a
-                  href={item.buttonLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex gap-4 items-center justify-center max-w-max 
-                px-5 py-3  rounded-lg text-white
-             bg-gradient-to-r from-[#5323EC] via-[#4B0082] to-[#170226] shadow-lg"
-                >
-                  {item.button}
-                  <svg
-                    width={14}
-                    height={13}
-                    viewBox="0 0 14 13"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1.58838 1.13625L12.5527 1.13623M12.5527 1.13623L12.5527 11.5775M12.5527 1.13623L1.58839 11.5774"
-                      stroke="white"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                <div className="flex gap-4">
+                  {item.logos?.map((logo, index) => (
+                    <Image
+                      key={`logo-${index}`}
+                      src={`logo/${logo}`}
+                      width={50}
+                      height={50}
+                      alt={logo}
                     />
-                  </svg>
-                </a>
+                  ))}
+                </div>
               </motion.li>
             );
           })}
