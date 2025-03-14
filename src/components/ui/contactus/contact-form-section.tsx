@@ -4,13 +4,15 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import toast, { Toaster } from "react-hot-toast";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email address"),
-  company: z.string().optional(),
+  email: z
+    .string()
+    .email("Invalid email address")
+    .min(1, "Email cannot be empty"),
+  company: z.string().min(1, "Company cannot be empty"),
   contact: z.string().min(10, "Contact must be at least 10 digits"),
   message: z.string().min(5, "Message must be at least 5 characters"),
 });
@@ -27,24 +29,18 @@ const ContactFormSection = () => {
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
     setLoading(true);
     try {
-      console.log(data);
-
-      const response = await fetch("/api/send-email", {
+      await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
-      if (response.ok) {
-        toast.success("Message sent successfully!");
-        reset();
-      } else {
-        toast.error("Failed to send message. Please try again.");
-      }
-    } catch (error) {
+      toast.success("Message sent successfully!");
+      reset();
+    } catch {
       toast.error("Failed to send message. Try again!");
     } finally {
       setLoading(false);
@@ -53,6 +49,8 @@ const ContactFormSection = () => {
 
   return (
     <div className="flex items-center justify-center py-2 px-3">
+      <Toaster position="bottom-center" reverseOrder={false} />
+
       <div className="w-full min-w-2xl">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 gap-x-20">
@@ -178,16 +176,17 @@ const ContactFormSection = () => {
             <button
               type="submit"
               disabled={loading}
-              className="relative inline-flex items-center justify-center px-8 py-3 font-bold rounded-2xl mt-20 bg-gradient-to-br from-primary to-blue text-white uppercase"
+              className="relative cursor-pointer inline-flex items-center justify-center w-40 h-10 font-bold rounded-2xl mt-20 bg-gradient-to-br from-primary to-blue text-white uppercase"
             >
-              {loading ? "Sending..." : "Connect"}
+              {loading ? (
+                <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+              ) : (
+                "Connect"
+              )}
             </button>
           </div>
         </form>
       </div>
-
-      {/* Toast Notifications */}
-      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };
