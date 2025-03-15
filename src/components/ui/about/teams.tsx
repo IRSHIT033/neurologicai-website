@@ -130,7 +130,7 @@ export default function TeamDirectory() {
   return (
     <div className="bg-background min-h-screen p-4 md:p-6">
       <h2 className="text-5xl py-10  text-center font-bold mb-4 bg-gradient-to-r from-blue from-40% via-primary via-60%  to-white bg-clip-text text-transparent  ">
-        Teams Neurologicai
+        Team Neurologicai
       </h2>
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
