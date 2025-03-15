@@ -179,7 +179,11 @@ export default function Resources() {
               >
                 <div className="">{item.title}</div>
                 <div className="text-4xl cursor-pointer font-bold">
-                  {openIndex === index ? <MinusIcon /> : <PlusIcon />}
+                  {openIndex === index ? (
+                    <MinusIcon size={40} />
+                  ) : (
+                    <PlusIcon size={40} />
+                  )}
                 </div>
               </button>
 
@@ -271,7 +275,7 @@ export default function Resources() {
                 placeholder="Enter email address"
                 className="px-4 py-2 rounded-full border-none w-64 text-gray-900 focus:ring-0 focus:outline-none"
               />
-              <button className="bg-[#0328EE] text-white px-6 py-2 rounded-full">
+              <button className="cursor-pointer bg-[#0328EE] text-white px-6 py-2 rounded-full">
                 Subscribe
               </button>
             </div>
