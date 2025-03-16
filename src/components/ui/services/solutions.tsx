@@ -1,10 +1,20 @@
-import { PencilRulerIcon } from "lucide-react";
+import { ArrowRight, PencilRulerIcon } from "lucide-react";
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "../dialog";
+
 import Image from "next/image";
 
 export default function SolutionGrid({
   solutions,
 }: {
-  solutions: { text: string }[];
+  solutions: { text: string; desc: string }[];
 }) {
   return (
     <section className=" relative py-16 px-8  text-white flex flex-col items-center">
@@ -35,6 +45,26 @@ export default function SolutionGrid({
             <p className="flex flex-col justify-center text-center text-white text-2xl  font-bold leading-[45px] tracking-[-0.645px] capitalize ">
               {solution.text}
             </p>
+            <Dialog>
+              <DialogTrigger>
+                <div className="cursor-pointer absolute bottom-4 right-4 flex items-center gap-2">
+                  <ArrowRight />
+                  <span className="text-white text-lg text-[20px] font-semibold leading-[30px]">
+                    View More
+                  </span>
+                </div>
+              </DialogTrigger>
+              <DialogContent className="min-w-3xl ">
+                <DialogHeader className="text-center m-4">
+                  <DialogTitle className="text-4xl text-center">
+                    {solution.text}
+                  </DialogTitle>
+                  <DialogDescription className="pt-10 text-left text-xl">
+                    {solution.desc}
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
           </div>
         ))}
       </div>

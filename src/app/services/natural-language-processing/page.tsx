@@ -12,14 +12,17 @@ const page = () => {
     {
       text: "Intelligent Receipt and Invoice Data Extraction for Accelerated Financial Workflows",
       desc: "Traditional methods of manually processing financial documents like receipts and invoices are time-consuming, error-prone, and lack scalability. To address these challenges, we developed an automated intelligent data extraction system that combines advanced AI technologies, utilizing LayoutLM V3 for section segmentation and Large Language Models (LLMs) for structured data extraction. With over 98% accuracy, our solution has significantly streamlined financial workflows, reduced manual workloads by 60%, and delivered annual operational savings exceeding $800,000. This intelligent system enhances efficiency, accuracy, and cost-effectiveness, transforming financial document processing for businesses. ",
+      href: "https://drive.google.com/file/d/1b8UrJ812TrGX6du3wuMmgTKawHIHbuBW/view?usp=drive_link",
     },
     {
       text: "SLM-Powered Findings Extraction from Medical Reports using PHI4",
       desc: "Neurologic AI’s fine-tuned SLM framework ensures high-accuracy findings extraction from radiology and mammography reports, minimizing hallucinations. Optimized for AWS SageMaker, it combines Phi4 modeling, LoRA fine-tuning, regex-based preprocessing, and feedback-driven learning to enhance medical text accuracy and reliability.",
+      href: "https://drive.google.com/file/d/1SaViJmoFi2-BJtXvWEV9p1XwJEh206Ei/view?usp=drive_link",
     },
     {
       text: "Intelligent Receipt and Invoice Data Extraction for Accelerated Financial Workflows",
       desc: "Traditional methods of manually processing financial documents like receipts and invoices are time-consuming, error-prone, and lack scalability. To address these challenges, we developed an automated intelligent data extraction system that combines advanced AI technologies, utilizing LayoutLM V3 for section segmentation and Large Language Models (LLMs) for structured data extraction. With over 98% accuracy, our solution has significantly streamlined financial workflows, reduced manual workloads by 60%, and delivered annual operational savings exceeding $800,000. This intelligent system enhances efficiency, accuracy, and cost-effectiveness, transforming financial document processing for businesses. ",
+      href: "https://drive.google.com/file/d/1b8UrJ812TrGX6du3wuMmgTKawHIHbuBW/view?usp=drive_link",
     },
   ];
 

@@ -12,10 +12,12 @@ const page = () => {
     {
       text: "AI-Powered Smart Shelf: Vision-Enabled Analytics & Real-Time Recommendations",
       desc: "Neurologic’s Smart Shelf seamlessly merges advanced computer vision, real-time analytics, and recommendation engines to deliver a personalized in-store experience. It detects shopper demographics (age, gender, style) and instantly offers tailored product suggestions or promotions. By leveraging edge computing for low-latency analysis and cloud integration for deeper insights, retailers can scale effortlessly. Built with robust data privacy controls and easy API-driven integration, the Smart Shelf elevates customer engagement, boosts conversions, and drives operational efficiency—redefining the retail aisle for a new era of connected shopping.",
+      href: "https://drive.google.com/file/d/1xOfvgbnLY5bgSYdjS0fp21CxZmb21Nl7/view?usp=drive_link",
     },
     {
       text: "Context-Aware Recommendation Engine for Airport Retail",
-      desc: "VLM-driven framework automates radiology report generation, enhancing clinical accuracy and decision support. Integrating MiniGPT-Med & MedImageInsight, it extracts detailed CXR features, employs LoRA fine-tuned LLaMA 3.2 for efficient medical text generation, and achieves 90% accuracy in Visual Question Answering (VQA). With multi-image processing, advanced embeddings, and cross-attention, it generates structured, clinically relevant reports from frontal and lateral views of Chest X-rays.",
+      desc: "Neurologic’s recommendation engine leverages real-time contextual data—such as time of day, weather, holidays, and product associations—to deliver highly personalized offers in high-traffic airport environments. By analyzing purchase patterns and situational triggers, it dynamically adjusts promotions and product placements to match passenger behaviors. Built on robust data pipelines and advanced ML algorithms, the solution integrates seamlessly with existing POS and CRM systems, boosting store revenue and enhancing the traveler shopping experience.",
+      href: "https://drive.google.com/file/d/1P7C4XKu52a5eJvCt6BfdJsPIry9Omdma/view?usp=drive_link",
     },
   ];
 

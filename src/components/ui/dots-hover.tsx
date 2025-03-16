@@ -8,17 +8,17 @@ const HoverDots = () => {
     {
       id: 1,
       text: "We are a strong team of dedicated individuals, constantly pushing ourselves beyond our limits, from simply being an AI transformation organization to becoming a leader in enabling global AI transformation.",
-      position: "top-6/20 left-1/6",
+      position: "top-[30%] left-[20%] -translate-x-1/2 -translate-y-1/2",
     },
     {
       id: 2,
       text: "To create a one-stop solution for high-performance AI and ML deliverables in a world of rapid digital transformation",
-      position: "top-1/2 left-8/14",
+      position: "top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2",
     },
     {
       id: 3,
       text: "To understand how your business works, resolve bottlenecks, and accelerate business deliveries",
-      position: "top-1/14 left-18/22",
+      position: "top-[20%] left-[70%] -translate-x-1/2 -translate-y-1/2",
     },
   ];
 
@@ -35,7 +35,6 @@ const HoverDots = () => {
               {" "}
               <ArrowRight size={15} />
             </div>
-
             <div>{dot.text}</div>
           </div>
         </div>

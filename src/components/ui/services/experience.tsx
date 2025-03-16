@@ -1,12 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "../dialog";
+import Link from "next/link";
 
 export default function ExperiencesSection({
   experiences,
@@ -14,6 +7,7 @@ export default function ExperiencesSection({
   experiences: {
     text: string;
     desc: string;
+    href: string;
   }[];
 }) {
   return (
@@ -53,26 +47,19 @@ export default function ExperiencesSection({
             </p>
 
             {/* View More Text & Arrow Container */}
-            <Dialog>
-              <DialogTrigger>
-                <div className="cursor-pointer absolute bottom-4 right-4 flex items-center gap-2">
-                  <ArrowRight />
-                  <span className="text-white text-lg text-[20px] font-semibold leading-[30px]">
-                    View More
-                  </span>
-                </div>
-              </DialogTrigger>
-              <DialogContent className="min-w-3xl h-[40vh]">
-                <DialogHeader className="text-center m-4">
-                  <DialogTitle className="text-4xl text-center">
-                    {experience.text}
-                  </DialogTitle>
-                  <DialogDescription className="pt-10 text-center">
-                    {experience.desc}
-                  </DialogDescription>
-                </DialogHeader>
-              </DialogContent>
-            </Dialog>
+
+            <Link
+              href={experience.href}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <div className="cursor-pointer absolute bottom-4 right-4 flex items-center gap-2">
+                <ArrowRight />
+                <span className="text-white text-lg text-[20px] font-semibold leading-[30px]">
+                  View More
+                </span>
+              </div>
+            </Link>
           </div>
         ))}
       </div>

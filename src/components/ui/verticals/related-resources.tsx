@@ -10,17 +10,17 @@ export default function RelatedResources({
   resources: { title: string; desc: string; image: string }[];
 }) {
   const [isToggled, setIsToggled] = useState(false);
-  const [selected, setSelected] = useState("Popular");
+  // const [selected, setSelected] = useState("Popular");
 
   return (
     <section className="mt-[8vh] text-white py-6 px-6 mb-30">
       <div className="text-center mb-2">
-        <h2 className="text-5xl z-10 ">Related Resource</h2>
+        <h2 className="text-5xl z-10 ">Case Studies</h2>
       </div>
 
       <div className="mt-12 mb-6">
         <div className="flex flex-col items-center">
-          <div className="relative flex gap-6">
+          {/* <div className="relative flex gap-6">
             <button
               className={`px-4 py-1 transition font-medium relative ${
                 selected === "Popular" ? "text-white" : "text-gray-500"
@@ -45,7 +45,7 @@ export default function RelatedResources({
                 left: selected === "Popular" ? "0%" : "45%",
               }}
             />
-          </div>
+          </div> */}
         </div>
         <div className="flex justify-end items-center pr-[10vw] mt-[-70]">
           <div className="flex flex-col gap-4 mb-2">

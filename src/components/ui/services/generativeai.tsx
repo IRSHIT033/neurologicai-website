@@ -27,7 +27,7 @@ export default function GenerativeAISection({
         {/* Section Heading (Fixed in Place) */}
         <h2
           className="flex flex-col justify-center flex-shrink-0 text-center 
-               text-[75px] font-extrabold leading-[65px] tracking-[-1.5px] capitalize 
+               text-[75px] font-bold leading-[65px] tracking-[-1.5px] capitalize 
                font-poppins bg-gradient-to-b from-[#FFF] via-[#D1D1D1] to-[#373636] 
                bg-clip-text text-transparent w-[1300px] h-[125px]"
         >
@@ -39,7 +39,7 @@ export default function GenerativeAISection({
           {/* Subtitle / Highlighted Text */}
           <p
             className="flex-shrink-0 text-white text-left 
-                font-poppins text-[24px] font-semibold leading-[36px]"
+                font-poppins text-[24px] font-medium leading-[36px]"
           >
             {servicesHeaderText.headerdesc}
           </p>

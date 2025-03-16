@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const images = ["/whoweare1.png", "/whoweare2.png"];
 
 export default function ImageSlider() {
-  const [activeIndex, setActiveIndex] = useState(2);
+  const [activeIndex, setActiveIndex] = useState(1);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const handlePrev = () => {

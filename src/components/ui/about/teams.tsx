@@ -45,6 +45,8 @@ export default function TeamDirectory() {
       title: "Associate Software Engineer",
       education: ["Masters in Computer Application", "Academy of Technology"],
       image: "/headshots/AkashPal.png?height=200&width=200",
+      linkedinurl:
+        "https://www.linkedin.com/in/akash-pal-88a015234?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     },
     {
       name: "Irshit Mukherjee",
@@ -84,6 +86,7 @@ export default function TeamDirectory() {
         "IIT Kharagpur",
       ],
       image: "/headshots/YedlaAnilKumar.png?height=200&width=200",
+      linkedinurl: "https://www.linkedin.com/in/yedla-anil-kumar-0b9430230",
     },
     {
       name: "Aditya Bhattachariya",
