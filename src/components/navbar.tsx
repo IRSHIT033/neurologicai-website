@@ -35,19 +35,19 @@ const NavItems = [
     navtitle: "Verticals",
     services: [
       {
-        href: "/verticals",
+        href: "/verticals/healthcare",
         title: "Healthcare",
         description:
           "Neurologic AI uses AI to transform healthcare. They've developed AI that precisely identifies organs in scans, reads and interprets medical reports, and automates insurance claims. This means faster diagnoses, streamlined care, and improved patient outcomes.",
       },
       {
-        href: "/verticals",
+        href: "/verticals/retail",
         title: "Retail",
         description:
           "Neurologic AI enhances retail with AI & offer vision-based checkouts, real-time inventory, shopper tracking, and voice recommendations. This creates personalized experiences and efficient store operations, keeping retailers ahead.",
       },
       {
-        href: "/verticals",
+        href: "/verticals/manufacturing",
         title: "Manufacturing",
         description:
           "Neurologic AI boosts manufacturing using AI. They offer AI robotics, digital twins, and simulations for better product management. This includes real-time insights, cost predictions, and optimized processes, helping manufacturers stay competitive.",

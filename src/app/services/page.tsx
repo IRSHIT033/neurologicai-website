@@ -5,7 +5,6 @@ import SolutionGrid from "@/components/ui/services/solutions";
 const page = () => {
   return (
     <div className="scroll-smooth">
-      <GenerativeAISection />
       <SolutionGrid />
       <ExperiencesSection />
     </div>

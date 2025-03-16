@@ -5,48 +5,13 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export default function HealthcareAICarousel() {
+export default function HealthcareAICarousel({
+  features,
+}: {
+  features: { title: string; description: string }[];
+}) {
   const [activeIndex, setActiveIndex] = useState(3);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  const features = [
-    {
-      title: "End-to-End Inference Optimized for Healthcare",
-
-      description:
-        "Latency-reduced AI models with VLLM power real-time clinical decision making.",
-    },
-    {
-      title: "Multi-Modal AI Imaging",
-
-      description:
-        "Integration of text, images, and data into unified, comprehensive patient analysis.",
-    },
-    {
-      title: "80B+ Parameter Model Processing",
-      description:
-        "Developed domain-specific VLMs tailored for radiology understanding, and diagnostics.",
-    },
-    {
-      title: "3x Faster Model Training Speed",
-      description:
-        "Optimized AI pipelines using FSDP, DeepSpeed, and multi-GPU training (A100/H100 clusters) to accelerate healthcare AI model development.",
-    },
-    {
-      title: "Automation in Workflow",
-      description:
-        "Patient intelligence and machine medical records, and EHR processing.",
-    },
-    {
-      title: "Accuracy in Detection",
-      description:
-        "Learning models improve early identification of diseases from imaging and clinical data.",
-    },
-    {
-      title: "Processing Time",
-      description: "Speeds up approvals, workflows for insurers and providers.",
-    },
-  ];
 
   const nextSlide = () => {
     setActiveIndex((prevIndex) => (prevIndex + 1) % features.length);

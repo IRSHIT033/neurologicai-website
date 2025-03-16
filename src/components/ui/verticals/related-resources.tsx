@@ -4,25 +4,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useState } from "react";
 import Image from "next/image";
 
-const resources = [
-  {
-    title: "AI-Powered Grounded Report Generation for Medical Imaging",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-    image: "/relatedResourceCard-1.png",
-  },
-  {
-    title: "Prompt-Based Image Segmentation Using LLM",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-    image: "/relatedResourceCard-2.png",
-  },
-  {
-    title: "Efficient Vision-Language Models for Edge Computing",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-    image: "/relatedResourceCard-3.png",
-  },
-];
-
-export default function RelatedResources() {
+export default function RelatedResources({
+  resources,
+}: {
+  resources: { title: string; desc: string; image: string }[];
+}) {
   const [isToggled, setIsToggled] = useState(false);
   const [selected, setSelected] = useState("Popular");
 
