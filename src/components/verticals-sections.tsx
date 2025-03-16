@@ -85,19 +85,19 @@ export default function VerticalsSection() {
   const [selectedVertical, setSelectedVertical] = useState("healthcare");
 
   return (
-    <div className=" text-white h-[60vh] p-40">
-      <div className="max-w-7xl mx-auto">
+    <div className=" text-white min-h-[50vh] p-10 md:p-40 ">
+      <div className="max-w-7xl  mx-auto">
         <h1 className="text-6xl tracking-wider w-[25rem] space-x-0.5 bg-gradient-to-r from-blue from-0% via-primary via-60%  to-white bg-clip-text text-transparent  mb-12">
           Verticals
         </h1>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-72">
+        <div className="grid md:grid-cols-1 lg:grid-cols-4 gap-x-20 sm:gap-y-20 order-first md:order-last ">
           {/* Left side content */}
-          <div className="lg:col-span-2">
-            <div className="text-white h-44">
+          <div className="lg:col-span-2 order-2 lg:order-1 p-2">
+            <div className="text-white min-h-[30vh] ">
               {verticals[selectedVertical as keyof typeof verticals].content}
             </div>
-            <div className="mt-8 flex h-[10vh] items-center gap-4 font-bold text-white py-2 rounded-md">
+            <div className="mt-8 flex h-[10vh] items-center gap-4 font-bold text-white py-2 rounded-md p-2">
               <div className="text-3xl mt-6">
                 Explore{" "}
                 {verticals[selectedVertical as keyof typeof verticals].title}
@@ -109,14 +109,14 @@ export default function VerticalsSection() {
           </div>
 
           {/* Right side navigation */}
-          <div className="lg:col-span-1 ">
-            <div className="flex flex-col space-y-16">
+          <div className="lg:col-span-2 order-1 lg:order-2">
+            <div className="flex flex-col space-y-16 w-full justify-end items-end">
               {Object.entries(verticals).map(([key, vertical]) => (
                 <button
                   key={key}
                   onClick={() => setSelectedVertical(key)}
                   className={cn(
-                    "cursor-pointer p-4 py-6 relative text-xl text-center font-medium transition-all duration-300",
+                    "w-full lg:w-60 cursor-pointer p-4 py-6 relative text-xl text-center font-medium transition-all duration-300",
                     selectedVertical === key &&
                       "bg-gradient-to-tr from-blue via-blue via-50% to-primary"
                   )}

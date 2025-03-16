@@ -1,5 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Loader2 } from "lucide-react"; // Shadcn/ui's loading spinner
+import { cn } from "@/lib/utils";
 
 export default function ExperiencesSection({
   experiences,
@@ -10,8 +15,28 @@ export default function ExperiencesSection({
     href: string;
   }[];
 }) {
+  const [selectedExperience, setSelectedExperience] = useState<{
+    text: string;
+    desc: string;
+    href: string;
+  } | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleIframeLoad = () => {
+    setLoading(false);
+  };
+
+  const openModal = (experience: {
+    text: string;
+    desc: string;
+    href: string;
+  }) => {
+    setSelectedExperience(experience);
+    setLoading(true); // Set loading when opening modal
+  };
+
   return (
-    <section className=" mb-30 flex flex-col items-center text-center  relative w-full">
+    <section className="mb-30 flex flex-col items-center text-center relative w-full">
       {/* Gradient Background Effect */}
       <div className="absolute inset-0 flex items-center justify-center -z-10">
         <div className="w-[800px] h-[400px] bg-gradient-to-r from-[#7F36F5] to-[#4B0082] opacity-30 rounded-full blur-3xl"></div>
@@ -32,34 +57,51 @@ export default function ExperiencesSection({
         {experiences.map((experience, index) => (
           <div
             key={index}
-            className={`relative w-[600px] h-44 flex-shrink-0 bg-[#14161A] rounded-[12px] flex flex-col  cursor-pointer 
-              border-[3px] border-t-[#14161A] border-b-[#7F36F5] border-l-[#7F36F5] border-r-[#7F36F5] overflow-hidden transition`}
+            className="relative w-[600px] h-44 flex-shrink-0 bg-[#14161A] rounded-[12px] flex flex-col cursor-pointer 
+              border-[3px] border-t-[#14161A] border-b-[#7F36F5] border-l-[#7F36F5] border-r-[#7F36F5] overflow-hidden transition"
           >
-            {/* Left Gradient Border */}
-            {/* <div className="absolute top-0 left-0 h-full w-[3px] bg-gradient-to-b from-[#14161A] to-[#7F36F5]"></div> */}
-
-            {/* Right Gradient Border */}
-            {/* <div className="absolute top-0 right-0 h-full w-[3px] bg-gradient-to-b from-[#14161A] to-[#7F36F5]"></div> */}
-
             {/* Experience Text */}
             <p className="text-white text-left p-4 text-xl font-semibold leading-[45px] tracking-[-0.19px] capitalize">
               {experience.text}
             </p>
 
-            {/* View More Text & Arrow Container */}
+            {/* View More Button */}
+            <Dialog>
+              <DialogTrigger asChild>
+                <button
+                  onClick={() => openModal(experience)}
+                  className="cursor-pointer absolute bottom-4 right-4 flex items-center gap-2"
+                >
+                  <ArrowRight />
+                  <span className="text-white text-lg text-[20px] font-semibold leading-[30px]">
+                    View More
+                  </span>
+                </button>
+              </DialogTrigger>
+              <DialogContent className="w-[80vw] h-[80vh] max-w-5xl p-6 flex flex-col items-center">
+                {selectedExperience && (
+                  <div className="w-full h-full flex flex-col items-center">
+                    {/* Loader (Spinner) */}
+                    {loading && (
+                      <div className="flex justify-center items-center h-full">
+                        <Loader2 className="animate-spin h-40 w-40 text-primary" />
+                      </div>
+                    )}
 
-            <Link
-              href={experience.href}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <div className="cursor-pointer absolute bottom-4 right-4 flex items-center gap-2">
-                <ArrowRight />
-                <span className="text-white text-lg text-[20px] font-semibold leading-[30px]">
-                  View More
-                </span>
-              </div>
-            </Link>
+                    {/* iFrame (Hidden Until Loaded) */}
+                    <iframe
+                      src={selectedExperience.href.replace("/view", "/preview")}
+                      className={cn(
+                        "w-full h-full aspect-[16/9] rounded-md",
+                        loading ? "hidden" : "block"
+                      )}
+                      allow="autoplay"
+                      onLoad={handleIframeLoad} // Hide loader when loaded
+                    />
+                  </div>
+                )}
+              </DialogContent>
+            </Dialog>
           </div>
         ))}
       </div>
