@@ -8,36 +8,6 @@ const page = () => {
     headerdesc: `Neurologic AI pioneers Generative AI by training and deploying multi-billion-parameter models across industries. Using architectures like GPT-4, LLaMA, Qwen, and domain-specific models (MedGPT, Med Image Insights), we tackle complex challenges with precision. Our large-scale pipelines run on top-tier GPUs (A100s, H100s) with Slurm, FSDP, and distributed optimization for peak efficiency. We specialize in fine-tuning (RLHF, LoRA), inference acceleration (speculative decoding, KV caching), and scalable deployment via SageMaker, VLLM, and TensorRT. With AI safety, multimodal capabilities, synthetic data generation, Retrieval-Augmented Generation (RAG), and adaptive learning, we drive innovation, automation, and business transformation.`,
   };
 
-  const solutions = [
-    {
-      text: "Foundational Generative AI Model Building For Healthcare",
-    },
-    {
-      text: "AI-Powered Grounded Report Generation For Medical Imaging",
-    },
-    {
-      text: "Prompt-Based Image Segmentation Using VLM",
-    },
-    {
-      text: "Efficient Vision-Language Models For Edge Computing",
-    },
-    {
-      text: "Evaluation Pipeline For LLM-Generated Radiology Reports",
-    },
-    {
-      text: "AI-Powered Nuclear Morphological Analysis For Ovarian Cancer Diagnosis",
-    },
-    {
-      text: "Multi-Stage Agentic Framework Powered By VLM And Knowledge Graphs For Product’s Damage Assessment And Recycling",
-    },
-    {
-      text: "SLM-Powered Findings Extraction From Medical Reports Using PHI4",
-    },
-    {
-      text: "Customer Service Using Agentic AI",
-    },
-  ];
-
   const experiences = [
     {
       text: "Foundational Generative AI Model Building For Healthcare",
@@ -80,7 +50,7 @@ const page = () => {
   return (
     <div className="scroll-smooth">
       <HeaderSection servicesHeaderText={servicesHeaderText} />
-      <SolutionGrid solutions={solutions} />
+      <SolutionGrid solutions={experiences} />
       <ExperiencesSection experiences={experiences} />
     </div>
   );

@@ -58,42 +58,42 @@ const NavItems = [
     navtitle: "Services",
     services: [
       {
-        href: "/services",
+        href: "/services/generative-ai",
         title: "Generative AI",
         description:
           "Creating novel solutions and content with intelligent systems",
       },
       {
-        href: "/services",
+        href: "/services/digital-twin-physical-ai-robotics",
         title: "Physical AI & Robotics",
         description:
           "Integrating AI into physical systems for automation and intelligence",
       },
       {
-        href: "/services",
+        href: "/services/digital-twin-physical-ai-robotics",
         title: "Digital Twin",
         description:
           "Simulating real-world systems for optimal performance and analysis",
       },
       {
-        href: "/services",
-        title: "Recomendation Engine",
+        href: "/services/recommendation-engine",
+        title: "Recommendation Engine",
         description:
           "Personalizing experiences with intelligent suggestions and insights",
       },
       {
-        href: "/services",
+        href: "/services/computer-vision-&-video-analytics",
         title: "Computer Vision & Video Analytics",
         description:
           "Extracting insights from visual data for informed decisions.x",
       },
       {
-        href: "/services",
+        href: "/services/forecasting-&-predictive-modeling",
         title: "Forecasting & Predictive Modeling",
         description: "Anticipating future trends with data-driven predictions",
       },
       {
-        href: "/services",
+        href: "/services/natural-language-processing",
         title: "Natural Language Processing",
         description:
           "Understanding and generating human language for seamless communication",
