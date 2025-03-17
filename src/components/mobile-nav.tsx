@@ -29,9 +29,14 @@ export default function MobileNavbar() {
   return (
     <>
       <div className="h-[10vh]"></div>
-      <header className={cn("fixed w-full inset-0", isOpen && "z-50")}>
+      <header
+        className={cn(
+          "fixed w-full z-50 inset-0",
+          isOpen ? "h-full" : "h-[10vh]"
+        )}
+      >
         {/* Navbar */}
-        <nav className="relative z-50 top-0 left-0 right-0 flex items-center justify-between px-6 py-4 bg-background text-white">
+        <nav className="relative  flex items-center justify-between px-6 py-4 bg-background text-white">
           <div className="text-xl font-bold">
             <Link href="/">
               <Image
@@ -59,8 +64,10 @@ export default function MobileNavbar() {
         {/* Mobile Navigation Drawer */}
         <div
           className={cn(
-            "relative bg-background z-50 text-white transform transition-transform duration-300 ease-in-out",
-            isOpen ? "translate-x-0" : "translate-x-full"
+            "fixed  h-screen w-full bg-background z-50 text-white transform transition-transform duration-300 ease-in-out",
+            isOpen
+              ? "translate-x-0 pointer-events-auto"
+              : "translate-x-full pointer-events-none"
           )}
         >
           <div className="px-6 py-4 overflow-y-auto h-screen">
