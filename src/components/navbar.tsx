@@ -108,6 +108,8 @@ export const NavItems = [
   },
   {
     navtitle: "Logo",
+    moretext: "",
+    services: [],
   },
   {
     navtitle: "Resources",
@@ -176,12 +178,13 @@ export const NavItems = [
 
 const navNews = [
   {
-    event: "Times event",
+    event: "Times Honoured with Time Business Award 2024",
     date: "29th sept ’24",
     image: "/whoweare1.png",
   },
   {
-    event: "Dubai health 2.0 coneference",
+    event:
+      "Honored to Receive Excellence in Healthcare Award at Health 2.0 Conference, Dubai 2024",
     date: "5th dec ’24",
     image: "/whoweare2.png",
   },
@@ -196,7 +199,7 @@ const Navbar = () => {
     setActiveNavItem((prev) => (prev === title ? null : title));
   };
   const getCurrentNavServiceDetails = (title: string) => {
-    return NavItems.find((navitem) => navitem.navtitle === title) || null;
+    return NavItems.find((navitem) => navitem.navtitle === title)!;
   };
 
   // Close dropdown when clicking outside
@@ -263,18 +266,24 @@ const Navbar = () => {
                   <div className="flex justify-between">
                     {/* Services Section */}
                     <div className="w-3/5 pr-8">
-                      <Link
-                        href="/services"
-                        className="text-primary-bright flex items-center mb-6"
-                      >
-                        <span className="text-xl font-bold">
+                      <div className="text-primary-bright flex items-center mb-6">
+                        <span
+                          className="text-xl font-bold cursor-pointer"
+                          onClick={() => {
+                            router.push(
+                              getCurrentNavServiceDetails(activeNavItem!)
+                                .services[0].href
+                            );
+                            setActiveNavItem(null);
+                          }}
+                        >
                           {
                             getCurrentNavServiceDetails(activeNavItem!)
                               ?.moretext
                           }
                         </span>
                         <ChevronRight className="ml-2 h-5 w-5" />
-                      </Link>
+                      </div>
                       <div className="grid grid-cols-2 gap-x-8 gap-y-6">
                         {getCurrentNavServiceDetails(
                           activeNavItem!
