@@ -30,7 +30,6 @@ const timelineData = [
       "Neurologic receives Times Business Award",
     ],
   },
-  { year: "2025", details: ["Ask if anything"] },
 ];
 
 const Timeline = () => {
@@ -45,7 +44,7 @@ const Timeline = () => {
       <h1 className="text-gradient text-5xl font-bold bg-gradient-to-r from-blue from-40% to-primary  bg-clip-text text-transparent">
         Timeline
       </h1>
-      <div className="w-4xl relative flex">
+      <div className="w-3xl relative flex">
         <div className="relative w-full flex justify-center items-center text-white">
           {/* Animated Timeline Line */}
           <motion.div
