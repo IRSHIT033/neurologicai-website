@@ -1,19 +1,78 @@
-export default function FooterCTA() {
-  return (
-    <div className=" w-[549px] h-[115px]  p-[10px] flex flex-col justify-center items-center  text-white flex-shrink-0">
-      <h2 className="text-[48px] font-medium  text-white opacity-70 leading-[120%] mb-4">
-        Looking to Push Boundaries with Us?
-      </h2>
+import Image from "next/image";
+import Link from "next/link";
 
-      <div className="flex items-center gap-4 self-start ">
-        <input
-          type="text"
-          placeholder="Enter your email here..."
-          className="py-2 px-4 text-[#B3B3B3] bg-white rounded-[10px] outline-none text-[16px]  transition focus:ring-2 focus:ring-[#7300FF]"
-        />
-        <button className="flex justify-center items-center gap-[4px] w-[121.651px] h-[38.571px] py-[8px] px-[16px] flex-shrink-0 rounded-[10px] bg-gradient-to-b from-[#5323EC] to-[#A400FF] text-[#FFF]  text-[16px] font-normal leading-normal transition hover:bg-gradient-to-b hover:from-[#4300CC] hover:to-[#8200CC]">
-          Contact us
-        </button>
+export default function FooterCallToAction() {
+  return (
+    <div className="w-full flex flex-col items-center md:items-start text-white text-center md:text-left gap-6 md:gap-12 px-4 sm:px-8">
+      
+      {/* Call-to-Action Section */}
+      <div className="w-full flex flex-col items-center md:items-start text-white text-center md:text-left">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium opacity-80 leading-[120%] mb-4">
+          Looking to Push Boundaries with Us?
+        </h2>
+
+        {/* Input + Button Section */}
+        <div className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-lg">
+          <input
+            type="text"
+            placeholder="Enter your email here..."
+            className="w-full sm:w-auto py-2 px-4 text-gray-400 bg-white rounded-lg outline-none text-sm md:text-base focus:ring-2 focus:ring-[#7300FF] transition"
+          />
+          <button className="w-full sm:w-auto px-6 py-2 rounded-lg bg-gradient-to-b from-[#5323EC] to-[#A400FF] text-white text-sm md:text-base font-medium transition hover:from-[#4300CC] hover:to-[#8200CC]">
+            Contact us
+          </button>
+        </div>
+      </div>
+
+      {/* Contact Information Section */}
+      <div className="w-full flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-16">
+        
+        {/* Logo & Social Media */}
+        <div className="flex flex-col items-center md:items-start">
+          <div
+            className="w-[184px] h-[46px] bg-lightgray"
+            style={{
+              backgroundImage: "url('/Logo.svg')",
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          ></div>
+
+          <div className="flex flex-row justify-center md:justify-start gap-4 mt-4">
+            <Link href="mailto:info@neurologicai.com">
+              <Image
+                src="/mail.svg"
+                alt="Email"
+                width={40}
+                height={40}
+                className="hover:opacity-75 transition"
+              />
+            </Link>
+            <Link href="https://linkedin.com" target="_blank">
+              <Image
+                src="/LinkedIn.svg"
+                alt="LinkedIn"
+                width={40}
+                height={40}
+                className="hover:opacity-75 transition"
+              />
+            </Link>
+          </div>
+        </div>
+
+        {/* Address & Contact Info */}
+        <div className="flex flex-col text-[#686868] text-[15px] font-normal leading-[23px] tracking-[-0.45px] text-center md:text-left space-y-3">
+          <p className="max-w-xs md:max-w-sm">
+            254 Chapman Rd, Ste 208 #17957, Newark, Delaware 19702, United States - 19702
+          </p>
+          <p>info@neurologicai.com</p>
+          <p>
+            <Link href="https://www.linkedin.com/company/neurologicai" target="_blank" className="hover:text-white transition">
+              https://www.linkedin.com/company/neurologicai
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );

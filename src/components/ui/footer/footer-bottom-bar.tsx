@@ -1,19 +1,15 @@
 export default function FooterBottom() {
   return (
-    <div className=" text-white py-4">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col items-center md:flex-row md:justify-between">
+    <div className="relative w-full text-white py-4">
+      <div className="mt-10 max-w-7xl mx-auto px-6 flex flex-col items-center md:flex-row md:justify-between">
+        
         {/* Left Side: Copyright Text */}
-        <div className="mt-24 ml-[500px] text-center text-[#B3B3B3] text-[14px] pt-4">
+        <div className="text-center text-[#B3B3B3] text-sm md:text-base md:ml-[40%]">
           <p>Copyright©2025 Neurologic AI</p>
         </div>
 
         {/* Right Side: Awards Image */}
-        <div
-          className="  w-[171.103px] h-[71.374px] flex-shrink-0 rounded-[23px] bg-cover"
-          style={{
-            background: "url('/business-award.svg')  no-repeat",
-          }}
-        />
+        {/* <div className="w-44 h-20 flex-shrink-0 rounded-lg bg-cover bg-no-repeat bg-center md:mt-0 mt-6 bg-[url('/business-award.svg')]" /> */}
       </div>
     </div>
   );
