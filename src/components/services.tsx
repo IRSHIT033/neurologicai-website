@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import useDeviceType from "@/hooks/device-check";
 const cards = [
   {
     title: "Generative AI",
@@ -61,6 +62,7 @@ export default function ServicesSection() {
     target: sectionRef,
     offset: ["start start", "end end"],
   });
+  const device = useDeviceType();
 
   // const motionY: any = [];
 
@@ -69,7 +71,11 @@ export default function ServicesSection() {
     const end = (i + 0.5) / cards.length; // End before next starts
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    return useTransform(scrollYProgress, [start, end], [1, -i * 400]);
+    return useTransform(
+      scrollYProgress,
+      [start, end],
+      [1, -i * (device === "sm" ? 570 : 400)]
+    );
   });
 
   return (
@@ -96,22 +102,22 @@ export default function ServicesSection() {
             return (
               <motion.li
                 key={index}
-                className={`px-12 py-14 w-full h-[500px] border border-[#EAD2FF] rounded-2xl relative  bg-background`}
+                className={`px-12 py-14 w-full h-[700px] lg:h-[500px] border border-[#EAD2FF] rounded-2xl relative  bg-background`}
                 style={{ y: motionY[index], zIndex: index }}
                 ref={(el) => {
                   liRefs.current[index] = el;
                 }}
               >
-                <div className="w-full h-full flex justify-between items-center">
-                  <div className="w-2/4 h-full flex flex-col justify-between">
+                <div className="w-full h-full flex flex-col md:flex-row justify-between items-center">
+                  <div className="w-full md:w-2/4 h-full flex flex-col justify-between">
                     <h3 className="text-4xl font-medium self-start">
                       {item.title}
                     </h3>
-                    <p className="my-12 text-lg whitespace-break-spaces">
+                    <p className=" my-12 text-sm md:text-lg whitespace-break-spaces">
                       {item.description}
                     </p>
                   </div>
-                  <div className="w-2/4 flex justify-center items-center">
+                  <div className=" w-2/4 flex justify-center items-center">
                     <Image
                       src={`/landing-services/${item.logo}`}
                       alt={item.title}
