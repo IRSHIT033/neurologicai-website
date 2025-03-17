@@ -1,6 +1,5 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { MinusIcon, PlusIcon } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 // import { FaMinus, FaPlus } from "react-icons/fa";
@@ -32,22 +31,6 @@ export default function Resources() {
         "When fine-tuning a Hugging Face model, it often saves as LoRA adapters.",
     },
   ];
-  const publications = [
-    {
-      title: "Hosting a Hugging Face Model on AWS SageMaker",
-      content: "Details about how to host a model on AWS SageMaker...",
-    },
-    {
-      title:
-        "When fine-tuning a Hugging Face model, it often saves as LoRA adapters",
-      content:
-        "Explanation of fine-tuning Hugging Face models and LoRA adapters...",
-    },
-    {
-      title: "Deploying AI Models with TensorFlow and PyTorch",
-      content: "A guide on deploying AI models using TensorFlow and PyTorch...",
-    },
-  ];
 
   const [selectedCategory, setSelectedCategory] = useState("All");
 
@@ -57,11 +40,6 @@ export default function Resources() {
       ? blogs
       : blogs.filter((blog) => blog.category === selectedCategory);
 
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggleAccordion = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
   return (
     <div>
       <section className="py-[5vh] px-[5vw]">
@@ -98,7 +76,7 @@ export default function Resources() {
       </section>
       <section className="py-[2vh] px-[5vw] mb-20">
         <div className="flex flex-row justify-between">
-          <h2 className="text-white text-4xl font-bold mb-6">Latest Blogs</h2>
+          <h2 className="text-white text-4xl font-bold mb-6">Case Studies</h2>
           <div className="flex space-x-4 mb-6">
             {categories.map((category, index) => (
               <button
@@ -156,43 +134,6 @@ export default function Resources() {
           Show More <span className="align-middle">{">"}</span>{" "}
         </p>
         {/* </div> */}
-      </section>
-
-      <section className="py-[5vh] px-[5vw] mt-30 mb-10">
-        <div className="flex flex-row justify-between">
-          <h2 className="text-white text-4xl font-bold mb-6">Publications</h2>
-          <div className="flex  mb-6">
-            <button className="border-[#8875D8] cursor-pointer border-[1px] text-[#8875D8] rounded-lg text-[22px] h-[40px] px-4">
-              View All Publications
-            </button>
-          </div>
-        </div>
-        <div className="space-y-3 mt-2">
-          {publications.map((item, index) => (
-            <div
-              key={index}
-              className="bg-gradient-to-b from-[#1F3A9A70] via-[#460bc470] to-[#4B0082] rounded-b-lg border-[#3c1ec2] border-[1px] border-t-0"
-            >
-              <button
-                onClick={() => toggleAccordion(index)}
-                className="w-full flex justify-between items-center text-right px-6 py-3 font-bold text-xl"
-              >
-                <div className="">{item.title}</div>
-                <div className="text-4xl cursor-pointer font-bold">
-                  {openIndex === index ? (
-                    <MinusIcon size={40} />
-                  ) : (
-                    <PlusIcon size={40} />
-                  )}
-                </div>
-              </button>
-
-              {openIndex === index && (
-                <div className="px-6 pb-4 text-gray-300">{item.content}</div>
-              )}
-            </div>
-          ))}
-        </div>
       </section>
 
       <section className="py-[2vh] px-[5vw] mt-20 mb-30">
