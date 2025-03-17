@@ -1,6 +1,4 @@
 import FooterCTA from "./footer-cta";
-import FooterContact from "./footer-contact";
-import FooterServices from "./footer-service";
 import FooterLinks from "./footer-link";
 import FooterBottomBar from "./footer-bottom-bar";
 
@@ -12,10 +10,8 @@ export default function Footer() {
         
         <div className="col-span-2 flex flex-col justify-between gap-30 ">
           <FooterCTA />
-          {/* <FooterContact /> */}
         </div>
-        
-        {/* <FooterServices /> */}
+      
         <FooterLinks />
 
       </div>
