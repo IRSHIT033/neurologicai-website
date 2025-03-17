@@ -17,7 +17,7 @@ export default function SolutionGrid({
   solutions: { text: string; desc: string }[];
 }) {
   return (
-    <section className=" relative py-16 px-8  text-white flex flex-col items-center">
+    <section className=" relative py-16 px-8  text-white flex flex-col items-center sm:2">
       {/* AI Themed Image Above Solutions */}
       <Image
         src="/ai.png" // Make sure this image is placed in the public folder
@@ -28,7 +28,7 @@ export default function SolutionGrid({
       />
       {/* Centered Heading */}
       <div className="flex justify-center">
-        <h2 className="text-[75px] mb-10 font-extrabold leading-[65px] tracking-[-1.5px] text-center text-transparent bg-clip-text bg-gradient-to-b from-white via-[#D1D1D1] to-[#373636]">
+        <h2 className="text-4xl md:text-[75px] mb-10 font-extrabold leading-[65px] tracking-[-1.5px] text-center text-transparent bg-clip-text bg-gradient-to-b from-white via-[#D1D1D1] to-[#373636]">
           SOLUTIONS
         </h2>
       </div>
