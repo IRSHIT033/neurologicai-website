@@ -11,7 +11,7 @@ const HeroSection = () => {
       }}
     >
       {/* Content */}
-      <div className="relative flex flex-col items-center justify-center h-64 text-white z-10 ">
+      <div className="relative flex flex-col items-center justify-center h-24 text-white z-10 ">
         <div className="text-center mt-48  p-4 rounded-lg">
           <h1 className="text-3xl lg:text-7xl font-bold bg-gradient-to-r from-blue from-0% via-primary via-60% to-white bg-clip-text text-transparent md:leading-20">
             Transforming Business <br /> with Intelligence.
