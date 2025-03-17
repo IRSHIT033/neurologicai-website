@@ -31,7 +31,7 @@ export default function MobileNavbar() {
       <div className="h-[10vh]"></div>
       <header className={cn("fixed w-full inset-0", isOpen && "z-50")}>
         {/* Navbar */}
-        <nav className="relative top-0 left-0 right-0 flex items-center justify-between px-6 py-4 bg-background text-white z-40">
+        <nav className="relative z-50 top-0 left-0 right-0 flex items-center justify-between px-6 py-4 bg-background text-white">
           <div className="text-xl font-bold">
             <Link href="/">
               <Image
