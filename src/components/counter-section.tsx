@@ -37,7 +37,7 @@ export default function CounterSection() {
             }}
           >
             <Counter value={stat.value} suffix={stat.suffix} />
-            <p className="text-2xl mt-3 bg-gradient-to-r from-blue from-0% via-primary via-70% to-primary-light  bg-clip-text text-transparent">
+            <p className="text-2xl mt-3 bg-gradient-to-r from-blue from-0% to-primary via-70%   bg-clip-text text-transparent">
               {stat.label}
             </p>
           </motion.div>
@@ -72,7 +72,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
   return (
     <h2
       ref={ref}
-      className="text-4xl mt-20 flex justify-center items-center tracking-wider text-primary-light"
+      className="text-4xl mt-20 flex justify-center items-center tracking-wider text-white font-bold"
     >
       {count}
       <span className="ml-1 text-2xl">{suffix}</span>

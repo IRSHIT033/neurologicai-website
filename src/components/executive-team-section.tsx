@@ -58,9 +58,9 @@ export default function ExecutiveTeam() {
   ];
 
   return (
-    <section className="py-16 px-4 mt-28  text-white">
-      <div className="max-w-[90vw] mx-auto">
-        <h1 className="text-4xl md:text-4xl text-center  mb-4 bg-gradient-to-r from-blue from-40% via-primary via-60%  to-white bg-clip-text text-transparent ">
+    <section className=" px-4 mt-28  text-white">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-4xl md:text-6xl text-center  mb-4 bg-gradient-to-r from-blue from-40% via-primary via-60%  to-white bg-clip-text text-transparent ">
           Senior Team
         </h1>
         <p className="text-lg text-center max-w-3xl mx-auto mb-16">
@@ -83,10 +83,10 @@ export default function ExecutiveTeam() {
                 </div>
               </div>
 
-              <h3 className="text-xl font-semibold text-center mb-1">
+              <h3 className="text-xl font-semibold text-center mb-1 ">
                 {member.name}
               </h3>
-              <p className=" font-bold text-primary-bright tracking-tighter text-center w-full h-6 text-nowrap">
+              <p className=" font-bold text-primary-bright tracking-tighter text-center  min-h-10 ">
                 {member.title}
               </p>
 

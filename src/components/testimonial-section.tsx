@@ -59,7 +59,7 @@ const TestimonialSection = () => {
       >
         <CarouselContent>
           {testimonialsImages.map((image, index) => (
-            <CarouselItem key={index} className="h-[40vh]">
+            <CarouselItem key={index} className="max-h-[40vh]">
               <div className="p-1">
                 <Card className="border-0">
                   <CardContent className="flex items-center justify-center px-6">

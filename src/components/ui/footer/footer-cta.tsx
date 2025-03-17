@@ -1,17 +1,17 @@
 export default function FooterCTA() {
   return (
-    <div className=" w-[549px] h-[115px]  p-[10px] flex flex-col justify-center items-center  text-white flex-shrink-0">
-      <h2 className="text-[48px] font-medium  text-white opacity-70 leading-[120%] mb-4">
+    <div className="min-w-full px-4 py-6 flex flex-col justify-center items-center text-white">
+      <h2 className="text-2xl sm:text-4xl md:text-4xl font-bold text-white opacity-70 leading-[120%] mb-4 text-left mx-4">
         Looking to Push Boundaries with Us?
       </h2>
 
-      <div className="flex items-center gap-4 self-start ">
+      <div className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-sm">
         <input
           type="text"
           placeholder="Enter your email here..."
-          className="py-2 px-4 text-[#B3B3B3] bg-white rounded-[10px] outline-none text-[16px]  transition focus:ring-2 focus:ring-[#7300FF]"
+          className="w-full sm:w-auto flex-1 py-2 px-4 text-[#B3B3B3] bg-white rounded-lg outline-none text-[16px] transition focus:ring-2 focus:ring-[#7300FF]"
         />
-        <button className="flex justify-center items-center gap-[4px] w-[121.651px] h-[38.571px] py-[8px] px-[16px] flex-shrink-0 rounded-[10px] bg-gradient-to-b from-[#5323EC] to-[#A400FF] text-[#FFF]  text-[16px] font-normal leading-normal transition hover:bg-gradient-to-b hover:from-[#4300CC] hover:to-[#8200CC]">
+        <button className="w-full sm:w-auto flex justify-center items-center gap-2 py-2 px-4 rounded-lg bg-gradient-to-b from-[#5323EC] to-[#A400FF] text-white text-[16px] font-normal transition hover:from-[#4300CC] hover:to-[#8200CC]">
           Contact us
         </button>
       </div>

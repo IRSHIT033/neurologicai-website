@@ -5,48 +5,13 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export default function HealthcareAICarousel() {
+export default function HealthcareAICarousel({
+  features,
+}: {
+  features: { title: string; description: string }[];
+}) {
   const [activeIndex, setActiveIndex] = useState(3);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  const features = [
-    {
-      title: "End-to-End Inference Optimized for Healthcare",
-
-      description:
-        "Latency-reduced AI models with VLLM power real-time clinical decision making.",
-    },
-    {
-      title: "Multi-Modal AI Imaging",
-
-      description:
-        "Integration of text, images, and data into unified, comprehensive patient analysis.",
-    },
-    {
-      title: "80B+ Parameter Model Processing",
-      description:
-        "Developed domain-specific VLMs tailored for radiology understanding, and diagnostics.",
-    },
-    {
-      title: "3x Faster Model Training Speed",
-      description:
-        "Optimized AI pipelines using FSDP, DeepSpeed, and multi-GPU training (A100/H100 clusters) to accelerate healthcare AI model development.",
-    },
-    {
-      title: "Automation in Workflow",
-      description:
-        "Patient intelligence and machine medical records, and EHR processing.",
-    },
-    {
-      title: "Accuracy in Detection",
-      description:
-        "Learning models improve early identification of diseases from imaging and clinical data.",
-    },
-    {
-      title: "Processing Time",
-      description: "Speeds up approvals, workflows for insurers and providers.",
-    },
-  ];
 
   const nextSlide = () => {
     setActiveIndex((prevIndex) => (prevIndex + 1) % features.length);
@@ -89,8 +54,8 @@ export default function HealthcareAICarousel() {
               <div
                 key={index}
                 className={cn(
-                  "absolute flex h-[450px] w-[350px] transform flex-col items-center justify-center space-y-12 rounded-2xl  border-2 border-[#8875D8] bg-gradient-to-b  backdrop-blur-3xl  p-6 text-center text-white shadow-lg transition-all duration-500 ease-in-out",
-                  "before:absolute before:inset-0 before:-z-10 before:rounded-2xl before:bg-purple-600/20 before:blur-xl before:content-[''] ",
+                  "absolute flex h-[450px] w-[350px] transform flex-col items-center justify-center space-y-12 rounded-2xl  border-2 border-[#8875D8]   backdrop-blur-xl  p-6 text-center text-white shadow-lg transition-all duration-500 ease-in-out",
+                  "before:absolute before:inset-0 before:-z-10 before:rounded-2xl  before:bg-gradient-to-b before:from-[#602EEF1A] before:via-[#FFFFFF05] before:to-[#A400FF0F]   before:overflow-hidden before:content-[''] ",
                   {
                     "z-30 scale-110": normalizedPosition === 0,
                     "z-20 -translate-x-[250px] scale-90 ":
@@ -130,20 +95,20 @@ export default function HealthcareAICarousel() {
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 z-40 -translate-y-1/2 rounded-full bg-primary p-3 text-white backdrop-blur-sm hover:bg-primary-light"
+          className="absolute left-4 top-1/2 z-40 -translate-y-1/2 rounded-full  p-3 text-white backdrop-blur-sm hover:bg-primary-light bg-[radial-gradient(58.97%_79.17%_at_27.37%_18.36%,_#397FF7_0%,_#602EEF_100%)]"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="h-6 w-6" />
+          <ChevronLeft className="h-6 w-6 cursor-pointer" />
         </button>
 
         <button
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 z-40 -translate-y-1/2 rounded-full bg-primary p-3 text-white backdrop-blur-sm hover:bg-primary-light"
+          className="absolute right-4 top-1/2 z-40 -translate-y-1/2 rounded-full  p-3 text-white backdrop-blur-sm hover:bg-primary-light bg-[radial-gradient(58.97%_79.17%_at_27.37%_18.36%,_#397FF7_0%,_#602EEF_100%)]"
           aria-label="Next slide"
         >
-          <ChevronRight className="h-6 w-6" />
+          <ChevronRight className="h-6 w-6 cursor-pointer" />
         </button>
 
         <div className="mt-8 flex items-center justify-center gap-2">
