@@ -102,10 +102,14 @@ export default function ServicesSection() {
                   liRefs.current[index] = el;
                 }}
               >
-                <h3 className="text-4xl font-medium">{item.title}</h3>
-                <div className="w-full flex justify-between items-center">
-                  <div className="w-2/4">
-                    <p className="my-12 text-lg">{item.description}</p>
+                <div className="w-full h-full flex justify-between items-center">
+                  <div className="w-2/4 h-full flex flex-col justify-between">
+                    <h3 className="text-4xl font-medium self-start">
+                      {item.title}
+                    </h3>
+                    <p className="my-12 text-lg whitespace-break-spaces">
+                      {item.description}
+                    </p>
                   </div>
                   <div className="w-2/4 flex justify-center items-center">
                     <Image

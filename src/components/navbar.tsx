@@ -174,6 +174,19 @@ export const NavItems = [
   },
 ];
 
+const navNews = [
+  {
+    event: "Times event",
+    date: "29th sept ’24",
+    image: "/whoweare1.png",
+  },
+  {
+    event: "Dubai health 2.0 coneference",
+    date: "5th dec ’24",
+    image: "/whoweare2.png",
+  },
+];
+
 const Navbar = () => {
   const router = useRouter();
   const [activeNavItem, setActiveNavItem] = useState<string | null>();
@@ -292,15 +305,21 @@ const Navbar = () => {
                         Latest in Neurologic
                       </h3>
                       <div className="grid grid-cols-2 gap-x-8 gap-y-6">
-                        {Array.from({ length: 2 }).map((_, index) => (
+                        {navNews.map((news, index) => (
                           <div key={index} className="group">
-                            <div className="bg-white h-36 mb-2 rounded-md"></div>
+                            <div className="bg-white border-1 border-grey  h-36 mb-2 rounded-md overflow-hidden">
+                              <Image
+                                src={news.image}
+                                alt={news.image}
+                                width={300}
+                                height={300}
+                                objectFit="cover"
+                              />
+                            </div>
                             <h4 className="text-sm font-medium group-hover:text-primary">
-                              Latest news update
+                              {news.event}
                             </h4>
-                            <p className="text-xs text-gray-500">
-                              March 02, 2025
-                            </p>
+                            <p className="text-xs text-gray-500">{news.date}</p>
                           </div>
                         ))}
                       </div>
