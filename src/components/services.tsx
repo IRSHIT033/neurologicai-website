@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 const cards = [
@@ -9,7 +9,7 @@ const cards = [
       "Neurologic AI specializes in training and deploying multi-billion-parameter models, driving transformative breakthroughs in Generative AI. We leverage industry-leading platforms like GPT-3, GPT-4, LLaMA, Mixva, Qwen, BLIP-2, and domain-specific models like MedGPT and Med Image Insights to address complex challenges across industries. Our large-scale training pipelines orchestrate hundreds of top-tier GPUs (A100s, H100s) using Slurm, FSDP, and distributed optimization, ensuring unparalleled performance. We extract value in multi-turn (RLHF, LoRA), inference acceleration (speculative decoding, KV caching), and scalable deployments with SageMaker Endpoints, VLLM, TensorRT, and MLOpsDev. By integrating AI safety guardrails, multimodal fusion, synthetic data generation, and Retrieval-Augmented Generation (RAG), we deliver cutting-edge AI solutions that seamlessly transform business processes, drive innovation, and create generate meaningful significant impact.",
     button: "Deploy Now",
     buttonLink: "#",
-    logo: "Generative-AI.svg",
+    logo: "Generative-AI.png",
   },
   {
     title: "Robotics & Digital Twins",
@@ -17,7 +17,7 @@ const cards = [
       "Neurologic AI fuses advanced robotics with immersive digital twin technologies, leveraging NVIDIA COSMOS, ROS2, Isaac SIM, Isaac ROS, and NVIDIA Omniverse for photorealistic simulation, real-time sensor fusion, and domain randomization. We harness NVIDIA Replicator for synthetic data generation, manipulate datasets in headless mode, and deploy Omniverse microservices for seamless scalability. In today’s AI-driven world, combining predictive maintenance, we deliver next-generation automation, streamlined workflows, and data-driven insights across robotics ecosystems.",
     button: "Deploy Now",
     buttonLink: "#",
-    logo: "Robotics-&-Digital-Twins.svg",
+    logo: "Robotics-&-Digital-Twins.png",
   },
   {
     title: "Computer Vision & Video Analysis",
@@ -25,7 +25,7 @@ const cards = [
       "Computer Vision & Video Analytics: Neurologic AI delivers cutting-edge Computer Vision solutions for complex visual tasks that scale seamlessly from high-performance clusters to resource-constrained edge devices. We leverage state-of-the-art architectures like SAM2, Grounded SAM, YOLO, Vision Transformers (ViT), and CNNs for precise detection, segmentation, and classification. Our HPC-accelerated pipelines integrate multi-camera tracking (DeepSort), domain randomization, and synthetic data generation for robust performance. By employing ONNX-based conversions, quantization, and distillation, we achieve real-time inference on devices like NVIDIA Jetson. Through platforms such as NVIDIA Metropolis, DeepStream, and TensorRT, we deploy scalable microservices that drive actionable insights across surveillance, anomaly detection, and automated inspection.",
     button: "Deploy Now",
     buttonLink: "#",
-    logo: "Computer-Vision-&-Video-Analysis.svg",
+    logo: "Computer-Vision-&-Video-Analysis.png",
   },
   {
     title: "Recommendation Engine",
@@ -33,7 +33,7 @@ const cards = [
       "Neurologic AI designs and deploys advanced recommendation systems that personalize user experiences. Through cutting-edge frameworks like NVIDIA Merlin, we combine collaborative filtering, deep retrieval, and transformer-based ranking to handle large-scale data with high efficiency. Our HPC-accelerated pipelines support microservices-based architectures for seamless integration and low-latency inference. From dynamic product recommendations to curated content suggestions, we empower businesses to maximize engagement and drive data-informed growth.",
     button: "Deploy Now",
     buttonLink: "#",
-    logo: "Recommendation-Engine.svg",
+    logo: "Recommendation-Engine.png",
   },
   {
     title: "Forecasting and Predictive Modelling",
@@ -41,7 +41,7 @@ const cards = [
       "Neurologic AI delivers advanced forecasting solutions that combine classical methods (ARIMA, Prophet) with deep learning architectures (LSTM, N-BEATS, Transformer-based models) for accurate trend prediction and anomaly detection. We leverage distributed training on HPC clusters using PyTorch, Horovod, and Kubernetes to handle large-scale time-series data. Our pipelines incorporate hyperparameter optimization, feature engineering, and ensemble techniques for robust performance. Whether optimizing supply chain demand, mitigating financial risk, or predicting customer behavior, Neurologic AI’s data-driven, scalable modeling empowers organizations to make confident, forward-looking decisions and maintain a competitive edge.",
     button: "Learn More",
     buttonLink: "#",
-    logo: "Forecasting-Predictive-Modelling.svg",
+    logo: "Forecasting-and-Predictive-Modelling.png",
   },
   {
     title: "Natural Language Processing",
@@ -49,7 +49,7 @@ const cards = [
       "Neurologic AI harnesses cutting-edge Transformer architectures T5, BERT, GPT-4 and specialized large language models to tackle complex NLP tasks like information extraction, text classification, summarization, question answering, and named entity recognition (NER). Our large-scale training pipelines utilize HPC cluster frameworks such as DeepSpeed, Horovod, and Accelerate, enabling distributed multi-GPU solutions with diverse datasets. We integrate techniques like LoRA, RAG, retrieval-augmented generation (RAG), knowledge distillation, and prompt engineering to optimize performance and scalability. From multilingual frameworks to dynamic domain adaptation, our multilingual capabilities ensure precise NLP solutions deliver real-time insights and automation across diverse industries. Through microservices-based architectures and continuous model evaluation, we ensure scalable, high-availability deployments that drive transformative outcomes.",
     button: "Deploy Now",
     buttonLink: "#",
-    logo: "Natural-Language-Processing.svg",
+    logo: "Natural-Language-Processing.png",
   },
 ];
 
