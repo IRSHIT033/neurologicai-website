@@ -70,11 +70,13 @@ export default function ServicesSection() {
   return (
     <section className="h-[1050vh]">
       <div
-        className="max-w-[1537px] mx-auto relative"
+        className="max-w-[1537px] mx-auto relative my-20"
         style={{ height: `${cards.length * 200}vh` }}
         ref={sectionRef}
       >
-        <h1 className="text-gradient text-6xl mb-6">Services</h1>
+        <h1 className="w-fit text-gradient  text-4xl md:text-6xl mb-4 bg-gradient-to-r from-blue from-40% to-primary via-60%   bg-clip-text text-transparent mb-10">
+          Services
+        </h1>
         <ul className="sticky top-0" ref={ulRef}>
           {cards.map((item, index) => {
             // Dynamic staggered offsets for controlled delay effect
@@ -89,7 +91,7 @@ export default function ServicesSection() {
             return (
               <motion.li
                 key={index}
-                className={`px-12 py-14 h-[45vh] border border-[#EAD2FF] rounded-2xl relative  bg-background`}
+                className={`px-12 py-14 min-h-[45vh] border border-[#EAD2FF] rounded-2xl relative  bg-background`}
                 style={{ y: motionY[index], zIndex: index }}
                 ref={(el) => {
                   liRefs.current[index] = el;

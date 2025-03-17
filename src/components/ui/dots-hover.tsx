@@ -8,7 +8,7 @@ const HoverDots = () => {
     {
       id: 1,
       text: "We are a strong team of dedicated individuals, constantly pushing ourselves beyond our limits, from simply being an AI transformation organization to becoming a leader in enabling global AI transformation.",
-      position: "top-[30%] left-[20%] -translate-x-1/2 -translate-y-1/2",
+      position: "top-[40%] left-[20%] -translate-x-1/2 -translate-y-1/2",
     },
     {
       id: 2,
@@ -18,12 +18,12 @@ const HoverDots = () => {
     {
       id: 3,
       text: "To understand how your business works, resolve bottlenecks, and accelerate business deliveries",
-      position: "top-[20%] left-[70%] -translate-x-1/2 -translate-y-1/2",
+      position: "top-[30%] left-[70%] -translate-x-1/2 -translate-y-1/2",
     },
   ];
 
   return (
-    <div className="relative w-screen h-screen">
+    <div className="hidden md:block relative w-screen h-screen">
       {dots.map((dot) => (
         <div
           key={dot.id}

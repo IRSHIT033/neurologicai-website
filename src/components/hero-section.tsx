@@ -3,15 +3,19 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <div className="relative my-0 bg-[url('/mesh.svg')] h-[130vh] bg-cover bg-no-repeat">
-      <div className="relative flex flex-col items-center justify-center h-64 text-white">
+    <div className="relative my-0  min-h-[130vh] w-full bg-cover bg-center bg-no-repeat z-0">
+      {/* Background Image */}
+      <div className="absolute -inset-10 -top-50 bg-[url('/mesh.svg')] bg-cover  bg-no-repeat z-0" />
+
+      {/* Content */}
+      <div className="relative flex flex-col items-center justify-center h-64 text-white z-10">
         <div className="text-center mt-48">
-          <h1 className="text-7xl font-bold bg-gradient-to-r from-blue from-0% via-primary via-60%  to-white bg-clip-text text-transparent ">
+          <h1 className="text-3xl md:text-7xl font-bold bg-gradient-to-r from-blue from-0% via-primary via-60% to-white bg-clip-text text-transparent mb-6 md:leading-20">
             Transforming Business <br /> with Intelligence.
           </h1>
         </div>
         <Link href="/contact">
-          <button className="cursor-pointer relative z-10 text-md bg-gradient-to-r from-blue from-0% via-primary to-primary-dark mt-6 px-6 py-2   text-white  rounded-lg transition flex items-center gap-2">
+          <button className="cursor-pointer relative z-10 text-md bg-gradient-to-r from-blue from-0% via-primary to-primary-dark mt-6 px-6 py-2 text-white rounded-lg transition flex items-center gap-2">
             Talk To Us
             <svg
               width="15"
