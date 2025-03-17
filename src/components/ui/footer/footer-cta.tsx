@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export default function FooterCallToAction() {
   return (
-    <div className="w-full flex flex-col items-center md:items-start text-white text-center md:text-left gap-6 md:gap-12 px-4 sm:px-8">
+    <div className="ml-12 sm:ml-0 w-full flex flex-row sm:flex-col items-center md:items-start text-white text-center md:text-left gap-6 md:gap-12 px-4 sm:px-8">
       
       {/* Call-to-Action Section */}
       <div className="w-full flex flex-col items-center md:items-start text-white text-center md:text-left">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium opacity-80 leading-[120%] mb-4">
+        <h2 className="text-3xl sm:text-3xl md:text-4xl font-medium opacity-80 leading-[120%] mb-4">
           Looking to Push Boundaries with Us?
         </h2>
 
@@ -25,7 +25,7 @@ export default function FooterCallToAction() {
       </div>
 
       {/* Contact Information Section */}
-      <div className="w-full flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-16">
+      <div className="w-full flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-16 ml-16 sm:ml-0">
         
         {/* Logo & Social Media */}
         <div className="flex flex-col items-center md:items-start">

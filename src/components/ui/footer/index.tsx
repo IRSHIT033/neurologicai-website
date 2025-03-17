@@ -4,19 +4,18 @@ import FooterBottomBar from "./footer-bottom-bar";
 
 export default function Footer() {
   return (
-    <footer className=" text-white py-12 px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 md:gap-24 text-center md:text-center">
-
+    <footer className="w-full text-white py-12 px-8 mx-auto">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 md:gap-24 text-center md:text-center justify-center items-center">
         
-        <div className="col-span-2 flex flex-col justify-between gap-30 ">
+        {/* Fix: Proper alignment for the CTA section */}
+        <div className="col-span-2 flex flex-col justify-between gap-12">
           <FooterCTA />
         </div>
-      
+
         <FooterLinks />
 
       </div>
 
-      
       <FooterBottomBar />
     </footer>
   );
