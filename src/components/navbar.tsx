@@ -1,4 +1,5 @@
 "use client";
+import useDeviceType from "@/hooks/device-check";
 import { cn } from "@/lib/utils";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -6,10 +7,12 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import MobileNav from "./mobile-nav";
 
-const NavItems = [
+export const NavItems = [
   {
     navtitle: "About Us",
+    moretext: "Learn More About Neurologic AI",
     services: [
       {
         href: "/about",
@@ -33,6 +36,8 @@ const NavItems = [
   },
   {
     navtitle: "Verticals",
+    moretext:
+      "Beyond the Algorithm: Exploring Neurologic AI's Diverse Verticals",
     services: [
       {
         href: "/verticals/healthcare",
@@ -56,6 +61,7 @@ const NavItems = [
   },
   {
     navtitle: "Services",
+    moretext: "More About Neurologic AI’ Services",
     services: [
       {
         href: "/services/generative-ai",
@@ -105,6 +111,7 @@ const NavItems = [
   },
   {
     navtitle: "Resources",
+    moretext: "View Research",
     services: [
       {
         href: "/resources",
@@ -125,6 +132,7 @@ const NavItems = [
   },
   {
     navtitle: "News & Updates",
+    moretext: "Stay Updated on Neurologic AI's Latest News",
     services: [
       {
         href: "/news",
@@ -145,6 +153,7 @@ const NavItems = [
   },
   {
     navtitle: "Contact Us",
+    moretext: "Know More About Neurologic AI",
     services: [
       {
         href: "/contact",
@@ -174,9 +183,7 @@ const Navbar = () => {
     setActiveNavItem((prev) => (prev === title ? null : title));
   };
   const getCurrentNavServiceDetails = (title: string) => {
-    return (
-      NavItems.find((navitem) => navitem.navtitle === title)?.services || []
-    );
+    return NavItems.find((navitem) => navitem.navtitle === title) || null;
   };
 
   // Close dropdown when clicking outside
@@ -197,62 +204,68 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [activeNavItem]);
 
-  return (
-    <>
-      <div className="hidden lg:flex z-1000 relative bg-background  justify-center items-center space-x-20 w-[100vw] h-[15vh]  md:text-lg text-sm  text-white font-bold">
-        {NavItems.map((navitem) =>
-          navitem.navtitle === "Logo" ? (
-            <Link key={navitem.navtitle} href="/">
-              <Image
-                src="/Logo.svg"
-                alt="Neurologicai logo"
-                width={250}
-                height={250}
-              />
-            </Link>
-          ) : (
-            <div
-              key={navitem.navtitle}
-              className={cn(
-                "cursor-pointer px-2 py-0.5 rounded-md  transition-all select-none",
-                activeNavItem === navitem.navtitle
-                  ? " bg-linear-to-r from-blue via-primary to-primary"
-                  : " bg-transparent"
-              )}
-              onMouseDown={() => {
-                toggleActiveNavitem(navitem.navtitle);
-              }}
-            >
-              {" "}
-              {navitem.navtitle}
-            </div>
-          )
-        )}
-      </div>
-      {activeNavItem &&
-        createPortal(
-          <>
-            <div className="fixed inset-0 bg-black/10 backdrop-blur-sm z-40"></div>
-            <div
-              ref={dropdownRef}
-              className="bg-background absolute top-[15vh] left-0 w-full z-50 py-12 shadow-lg  border-b-1"
-            >
-              <div className="container mx-auto px-4">
-                <div className="flex justify-between">
-                  {/* Services Section */}
-                  <div className="w-3/5 pr-8">
-                    <Link
-                      href="/services"
-                      className="text-primary-bright flex items-center mb-6"
-                    >
-                      <span className="text-xl">
-                        Learn More About Neurologic AI&apos;s Services
-                      </span>
-                      <ChevronRight className="ml-2 h-5 w-5" />
-                    </Link>
-                    <div className="grid grid-cols-2 gap-x-8 gap-y-6">
-                      {getCurrentNavServiceDetails(activeNavItem!).map(
-                        (service, index) => (
+  const device = useDeviceType();
+  if (device === "lg")
+    return (
+      <>
+        <div className="flex z-1000 relative bg-background  justify-center items-center space-x-20 w-[100vw] h-[15vh]  md:text-lg text-sm  text-white font-bold">
+          {NavItems.map((navitem) =>
+            navitem.navtitle === "Logo" ? (
+              <Link key={navitem.navtitle} href="/">
+                <Image
+                  src="/Logo.svg"
+                  alt="Neurologicai logo"
+                  width={250}
+                  height={250}
+                />
+              </Link>
+            ) : (
+              <div
+                key={navitem.navtitle}
+                className={cn(
+                  "cursor-pointer px-2 py-0.5 rounded-md  transition-all select-none",
+                  activeNavItem === navitem.navtitle
+                    ? " bg-linear-to-r from-blue via-primary to-primary"
+                    : " bg-transparent"
+                )}
+                onMouseDown={() => {
+                  toggleActiveNavitem(navitem.navtitle);
+                }}
+              >
+                {" "}
+                {navitem.navtitle}
+              </div>
+            )
+          )}
+        </div>
+        {activeNavItem &&
+          createPortal(
+            <>
+              <div className="fixed inset-0 bg-black/10 backdrop-blur-sm z-40"></div>
+              <div
+                ref={dropdownRef}
+                className="bg-background absolute top-[15vh] left-0 w-full z-50 py-12 shadow-lg  border-b-1"
+              >
+                <div className="container mx-auto px-4">
+                  <div className="flex justify-between">
+                    {/* Services Section */}
+                    <div className="w-3/5 pr-8">
+                      <Link
+                        href="/services"
+                        className="text-primary-bright flex items-center mb-6"
+                      >
+                        <span className="text-xl font-bold">
+                          {
+                            getCurrentNavServiceDetails(activeNavItem!)
+                              ?.moretext
+                          }
+                        </span>
+                        <ChevronRight className="ml-2 h-5 w-5" />
+                      </Link>
+                      <div className="grid grid-cols-2 gap-x-8 gap-y-6">
+                        {getCurrentNavServiceDetails(
+                          activeNavItem!
+                        )?.services?.map((service, index) => (
                           <div key={index} className="group">
                             <div
                               className="cursor-pointer"
@@ -269,38 +282,38 @@ const Navbar = () => {
                               {service.description}
                             </p>
                           </div>
-                        )
-                      )}
+                        ))}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Latest News Section */}
-                  <div className="w-2/5">
-                    <h3 className="text-lg font-semibold mb-4">
-                      Latest in Neurologic
-                    </h3>
-                    <div className="grid grid-cols-2 gap-x-8 gap-y-6">
-                      {Array.from({ length: 2 }).map((_, index) => (
-                        <div key={index} className="group">
-                          <div className="bg-white h-36 mb-2 rounded-md"></div>
-                          <h4 className="text-sm font-medium group-hover:text-primary">
-                            Latest news update
-                          </h4>
-                          <p className="text-xs text-gray-500">
-                            March 02, 2025
-                          </p>
-                        </div>
-                      ))}
+                    {/* Latest News Section */}
+                    <div className="w-2/5">
+                      <h3 className="text-lg font-semibold mb-4">
+                        Latest in Neurologic
+                      </h3>
+                      <div className="grid grid-cols-2 gap-x-8 gap-y-6">
+                        {Array.from({ length: 2 }).map((_, index) => (
+                          <div key={index} className="group">
+                            <div className="bg-white h-36 mb-2 rounded-md"></div>
+                            <h4 className="text-sm font-medium group-hover:text-primary">
+                              Latest news update
+                            </h4>
+                            <p className="text-xs text-gray-500">
+                              March 02, 2025
+                            </p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </>,
-          document.body
-        )}
-    </>
-  );
+            </>,
+            document.body
+          )}
+      </>
+    );
+  else return <MobileNav />;
 };
 
 export default Navbar;

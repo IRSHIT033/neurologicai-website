@@ -1,0 +1,133 @@
+"use client";
+
+import { useState } from "react";
+import { ChevronLeft, Menu } from "lucide-react";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
+import Image from "next/image";
+import { NavItems } from "./navbar";
+
+export default function MobileNavbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [expandedItem, setExpandedItem] = useState<string | null>(null);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+    // Reset expanded item when closing menu
+    if (!isOpen === false) {
+      setExpandedItem(null);
+    }
+  };
+
+  const toggleAccordion = (title: string) => {
+    setExpandedItem((prev) => (prev === title ? null : title));
+  };
+
+  // Filter out the Logo item for mobile navigation
+  const mobileNavItems = NavItems.filter((item) => item.navtitle !== "Logo");
+
+  return (
+    <>
+      <div className="h-[10vh]"></div>
+      <header className={cn("fixed w-full inset-0", isOpen && "z-50")}>
+        {/* Navbar */}
+        <nav className="relative top-0 left-0 right-0 flex items-center justify-between px-6 py-4 bg-background text-white z-40">
+          <div className="text-xl font-bold">
+            <Link href="/">
+              <Image
+                src="/Logo.svg"
+                alt="Neurologicai logo"
+                width={150}
+                height={150}
+              />
+            </Link>
+          </div>
+          <button
+            onClick={toggleMenu}
+            className="focus:outline-none cursor-pointer"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+          >
+            <Menu
+              className={cn(
+                "h-6 w-6",
+                isOpen ? "text-primary-bright" : "text-white"
+              )}
+            />
+          </button>
+        </nav>
+
+        {/* Mobile Navigation Drawer */}
+        <div
+          className={cn(
+            "relative bg-background z-50 text-white transform transition-transform duration-300 ease-in-out",
+            isOpen ? "translate-x-0" : "translate-x-full"
+          )}
+        >
+          <div className="px-6 py-4 overflow-y-auto h-screen">
+            <ul>
+              {mobileNavItems.map((item) => (
+                <li key={item.navtitle}>
+                  {item.services ? (
+                    <div>
+                      {(expandedItem === item.navtitle ||
+                        expandedItem === null) && (
+                        <button
+                          onClick={() => toggleAccordion(item.navtitle)}
+                          className="flex items-center justify-between w-full text-left py-2 cursor-pointer"
+                          aria-expanded={expandedItem === item.navtitle}
+                        >
+                          <div className="my-4 w-full flex justify-between">
+                            <div className="flex items-center ">
+                              <ChevronLeft
+                                className={cn(
+                                  "h-5 w-5 mr-4 transition-transform ",
+                                  expandedItem === item.navtitle
+                                    ? "-rotate-90"
+                                    : ""
+                                )}
+                              />
+                            </div>
+                            <span className="text-2xl whitespace-nowrap font-extrabold">
+                              {item.navtitle}
+                            </span>
+                          </div>
+                        </button>
+                      )}
+
+                      {expandedItem === item.navtitle && (
+                        <ul className="pl-9 mt-4 space-y-4">
+                          <div className="flex justify-between text-primary-bright">
+                            <ChevronLeft className="" />
+                            <text className="font-bold text-xl">
+                              {item.moretext}
+                            </text>
+                          </div>
+                          {item.services.map((service, index) => (
+                            <li key={index} className="mb-4 text-right">
+                              <a href={service.href} className="block">
+                                <h3 className="text-lg  text-white font-bold">
+                                  {service.title}
+                                </h3>
+                                <p className="text-sm text-gray-400 mt-1">
+                                  {service.description}
+                                </p>
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ) : (
+                    <a href="#" className="flex items-center py-2">
+                      <span className="text-xl">{item.navtitle}</span>
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </header>
+    </>
+  );
+}

@@ -58,7 +58,7 @@ export default function ExecutiveTeam() {
   ];
 
   return (
-    <section className=" px-4 mt-28  text-white">
+    <section className=" px-4 mt-28  text-white min-h-[70vh]">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl md:text-6xl text-center  mb-4 bg-gradient-to-r from-blue from-40% via-primary via-60%  to-white bg-clip-text text-transparent ">
           Senior Team

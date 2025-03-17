@@ -79,7 +79,7 @@ export default function ServicesSection() {
         style={{ height: `${cards.length * 700}vh` }}
         ref={sectionRef}
       >
-        <h1 className="w-fit text-gradient  text-4xl md:text-6xl mb-4 bg-gradient-to-r from-blue from-40% to-primary via-60%   bg-clip-text text-transparent mb-10">
+        <h1 className="w-fit text-gradient  text-4xl md:text-6xl  bg-gradient-to-r from-blue from-40% to-primary via-60%   bg-clip-text text-transparent mb-10">
           Services
         </h1>
         <ul className="sticky top-0" ref={ulRef}>
