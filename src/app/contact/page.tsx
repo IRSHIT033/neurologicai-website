@@ -4,9 +4,9 @@ import ContactUsHeader from "@/components/ui/contactus/header";
 
 export default function Contact() {
   return (
-    <div className="min-h-screen scroll-smooth relative ">
+    <div className="min-h-screen scroll-smooth relative w-full ">
       <ContactUsHeader />
-      <div className="flex relative z-10 items-center justify-center gap-24">
+      <div className="w-full flex relative flex-col lg:flex-row z-10 items-center justify-center gap-24 ">
         <ContactFormSection />
         <DirectContactSection />
       </div>
