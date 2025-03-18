@@ -13,9 +13,9 @@ export default function RelatedResources({
   // const [selected, setSelected] = useState("Popular");
 
   return (
-    <section className="mt-[8vh] text-white py-6 px-6 mb-30">
+    <section className="mt-[8vh] text-white py-6 px-6 mb-30 w-screen">
       <div className="text-center mb-2">
-        <h2 className="text-5xl z-10 ">Case Studies</h2>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl z-10 ">Case Studies</h2>
       </div>
 
       <div className="mt-12 mb-6">
@@ -47,7 +47,7 @@ export default function RelatedResources({
             />
           </div> */}
         </div>
-        <div className="flex justify-end items-center pr-[10vw] mt-[-70]">
+        <div className="flex justify-end items-center pr-[10vw] mt-[-30] sm:mt-[-40] xl:mt-[-70]">
           <div className="flex flex-col gap-4 mb-2">
             <span className="text-gray-300">14 results</span>
             <label className="relative inline-flex items-center cursor-pointer mt-2">
@@ -78,11 +78,12 @@ export default function RelatedResources({
 
       {/* Toggle Switch */}
 
-      <div className="flex justify-center gap-6 mt-15 px-[10vw] min-h-125 h-auto rounded-6xl">
-        {resources.map((resource, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  justify-center gap-6 mt-15 px-4 md:px-[10vw] min-h-125 h-auto rounded-6xl">
+        {resources.map((resource, index) => (  
           <Card
             key={index}
-            className="bg-white text-background rounded-3xl shadow-lg overflow-hidden w-[26vw] flex flex-col"
+            className="bg-white text-background rounded-3xl shadow-lg overflow-hidden flex flex-col
+            "
           >
             <Image
               src={resource.image}
@@ -94,13 +95,13 @@ export default function RelatedResources({
             <CardContent className="p-4 flex flex-col flex-1">
               <div className="flex flex-col justify-between h-full">
                 <div>
-                  <p className="text-xs font-semibold">Case Study</p>
-                  <h3 className="font-extrabold text-2xl">{resource.title}</h3>
-                  <p className="text-gray-700 text-sm mt-2">{resource.desc}</p>
+                  <p className="text-[10px] md:text-xs font-semibold">Case Study</p>
+                  <h3 className="font-bold lg:font-extrabold text-lg lg:text-xl xl:text-2xl">{resource.title}</h3>
+                  <p className="text-gray-700 text-xs md:text-sm mt-2">{resource.desc}</p>
                 </div>
                 <Button
                   variant="outline"
-                  className="mt-3 px-5 py-3 bg-white w-25 mb-1"
+                  className="mt-3 px-3 py-2 md:px-5 md:py-3 bg-white w-20 md:w-25 mb-1 text-sm md:text-base"
                 >
                   View Now
                 </Button>
