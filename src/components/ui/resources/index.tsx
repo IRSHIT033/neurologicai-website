@@ -1,8 +1,10 @@
 "use client";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
-// import { FaMinus, FaPlus } from "react-icons/fa";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Loader2 } from "lucide-react";
 
 export default function Resources() {
   const blogs = [
@@ -11,14 +13,16 @@ export default function Resources() {
       category: "Healthcare",
       image: "/resources-case-studies/foundational-generative-ai.png", // Replace with actual image URL
       title: "Foundational Generative AI Model Building for Healthcare",
+      href: "https://drive.google.com/file/d/1wbG9CX0I8VW9VRSOY80f0SgIXaeKrZOl/view?usp=drive_link",
       description:
         "Foundational multimodal model designed specifically for healthcare applications, integrating advanced vision and language processing capabilities to enable comprehensive medical insights.",
     },
     {
       id: 2,
-      category: "Manufacturing",
+      category: "Retail",
       image: "/resources-case-studies/voice-chat.png", // Replace with actual image URL
       title: "Voice & Chat-Based Conversational Recommendation Engine",
+      href: "https://drive.google.com/file/d/1hfB1_y1RC2OitpH-AO5-PXTCatvvPVHH/view?usp=drive_link",
       description:
         "Retail customers increasingly seek personalized product recommendations through dynamic voice and chat interactions.",
     },
@@ -27,6 +31,7 @@ export default function Resources() {
       category: "Retail",
       image: "/resources-case-studies/realtime-retail.png", // Replace with actual image URL
       title: "Real-Time AI-Powered Detection for Retail Inventory Optimization",
+      href: "https://drive.google.com/file/d/1iIn37eeCf6UVdWkfgdlnWKcLDIcEMM8P/view?usp=drive_link",
       description:
         "Efficient inventory management significantly impacts profitability and customer satisfaction in retail operations.",
     },
@@ -59,12 +64,35 @@ export default function Resources() {
   ];
 
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const router = useRouter();
 
   const categories = ["All", "Healthcare", "Manufacturing", "Retail"];
   const filteredBlogs =
     selectedCategory === "All"
       ? blogs
       : blogs.filter((blog) => blog.category === selectedCategory);
+
+  const [selectedBlog, setSelectedBlog] = useState<{
+    image: string;
+    title: string;
+    description: string;
+    href: string;
+  } | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleIframeLoad = () => {
+    setLoading(false);
+  };
+
+  const openModal = (blog: {
+    image: string;
+    title: string;
+    description: string;
+    href: string;
+  }) => {
+    setSelectedBlog(blog);
+    setLoading(true); // Set loading when opening modal
+  };
 
   return (
     <div>
@@ -110,6 +138,7 @@ export default function Resources() {
           </div>
         </div>
       </section>
+
       <section className="py-[2vh] px-[5vw] mb-20">
         <div className="flex flex-col md:flex-row justify-between">
           <h2 className="text-white text-4xl font-bold mb-6">Case Studies</h2>
@@ -156,9 +185,42 @@ export default function Resources() {
                   </p>
 
                   <div className=" flex items-center">
-                    <button className=" bg-[#0328EE] px-6 py-2 text-xs rounded-4xl whitespace-nowrap ">
-                      READ IT
-                    </button>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button
+                          onClick={() => openModal(blog)}
+                          className=" bg-[#0328EE] px-6 py-2 text-xs rounded-4xl whitespace-nowrap cursor-pointer"
+                        >
+                          READ IT
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="w-[80vw] h-[80vh] max-w-5xl p-6 flex flex-col items-center">
+                        {selectedBlog && (
+                          <div className="w-full h-full flex flex-col items-center">
+                            {/* Loader (Spinner) */}
+                            {loading && (
+                              <div className="flex justify-center items-center h-full">
+                                <Loader2 className="animate-spin h-40 w-40 text-primary" />
+                              </div>
+                            )}
+
+                            {/* iFrame (Hidden Until Loaded) */}
+                            <iframe
+                              src={selectedBlog.href.replace(
+                                "/view",
+                                "/preview"
+                              )}
+                              className={cn(
+                                "w-full h-full aspect-[16/9] rounded-md",
+                                loading ? "hidden" : "block"
+                              )}
+                              allow="autoplay"
+                              onLoad={handleIframeLoad} // Hide loader when loaded
+                            />
+                          </div>
+                        )}
+                      </DialogContent>
+                    </Dialog>
                     <div className="w-[70%] h-[1.5px] bg-[#FFFFFF1A] "></div>
                   </div>
                 </div>
@@ -210,7 +272,10 @@ export default function Resources() {
                   </p>
 
                   <div className=" flex items-center">
-                    <button className=" bg-[#0328EE] px-6 py-2 text-xs rounded-4xl whitespace-nowrap ">
+                    <button
+                      className=" bg-[#0328EE] px-6 py-2 text-xs rounded-4xl whitespace-nowrap cursor-pointer"
+                      onClick={() => router.push("/news")}
+                    >
                       READ IT
                     </button>
                     <div className="w-[70%] h-[1.5px] bg-[#FFFFFF1A] "></div>
