@@ -28,7 +28,7 @@ export default function MobileNavbar() {
 
   return (
     <>
-      <div className="h-[10vh]"></div>
+      <div className="h-[10vh]" />
       <header
         className={cn(
           "fixed w-full z-50 inset-0",
@@ -105,9 +105,11 @@ export default function MobileNavbar() {
                         <ul className="pl-9 mt-4 space-y-4">
                           <div className="flex justify-between text-primary-bright">
                             <ChevronLeft className="" />
-                            <text className="font-bold text-xl">
-                              {item.moretext}
-                            </text>
+                            <a href={item.services[0].href}>
+                              <span className="font-bold text-xl">
+                                {item.moretext}
+                              </span>
+                            </a>
                           </div>
                           {item.services.map((service, index) => (
                             <li key={index} className="mb-4 text-right">

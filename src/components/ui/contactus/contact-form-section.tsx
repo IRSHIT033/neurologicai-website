@@ -48,7 +48,7 @@ const ContactFormSection = () => {
   };
 
   return (
-    <div className="flex items-center justify-center py-2 px-3 w-2/4">
+    <div className="flex items-center justify-center py-2 px-3 w-full md:w-2/4">
       <Toaster position="bottom-center" reverseOrder={false} />
 
       <div className="w-full ">
@@ -148,7 +148,7 @@ const ContactFormSection = () => {
           </div>
 
           {/* Message */}
-          <div className="space-y-3 mt-12 max-w-lg">
+          <div className="space-y-3 mt-4 md:mt-12 max-w-lg">
             <label
               htmlFor="message"
               className="block text-white font-bold uppercase"
