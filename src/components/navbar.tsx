@@ -224,7 +224,7 @@ const Navbar = () => {
   if (device === "lg")
     return (
       <>
-        <div className="flex z-1000 relative bg-background  justify-center items-center space-x-20 w-[100vw] h-[15vh]  md:text-lg text-sm  text-white font-bold">
+        <div className="flex z-1000 relative bg-background  justify-center items-center space-x-20  h-[15vh]  md:text-lg text-sm  text-white font-bold">
           {NavItems.map((navitem) =>
             navitem.navtitle === "Logo" ? (
               <Link key={navitem.navtitle} href="/">
