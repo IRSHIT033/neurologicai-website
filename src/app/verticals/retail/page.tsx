@@ -61,42 +61,42 @@ const cards = [
       "AI-Powered Smart Shelf: Vision-Enabled Analytics &amp; Real-Time Recommendations",
     content:
       " Neurologic’s Smart Shelf seamlessly merges advanced computer vision, real-time analytics, and recommendation engines to deliver a personalized in-store experience. It detects shopper demographics (age, gender, style) and instantly offers tailored product suggestions or promotions. By leveraging edge computing for low-latency analysis and cloud integration for deeper insights, retailers can scale effortlessly. Built with robust data privacy controls and easy API-driven integration, the Smart Shelf elevates customer engagement, boosts conversions, and drives operational efficiency—redefining the retail aisle for a new era of connected shopping.",
-    src: "/healthcareCard-1.png",
+    src: "/retail/explore/AI-Powered Chat with X-Ray Images Using Multimodal Vision-Language Models - graphics (15).png",
   },
   {
     id: 1,
     title: "Context-Aware Recommendation Engine for Airport Retail",
     content:
       "Neurologic’s recommendation engine leverages real-time contextual data—such as time of day, weather, holidays, and product associations—to deliver highly personalized offers in high-traffic airport environments. By analyzing purchase patterns and situational triggers, it dynamically adjusts promotions and product placements to match passenger behaviors. Built on robust data pipelines and advanced ML algorithms, the solution integrates seamlessly with existing POS and CRM systems, boosting store revenue and enhancing the traveler shopping experience.",
-    src: "/healthcareCard-2.png",
+    src: "/retail/explore/AI-Powered Chat with X-Ray Images Using Multimodal Vision-Language Models - graphics (16).png",
   },
   {
     id: 2,
     title: "Customer Service Using Agentic AI",
     content:
       "Neurologic’s Agentic AI platform transforms customer service by delivering real-time, personalized support across multiple channels. Built on advanced language models tailored for retail interactions, it interprets natural-language queries, pulls data from loyalty programs and order management systems, and automates resolutions or product recommendations. Through continuous learning and sentiment analysis, Agentic AI adapts responses to each customer’s context—resolving issues faster, minimizing wait times, and freeing human agents for complex tasks. Seamless integration with existing CRM and POS systems ensures a frictionless experience, driving higher customer satisfaction and solidifying brand loyalty.",
-    src: "/healthcareCard-3.png",
+    src: "/retail/explore/AI-Powered Chat with X-Ray Images Using Multimodal Vision-Language Models - graphics (17).png",
   },
   {
     id: 3,
     title: "Inventory Forecasting for Retail Chains",
     content:
       " Neurologic’s AI-driven inventory forecasting solution optimizes stock levels across large retail networks by combining advanced time-series models, deep learning frameworks, and real-time market signals. Our approach integrates historical sales patterns, promotional calendars, seasonal trends, and external data (e.g., weather or local events) to deliver highly accurate demand predictions. By automating restocking strategies and proactively reducing stockouts or overstocks, retailers can streamline supply chains, minimize operational costs, and consistently meet customer needs. The result: improved profitability, higher in-store availability, and a distinctly competitive edge",
-    src: "/healthcareCard-4.png",
+    src: "/retail/explore/AI-Powered Chat with X-Ray Images Using Multimodal Vision-Language Models - graphics (18).png",
   },
   {
     id: 4,
     title: "AI-Powered Multi-Camera Customer Tracking &amp; Analytics",
     content:
       "Neurologic’s multi-camera platform orchestrates real-time shopper tracking, generating heatmaps and behavioral insights to optimize store layouts and reduce bottlenecks. By blending advanced object detection, re-identification, and behavior modeling, it offers a 360° view of the in-store journey—from dwell times to product engagement. This AI-driven intelligence guides merchandising strategies, staff deployment, and promotional placements, elevating overall customer satisfaction and boosting sales. With robust data privacy controls and smooth integration into existing retail systems, Neurologic delivers immediate ROI and a sustainable competitive edge.",
-    src: "/healthcareCard-5.png",
+    src: "/retail/explore/AI-Powered Chat with X-Ray Images Using Multimodal Vision-Language Models - graphics (19).png",
   },
   {
     id: 5,
-    title: "Voice &amp; Chat-Based Conversational Recommendation Engine:",
+    title: "Voice & Chat-Based Conversational Recommendation Engine:",
     content:
       "Neurologic’s Conversational Recommender allows retailers to deliver natural, AI-driven product suggestions through voice and chat. By harnessing large language models and structured database queries, it interprets user requests, extracts constraints (allergies, budgets), and adapts suggestions on the fly. The system retains conversation context—handling mid-dialogue updates like “I’m also allergic to prawns”—and applies filtering to remove restricted or out-of-stock items. Deployed in the cloud or on-premise, it integrates seamlessly with existing catalogs and loyalty systems, boosting customer satisfaction and conversion rates while showcasing Neurologic’s expertise in advanced retail AI.",
-    src: "/healthcareCard-1.png",
+    src: "/retail/explore/AI-Powered Chat with X-Ray Images Using Multimodal Vision-Language Models - graphics (20).png",
   },
 ];
 
