@@ -56,14 +56,14 @@ const cards = [
       "Multi-Stage Agentic Framework powered by VLM and Knowledge Graphs for Product’s Damage Assessment and Recycling",
     content:
       "Our Multi-Stage Agentic Framework revolutionizes product damage assessment and recycling by integrating Vision-Language Models (VLMs), Knowledge Graphs, 3D design simulations, and Large Language Models (LLMs) into an intelligent decision-making pipeline. By combining automated defect detection, synthetic data augmentation using NVIDIA Omniverse, and structured reasoning with knowledge graphs, our solution enables rapid, high-accuracy assessment of repair feasibility and sustainability impact. This AI-driven system reduces inspection time by 40%, scales to 100K+ items/month, and optimizes cost-effective recycling decisions—enhancing efficiency, accuracy, and sustainability for manufacturers and recyclers.",
-    src: "/healthcareCard-1.png",
+    src: "/manufacturing/explore/AI-Powered Chat with X-Ray Images Using Multimodal Vision-Language Models - graphics (9).png",
   },
   {
     id: 1,
     title: "Automated Sorting with Vision Enabled Robotic Arm",
     content:
       "Our Intelligent Robotic Sorting System integrates Omniverse Isaac Sim, ROS 2, and NVIDIA GPU-accelerated perception for real-time, high-precision automation in manufacturing. Using YOLO-based object detection, synthetic data, and physics-accurate simulation, it minimizes the sim-to-real gap, achieving >95% sorting accuracy with sub-50ms inference times. With depth-based 3D pose estimation and adaptive motion planning, it reduces labor costs, accelerates deployment, and enhances production efficiency, transforming manual sorting into an intelligent, scalable automation solution",
-    src: "/healthcareCard-2.png",
+    src: "/manufacturing/explore/AI-Powered Chat with X-Ray Images Using Multimodal Vision-Language Models - graphics (10).png",
   },
   {
     id: 2,
@@ -71,14 +71,14 @@ const cards = [
       "Physics Accurate Synthetic Data Generation using NVIDIA Omniverse for Training Physical AI Models",
     content:
       "Our Physics-Accurate Synthetic Data Generation system, powered by NVIDIA Omniverse, PhysX, and advanced sensor simulation, creates high-fidelity 3D environments for AI training in robotics and physical AI applications. By modeling real-world physics including collisions, friction, and gravity it generates photorealistic synthetic datasets with RGB images, depth maps, LiDAR scans, and segmentation masks. This scalable, automated pipeline reduces data collection costs, accelerates AI model training, and enhances simulation-to-reality transfer, enabling faster, more accurate AI-driven automation for manufacturing and robotics.",
-    src: "/healthcareCard-3.png",
+    src: "/manufacturing/explore/AI-Powered Chat with X-Ray Images Using Multimodal Vision-Language Models - graphics (11).png",
   },
   {
     id: 3,
     title: "Predictive Maintenance",
     content:
       "Our AI-driven Predictive Maintenance solution leverages sensor analytics, machine learning, and anomaly detection to predict equipment failures before they occur. By analyzing real-time IoT data, vibration patterns, and operational metrics, it enables proactive maintenance, reducing downtime, repair costs, and unexpected failures. This system optimizes asset health, extends equipment lifespan, and enhances operational efficiency for manufacturing and industrial operations",
-    src: "/healthcareCard-4.png",
+    src: "/manufacturing/explore/AI-Powered Chat with X-Ray Images Using Multimodal Vision-Language Models - graphics (12).png",
   },
   {
     id: 4,
@@ -86,7 +86,7 @@ const cards = [
       "Autonomous Intelligent Robots for RFID Scanning with SLAM-Based Navigation",
     content:
       "Our Autonomous RFID Scanning Robots, powered by SLAM-based navigation and AI-driven path planning, automate real-time inventory tracking in manufacturing and logistics. By integrating computer vision, RFID sensors, and adaptive motion control, these robots precisely locate and scan tagged assets in dynamic environments, reducing manual labor, improving accuracy, and enhancing warehouse efficiency with fully autonomous, collision-free operation.",
-    src: "/healthcareCard-5.png",
+    src: "/manufacturing/explore/AI-Powered Chat with X-Ray Images Using Multimodal Vision-Language Models - graphics (13).png",
   },
   {
     id: 5,
@@ -94,7 +94,7 @@ const cards = [
       "Simulating Sensor-Based Systems with NVIDIA Omniverse for Material Classification Using AI",
     content:
       "Our AI-driven Material Classification system leverages NVIDIA Omniverse’s physics-accurate simulations to train models for sensor-based defect detection and material analysis. By generating synthetic sensor data—including LiDAR, hyperspectral imaging, and depth maps—it enables AI models to classify materials with high precision. This simulation-first approach reduces data collection costs, accelerates AI deployment, and improves quality control in manufacturing and industrial inspection.",
-    src: "/healthcareCard-1.png",
+    src: "/manufacturing/explore/AI-Powered Chat with X-Ray Images Using Multimodal Vision-Language Models - graphics (14).png",
   },
 ];
 

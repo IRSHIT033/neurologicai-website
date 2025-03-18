@@ -110,15 +110,6 @@ export default function ServicesSection() {
         </h1>
         <ul className="sticky top-0" ref={ulRef}>
           {cards.map((item, index) => {
-            // Dynamic staggered offsets for controlled delay effect
-            // const start = index / cards.length; // When to start this card's animation
-            // const end = (index + 1) / cards.length; // When this card's animation fully completes
-
-            // const translateY = useTransform(
-            //   scrollYProgress,
-            //   [start, end], // Adjust so each card only starts after previous finishes
-            //   [0, -120 * (index + 1)] // Moves up progressively
-            // );
             return (
               <motion.li
                 key={index}
