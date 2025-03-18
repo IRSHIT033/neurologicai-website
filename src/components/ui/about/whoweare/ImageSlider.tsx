@@ -36,8 +36,8 @@ export default function ImageSlider() {
   }, [isAutoPlaying]);
 
   return (
-    <div className="relative flex flex-col items-center mb-8">
-      <div className="relative border-[2px] border-[#7F36F5] rounded-[20px] w-[820px] h-[520px] flex items-center justify-center overflow-hidden ">
+    <div className="  relative flex flex-col items-center mb-8 h-[60vh]">
+      <div className=" relative border-[2px] border-[#7F36F5] rounded-[20px] w-sm md:w-4xl h-[520px] flex items-center justify-center overflow-hidden ">
         <button
           onClick={handlePrev}
           onMouseEnter={() => setIsAutoPlaying(false)}
@@ -47,7 +47,7 @@ export default function ImageSlider() {
           <ArrowLeft />
         </button>
 
-        <div className="border-[1px] border-[#7F36F5] rounded-[20px] overflow-hidden w-[612px] h-[370px]">
+        <div className="border-[1px] border-[#7F36F5] rounded-[20px] overflow-hidden w-xs lg:w-2xl h-[370px]">
           {images[activeIndex] && (
             <Image
               src={images[activeIndex]}

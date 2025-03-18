@@ -15,11 +15,11 @@ export default function WhyChooseSection() {
         </p>
       </div>
 
-      <div className="flex justify-between items-start max-w-7xl mx-auto mt-8">
+      <div className="flex flex-col md:flex-row justify-between items-start lg:max-w-7xl mx-auto mt-8">
         <div className="flex-1 mr-12">
           <FeatureList />
         </div>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col justify-center items-center">
           <GlobeIllustration />
           <ConnectButton />
         </div>

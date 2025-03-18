@@ -1,55 +1,70 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { MinusIcon, PlusIcon } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
-// import { FaMinus, FaPlus } from "react-icons/fa";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Loader2 } from "lucide-react";
 
 export default function Resources() {
   const blogs = [
     {
       id: 1,
       category: "Healthcare",
-      image: "/resources/resourcesCard-3.png", // Replace with actual image URL
-      title: "Hosting a Hugging Face Model on AWS SageMaker",
+      image: "/resources-case-studies/foundational-generative-ai.png", // Replace with actual image URL
+      title: "Foundational Generative AI Model Building for Healthcare",
+      href: "https://drive.google.com/file/d/1wbG9CX0I8VW9VRSOY80f0SgIXaeKrZOl/view?usp=drive_link",
       description:
-        "When fine-tuning a Hugging Face model, it often saves as LoRA adapters.",
+        "Foundational multimodal model designed specifically for healthcare applications, integrating advanced vision and language processing capabilities to enable comprehensive medical insights.",
     },
     {
       id: 2,
-      category: "Manufacturing",
-      image: "/resources/resourcesCard-2.png", // Replace with actual image URL
-      title: "Hosting a Hugging Face Model on AWS SageMaker",
+      category: "Retail",
+      image: "/resources-case-studies/voice-chat.png", // Replace with actual image URL
+      title: "Voice & Chat-Based Conversational Recommendation Engine",
+      href: "https://drive.google.com/file/d/1hfB1_y1RC2OitpH-AO5-PXTCatvvPVHH/view?usp=drive_link",
       description:
-        "When fine-tuning a Hugging Face model, it often saves as LoRA adapters.",
+        "Retail customers increasingly seek personalized product recommendations through dynamic voice and chat interactions.",
     },
     {
       id: 3,
       category: "Retail",
-      image: "/resources/resourcesCard-1.png", // Replace with actual image URL
-      title: "Hosting a Hugging Face Model on AWS SageMaker",
+      image: "/resources-case-studies/realtime-retail.png", // Replace with actual image URL
+      title: "Real-Time AI-Powered Detection for Retail Inventory Optimization",
+      href: "https://drive.google.com/file/d/1iIn37eeCf6UVdWkfgdlnWKcLDIcEMM8P/view?usp=drive_link",
       description:
-        "When fine-tuning a Hugging Face model, it often saves as LoRA adapters.",
+        "Efficient inventory management significantly impacts profitability and customer satisfaction in retail operations.",
     },
   ];
-  const publications = [
+
+  const breakthroughs = [
     {
-      title: "Hosting a Hugging Face Model on AWS SageMaker",
-      content: "Details about how to host a model on AWS SageMaker...",
+      id: 1,
+      image: "/featured-journey-3.png?height=300&width=500",
+
+      title: "Honored with Times Business Award 2024",
+      description:
+        "We are thrilled to announce that [Your Company/Team Name] has been honored with the Times Business Award 2024. This prestigious recognition underscores our dedication to business excellence and innovation",
     },
     {
+      id: 2,
+      image: "/whoweare2.png?height=300&width=500",
       title:
-        "When fine-tuning a Hugging Face model, it often saves as LoRA adapters",
-      content:
-        "Explanation of fine-tuning Hugging Face models and LoRA adapters...",
+        "Honored to Receive Excellence in Healthcare Award at Health 2.0 Conference, Dubai 2024",
+      description:
+        'We are incredibly honored to announce that [Your Company/Team Name] has been awarded the "Excellence in Healthcare Award" at the Health 2.0 Conference in Dubai 2024. This prestigious recognition highlights our dedication to pushing the boundaries of healthcare innovation',
     },
     {
-      title: "Deploying AI Models with TensorFlow and PyTorch",
-      content: "A guide on deploying AI models using TensorFlow and PyTorch...",
+      id: 3,
+      image: "/featured-journey-2.png?height=300&width=500",
+      title: "Honored to be Invited Among the 50 Startups",
+      description:
+        "We had insightful discussions on the expansive opportunities for AI in the region. The discussions focused on capitalizing on the burgeoning AI landscape in Dubai/UAE, leveraging the robust inter-country trade corridor between India and the UAE, and identifying actionable pathways for rapid market penetration.",
     },
   ];
 
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const router = useRouter();
 
   const categories = ["All", "Healthcare", "Manufacturing", "Retail"];
   const filteredBlogs =
@@ -57,17 +72,44 @@ export default function Resources() {
       ? blogs
       : blogs.filter((blog) => blog.category === selectedCategory);
 
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [selectedBlog, setSelectedBlog] = useState<{
+    image: string;
+    title: string;
+    description: string;
+    href: string;
+  } | null>(null);
+  const [loading, setLoading] = useState(false);
 
-  const toggleAccordion = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const handleIframeLoad = () => {
+    setLoading(false);
   };
+
+  const openModal = (blog: {
+    image: string;
+    title: string;
+    description: string;
+    href: string;
+  }) => {
+    setSelectedBlog(blog);
+    setLoading(true); // Set loading when opening modal
+  };
+
   return (
     <div>
       <section className="py-[5vh] px-[5vw]">
         <div className="py-8">
-          <div className="p-6 bg-[linear-gradient(to_right,#8875D8,#40129D,#2E004F,#170028)] rounded-4xl flex flex-col md:flex-row items-center justify-between">
-            <div className="px-6 py-6 w-[50%] mt-9">
+          <div className="p-6 relative rounded-4xl flex flex-col md:flex-row items-center justify-between">
+            {/* Gradient border using padding + pseudo-element */}
+            <div
+              className="absolute inset-0 rounded-4xl bg-linear-to-r from-primary from-60% to-white"
+              style={{
+                padding: "2px",
+                mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                maskComposite: "exclude",
+                WebkitMaskComposite: "xor",
+              }}
+            />
+            <div className="px-6 py-6 w-full md:w-[50%] md:mt-9">
               <div className="mt">
                 <span className="bg-[#0328EE] text-white px-3 py-2 rounded-full text-xs">
                   FEATURED
@@ -86,7 +128,7 @@ export default function Resources() {
             </div>
             <div className="">
               <Image
-                src="/resources/resources-1.png"
+                src="/resources/resourcesCard-2.png"
                 width={500}
                 height={450}
                 className="rounded-3xl"
@@ -96,10 +138,11 @@ export default function Resources() {
           </div>
         </div>
       </section>
+
       <section className="py-[2vh] px-[5vw] mb-20">
-        <div className="flex flex-row justify-between">
-          <h2 className="text-white text-4xl font-bold mb-6">Latest Blogs</h2>
-          <div className="flex space-x-4 mb-6">
+        <div className="flex flex-col md:flex-row justify-between">
+          <h2 className="text-white text-4xl font-bold mb-6">Case Studies</h2>
+          <div className="flex flex-col md:flex-row space-x-4 gap-4 mb-6">
             {categories.map((category, index) => (
               <button
                 key={index}
@@ -117,31 +160,68 @@ export default function Resources() {
             ))}
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[6vw] mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[6vw] mt-6">
           {filteredBlogs.length > 0 ? (
             filteredBlogs.map((blog) => (
               <div
                 key={blog.id}
-                className="bg-[#010D50] rounded-4xl overflow-hidden shadow-lg"
+                className="bg-[#010D50]  rounded-4xl overflow-hidden"
               >
-                <Image
-                  src={blog.image}
-                  alt={blog.title}
-                  width={500}
-                  height={500}
-                />
-                <div className="py-4 px-6 text-white mb-4">
-                  <div className="w-[92%]">
-                    <p className="text-[20px] font-semibold">{blog.title}</p>
-                    <p className="text-gray-200 text-[17px] mt-6">
-                      {blog.description}
-                    </p>
-                  </div>
-                  <div className="mt-5 flex items-center">
-                    <button className="cursor-pointer mt-4 bg-[#0328EE] px-6 py-2 text-xs rounded-full top-[-10px]">
-                      READ IT
-                    </button>
-                    <div className="w-[65%] h-[1.5px] bg-[#FFFFFF1A] mt-3 ml-3"></div>
+                <div className="relative h-64 ">
+                  <Image
+                    src={blog.image}
+                    alt={blog.image}
+                    layout="fill"
+                    className="object-cover object-center w-full h-full"
+                  />
+                </div>
+
+                <div className=" z-50 h-full flex flex-col px-6 text-white mb-4 w-full ">
+                  <p className="min-h-23  mt-4 text-xl font-semibold">
+                    {blog.title}
+                  </p>
+                  <p className="min-h-32 text-gray-200 text-sm ">
+                    {blog.description}
+                  </p>
+
+                  <div className=" flex items-center">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button
+                          onClick={() => openModal(blog)}
+                          className=" bg-[#0328EE] px-6 py-2 text-xs rounded-4xl whitespace-nowrap cursor-pointer"
+                        >
+                          READ IT
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="w-[80vw] h-[80vh] max-w-5xl p-6 flex flex-col items-center">
+                        {selectedBlog && (
+                          <div className="w-full h-full flex flex-col items-center">
+                            {/* Loader (Spinner) */}
+                            {loading && (
+                              <div className="flex justify-center items-center h-full">
+                                <Loader2 className="animate-spin h-40 w-40 text-primary" />
+                              </div>
+                            )}
+
+                            {/* iFrame (Hidden Until Loaded) */}
+                            <iframe
+                              src={selectedBlog.href.replace(
+                                "/view",
+                                "/preview"
+                              )}
+                              className={cn(
+                                "w-full h-full aspect-[16/9] rounded-md",
+                                loading ? "hidden" : "block"
+                              )}
+                              allow="autoplay"
+                              onLoad={handleIframeLoad} // Hide loader when loaded
+                            />
+                          </div>
+                        )}
+                      </DialogContent>
+                    </Dialog>
+                    <div className="w-[70%] h-[1.5px] bg-[#FFFFFF1A] "></div>
                   </div>
                 </div>
               </div>
@@ -158,43 +238,6 @@ export default function Resources() {
         {/* </div> */}
       </section>
 
-      <section className="py-[5vh] px-[5vw] mt-30 mb-10">
-        <div className="flex flex-row justify-between">
-          <h2 className="text-white text-4xl font-bold mb-6">Publications</h2>
-          <div className="flex  mb-6">
-            <button className="border-[#8875D8] cursor-pointer border-[1px] text-[#8875D8] rounded-lg text-[22px] h-[40px] px-4">
-              View All Publications
-            </button>
-          </div>
-        </div>
-        <div className="space-y-3 mt-2">
-          {publications.map((item, index) => (
-            <div
-              key={index}
-              className="bg-gradient-to-b from-[#1F3A9A70] via-[#460bc470] to-[#4B0082] rounded-b-lg border-[#3c1ec2] border-[1px] border-t-0"
-            >
-              <button
-                onClick={() => toggleAccordion(index)}
-                className="w-full flex justify-between items-center text-right px-6 py-3 font-bold text-xl"
-              >
-                <div className="">{item.title}</div>
-                <div className="text-4xl cursor-pointer font-bold">
-                  {openIndex === index ? (
-                    <MinusIcon size={40} />
-                  ) : (
-                    <PlusIcon size={40} />
-                  )}
-                </div>
-              </button>
-
-              {openIndex === index && (
-                <div className="px-6 pb-4 text-gray-300">{item.content}</div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
-
       <section className="py-[2vh] px-[5vw] mt-20 mb-30">
         <div className="flex flex-row justify-between">
           <h2 className="text-white text-4xl font-bold mb-6">Breakthroughs</h2>
@@ -204,31 +247,38 @@ export default function Resources() {
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[6vw] mt-6">
-          {filteredBlogs.length > 0 ? (
-            filteredBlogs.map((blog) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[6vw] mt-6">
+          {breakthroughs.length > 0 ? (
+            breakthroughs.map((blog) => (
               <div
                 key={blog.id}
-                className="bg-[#010D50] rounded-4xl overflow-hidden shadow-lg"
+                className="bg-[#010D50]  rounded-4xl overflow-hidden"
               >
-                <Image
-                  src={blog.image}
-                  alt={blog.title}
-                  height={500}
-                  width={500}
-                />
-                <div className="py-4 px-6 text-white mb-4">
-                  <div className="w-[92%]">
-                    <p className="text-[20px] font-semibold">{blog.title}</p>
-                    <p className="text-gray-200 text-[17px] mt-6">
-                      {blog.description}
-                    </p>
-                  </div>
-                  <div className="mt-5 flex items-center">
-                    <button className="mt-4 bg-[#0328EE] px-6 py-2 text-xs rounded-full top-[-10px]">
+                <div className="relative h-64">
+                  <Image
+                    src={blog.image}
+                    alt={blog.image}
+                    layout="fill"
+                    className="object-cover object-center w-full h-full"
+                  />
+                </div>
+
+                <div className=" z-50 h-full flex flex-col px-6 text-white mb-4 w-full ">
+                  <p className="min-h-23  mt-4 text-xl font-semibold">
+                    {blog.title}
+                  </p>
+                  <p className="min-h-32 text-gray-200 text-sm ">
+                    {blog.description}
+                  </p>
+
+                  <div className=" flex items-center">
+                    <button
+                      className=" bg-[#0328EE] px-6 py-2 text-xs rounded-4xl whitespace-nowrap cursor-pointer"
+                      onClick={() => router.push("/news")}
+                    >
                       READ IT
                     </button>
-                    <div className="w-[70%] h-[1.5px] bg-[#FFFFFF1A] mt-3"></div>
+                    <div className="w-[70%] h-[1.5px] bg-[#FFFFFF1A] "></div>
                   </div>
                 </div>
               </div>
@@ -243,9 +293,9 @@ export default function Resources() {
 
       <section className="py-[2vh] mt-30 mb-20">
         <div className="bg-[radial-gradient(circle_at_top_left,_#1a1f42,_#0a0c1a)] text-white rounded-3xl flex justify-between items-center px-[5vw] ">
-          <div className="py-6 flex flex-row justify-between items-center">
-            <div className="w-[50%] leading-tight flex flex-row gap-4 items-center">
-              <div className="p-5 rounded-2xl bg-white flex flex-col items-center">
+          <div className="py-6 flex lg:flex-row gap-6 flex-col justify-between items-center">
+            <div className="w-full lg:w-[50%] leading-tight flex flex-row gap-4 items-center">
+              <div className="hidden lg:flex p-5 rounded-2xl bg-white flex-col items-center">
                 {/* <img src="/vectorTop.png" className="h-[20px] w-[70px]" ></img>
                                 <img src="/vectorBase.png" className="h-[20px] w-[70px] mt-[-8px]"></img> */}
                 <Image
@@ -264,7 +314,7 @@ export default function Resources() {
                 />
               </div>
               <div className="ml-1">
-                <p className="text-[38px] font-bold">
+                <p className="text-[38px] font-bold text-center lg:text-left">
                   Subscribe to our Neurologic AI’s news weekly newsletter!
                 </p>
               </div>

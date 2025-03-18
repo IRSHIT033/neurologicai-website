@@ -42,7 +42,7 @@ const TestimonialSection = () => {
       <h1 className="text-4xl md:text-4xl text-center mb-4 bg-gradient-to-r from-blue from-40% to-primary via-60%  bg-clip-text text-transparent">
         Clients Who Trust Us, Heres Why
       </h1>
-      <p className="text-sm text-center max-w-5xl mx-auto mb-16">
+      <p className="text-sm text-center max-w-5xl px-4 md:mx-auto mb-16">
         Client satisfaction is the backbone of our business. It&apos;not just
         about providing a satisfactory experience, but going above and beyond to
         exceed the expectations of our clients. This requires having a deep

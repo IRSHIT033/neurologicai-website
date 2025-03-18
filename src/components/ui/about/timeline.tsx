@@ -39,13 +39,13 @@ const Timeline = () => {
   return (
     <div
       ref={ref}
-      className="flex items-center justify-evenly mx-auto h-[50vh] gap-10"
+      className=" flex flex-col lg:flex-row items-center justify-evenly mx-auto h-[60vh] gap-10 overflow-x-hidden"
     >
       <h1 className="text-gradient text-5xl font-bold bg-gradient-to-r from-blue from-40% to-primary  bg-clip-text text-transparent">
         Timeline
       </h1>
       <div className="w-3xl relative flex">
-        <div className="relative w-full flex justify-center items-center text-white">
+        <div className="scale-50 md:scale-70 lg:scale-100 relative w-full flex justify-center items-center text-white">
           {/* Animated Timeline Line */}
           <motion.div
             initial={{ width: 0 }}

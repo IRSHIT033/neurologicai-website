@@ -5,7 +5,7 @@ export default function MissionVisionSection() {
   return (
     <section className="flex flex-col items-center py-16">
       <MissionVisionHeader />
-      <div className="flex gap-8 font-inter">
+      <div className="flex flex-col md:flex-row gap-8 font-inter">
         <MissionCard
           text="To empower our customers to integrate AI/ML technologies into their solutions, driving innovation."
           variant="left"

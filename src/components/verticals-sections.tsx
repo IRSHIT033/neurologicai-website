@@ -87,7 +87,7 @@ export default function VerticalsSection() {
   return (
     <div className=" text-white min-h-[50vh] p-10 md:p-40 ">
       <div className="max-w-7xl  mx-auto">
-        <h1 className="text-6xl tracking-wider w-[25rem] space-x-0.5 bg-gradient-to-r from-blue from-0% via-primary via-60%  to-white bg-clip-text text-transparent  mb-12">
+        <h1 className="text-6xl tracking-wider  space-x-0.5 bg-gradient-to-r from-blue from-0% via-primary via-60%  to-white bg-clip-text text-transparent  mb-12">
           Verticals
         </h1>
 

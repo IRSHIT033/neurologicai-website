@@ -16,7 +16,6 @@ export default function Header({
           className="absolute inset-0 rounded-4xl bg-linear-to-b from-primary via-white to-primary"
           style={{
             padding: "2px",
-
             mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
             maskComposite: "exclude",
             WebkitMaskComposite: "xor",

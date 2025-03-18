@@ -4,7 +4,7 @@ import React from "react";
 export default function WhoWeAreHeader() {
   return (
     <div className="flex flex-col justify-center items-center my-8">
-      <h2 className=" font-poppins text-[64px] font-bold leading-normal tracking-[-1.28px] text-transparent bg-clip-text bg-gradient-to-r from-[#5025FF] via-[#5A138E] to-[#F5F5F5]">
+      <h2 className=" font-poppins text-4xl lg:text-6xl md:text-[64px] font-bold leading-normal tracking-[-1.28px] text-transparent bg-clip-text bg-gradient-to-r from-[#5025FF] via-[#5A138E] to-[#F5F5F5]">
         Who We Are
       </h2>
       <p className="text-[#FFF]  text-[16px] font-normal text-center font-inter leading-[21px] ">

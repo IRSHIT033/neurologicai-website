@@ -3,25 +3,26 @@ import { Button } from "@/components/ui/button";
 
 const featuredJourney = [
   {
-    image: "/featured-journey-1.png?height=300&width=500",
+    image: "/featured-journey-2.png?height=300&width=500",
     alt: "Lenovo Tech World event",
-    title: "Lenovo Tech World 2025",
+    title: "Honored to be Invited Among the 50 Startups",
     description:
-      "This event promises groundbreaking discussions on AI advancements, community engagement, and intelligent transformations.",
+      "We had insightful discussions on the expansive opportunities for AI in the region. The discussions focused on capitalizing on the burgeoning AI landscape in Dubai/UAE, leveraging the robust inter-country trade corridor between India and the UAE, and identifying actionable pathways for rapid market penetration.",
   },
   {
-    image: "/featured-journey-2.png?height=300&width=500",
+    image: "/whoweare2.png?height=300&width=500",
     alt: "Startup event with audience",
-    title: "Honored to be invited among the 50 startups",
+    title:
+      "Honored to Receive Excellence in Healthcare Award at Health 2.0 Conference, Dubai 2024",
     description:
-      "We feel delighted to receive an invitation among the top 50 startups on the forefront of AI innovation. This recognition highlights our commitment to advancing neurological research.",
+      'We are incredibly honored to announce that [Your Company/Team Name] has been awarded the "Excellence in Healthcare Award" at the Health 2.0 Conference in Dubai 2024. This prestigious recognition highlights our dedication to pushing the boundaries of healthcare innovation.',
   },
   {
     image: "/featured-journey-3.png?height=300&width=500",
     alt: "Times Business Award ceremony",
-    title: "Times Business Award 2024",
+    title: "Honored with Times Business Award 2024",
     description:
-      "We are thrilled and honored to announce that Neurologic AI has been recognized with the Times Business Award 2024!",
+      "We are thrilled to announce that [Your Company/Team Name] has been honored with the Times Business Award 2024. This prestigious recognition underscores our dedication to business excellence and innovation",
   },
 ];
 
@@ -38,7 +39,7 @@ const weeklyHighlights = [
     alt: "Group photo of startup event",
     title: "Honored to be invited among the 50 startups",
     description:
-      "We feel delighted to receive an invitation among the top 50 startups on the forefront of AI innovation. This recognition highlights our commitment to advancing neurological research and market penetration.",
+      "We had insightful discussions on the expansive opportunities for AI in the region. The discussions focused on capitalizing on the burgeoning AI landscape in Dubai/UAE, leveraging the robust inter-country trade corridor between India and the UAE, and identifying actionable pathways for rapid market penetration.",
   },
 ];
 
@@ -75,7 +76,7 @@ export default function News() {
         <h2 className="text-5xl font-bold text-center mb-12">
           Weekly Highlights
         </h2>
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {weeklyHighlights.map((event, index) => (
             <div key={index} className="rounded-lg overflow-hidden">
               <div className="relative h-64">
@@ -102,7 +103,7 @@ export default function News() {
         <h2 className="text-4xl font-bold text-center mb-12">
           Featured Journeys
         </h2>
-        <div className="grid md:grid-cols-3 w-6xl mx-auto gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 md:max-w-6xl mx-auto gap-6">
           {featuredJourney.map((event, index) => (
             <div key={index} className=" rounded-lg overflow-hidden">
               <div className="relative h-64">
@@ -114,7 +115,7 @@ export default function News() {
                 />
               </div>
               <div className="p-4">
-                <h3 className="text-2xl text-center h-16 font-semibold mb-2 text-yellow-500">
+                <h3 className="text-xl text-center min-h-24 font-semibold mb-2 text-yellow-500">
                   {event.title}
                 </h3>
                 <p className="text-sm text-center text-gray-300">
