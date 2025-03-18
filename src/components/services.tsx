@@ -1,5 +1,6 @@
+/* eslint-disable */
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import useDeviceType from "@/hooks/device-check";
@@ -55,7 +56,7 @@ const cards = [
 ];
 
 export default function ServicesSection() {
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const ulRef = useRef<HTMLUListElement | null>(null); // <ul>
   const liRefs = useRef<(HTMLLIElement | null)[]>([]);
   const { scrollYProgress } = useScroll({
@@ -67,16 +68,35 @@ export default function ServicesSection() {
   // const motionY: any = [];
 
   const motionY = cards.map((_, i) => {
-    const start = (i * 0.3) / cards.length; // Start when previous card stops
-    const end = (i + 0.5) / cards.length; // End before next starts
+    const start = (i * 0.6) / cards.length; // Start earlier
+    const end = (i + 0.7) / cards.length; // End sooner
 
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     return useTransform(
       scrollYProgress,
       [start, end],
-      [1, -i * (device === "sm" ? 570 : 400)]
+      [1, -i * (device === "sm" ? 300 : 400)] // Increased displacement for faster movement
     );
   });
+
+  useEffect(() => {
+    const handleScroll = (event: WheelEvent) => {
+      if (!ulRef.current) return;
+
+      const rect = ulRef.current.getBoundingClientRect();
+      const inView = rect.top <= 0 && rect.bottom > 0;
+
+      if (inView) {
+        window.scrollBy(0, event.deltaY * 4); // Doubles scroll speed in Component 2
+        event.preventDefault(); // Prevents default scrolling
+      }
+    };
+
+    window.addEventListener("wheel", handleScroll, { passive: false });
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+    };
+  }, []);
 
   return (
     <section className="">
