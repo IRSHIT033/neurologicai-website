@@ -4,7 +4,7 @@ import FooterServices from "./footer-service";
 import FooterLinks from "./footer-link";
 import FooterBottomBar from "./footer-bottom-bar";
 
-export default function Footer() {
+export default function FooterLarge() {
   return (
     <footer className=" text-white py-12 px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-24">
