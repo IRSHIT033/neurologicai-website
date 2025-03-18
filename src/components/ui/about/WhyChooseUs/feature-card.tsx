@@ -6,14 +6,14 @@ export default function FeatureCard({
   description: string;
 }) {
   return (
-    <div className="flex items-start gap-4 mb-6">
-      <div className="w-[36px] h-[36px] rounded-lg bg-gradient-to-r from-[#4B0082] to-[#5323EC] flex-shrink-0"></div>
-      <div>
-        <h3 className="text-[#F2F2F7] text-[24px] font-inter font-bold leading-[32px] self-stretch mb-1">
+    <div className="flex relative items-start gap-4 mb-6">
+      <div className="absolute w-[36px] h-[36px] rounded-lg bg-gradient-to-r from-[#4B0082] to-[#5323EC] "></div>
+      <div className="pl-[46px]">
+        <h3 className=" text-[#F2F2F7] text-2xl  font-bold leading-[32px] self-stretch mb-1">
           {title}
         </h3>
 
-        <p className="text-[#C7C7CC] font-inter text-[14px] font-normal leading-[18px] w-[532px]">
+        <p className="text-[#C7C7CC]  text-sm font-normal leading-[18px] lg:w-[532px]">
           {description}
         </p>
       </div>
