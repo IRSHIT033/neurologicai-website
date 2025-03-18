@@ -19,7 +19,7 @@ export default function WhyChooseSection() {
         <div className="flex-1 mr-12">
           <FeatureList />
         </div>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col justify-center items-center">
           <GlobeIllustration />
           <ConnectButton />
         </div>
