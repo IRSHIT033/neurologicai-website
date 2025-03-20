@@ -128,7 +128,7 @@ const resources = [
     desc: "Neurologic's AI-driven inventory forecasting solution optimizes stock levels across large retail networks by combining data from store demand trends, historical frameworks, and real-time market signals. Our approach integrates intelligent sales patterns, performs predictive demand sensing, and enhances decision-making for automated stock replenishment. This AI-driven pipeline reduces stockouts by automating restocking strategies and accurately predicting product demand, overseeing data inconsistencies, and procurement errors. Retailers can control excess stock, enhance supply chain efficiency, improve profitability, and create higher store availability with a distinctly competitive advantage.",
     image:
       "/resources-case-studies/Retail/Inventory Forecasting for Retail Chains_.png",
-    href: "",
+    href: "https://drive.google.com/file/d/1iIn37eeCf6UVdWkfgdlnWKcLDIcEMM8P/view",
   },
   {
     title: "AI-Powered Multi-Camera Customer Tracking & Analytics",

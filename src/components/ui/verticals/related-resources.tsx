@@ -79,7 +79,7 @@ export default function RelatedResources({
           (resource, index) => (
             <Card
               key={index}
-              className="bg-white  text-background rounded-3xl shadow-lg overflow-hidden h-[650px]  flex flex-col "
+              className="bg-white  text-background rounded-3xl shadow-lg overflow-hidden min-h-[580px]  flex flex-col "
             >
               <CardTitle className="rounded-3xl overflow-hidden h-[45%]">
                 <Image

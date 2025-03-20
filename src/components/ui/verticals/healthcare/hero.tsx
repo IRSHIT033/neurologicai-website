@@ -39,10 +39,10 @@ export default function Header({
           {/* Content overlay */}
           <div className="relative z-10 text-center h-full">
             <div className=" mx-auto h-full flex flex-col justify-center items-center ">
-              <h2 className="text-gray-300 text-lg md:text-xl  font-bold">
+              <h2 className="text-gray-300 text-sm md:text-xl  font-bold">
                 {secondarytext}
               </h2>
-              <h1 className="text-white text-2xl md:text-5xl mt-2 font-bold tracking-tight">
+              <h1 className="text-white text-xl md:text-5xl mt-2 font-bold tracking-tight">
                 {primarytext}
               </h1>
             </div>
