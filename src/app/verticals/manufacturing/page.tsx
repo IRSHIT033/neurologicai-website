@@ -100,19 +100,49 @@ const cards = [
 
 const resources = [
   {
-    title: "AI-Powered Grounded Report Generation for Medical Imaging",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-    image: "/relatedResourceCard-1.png",
+    title:
+      "Multi-Stage Agentic Framework powered by VLM and Knowledge Graphs for Product’s Damage Assessment and Recycling",
+    desc: "Our Multi-Stage Agentic framework introduces product damage assessment and recycling by integrating Vision-Language Models (VLMs), Knowledge Graphs, 3D design simulations, and Large Language Models (LLMs) into an intelligent, decision-making pipeline. Our framework enables defect detection, strategic disassembly, part recognition via AI vision, and structured reasoning with knowledge graphs. Our AI solution enables rapid, high-accuracy assessment of repair feasibility and sustainability impact. This AI-driven solution optimizes inspection for OEMs, speeds up decision-making, and provides cost-effective recycling decisions—enhancing efficiency, accuracy, and sustainability for manufacturers and recyclers.",
+    image:
+      "/resources-case-studies/Manufacturing/Multi-Stage Agentic Framework powered by VLM and Knowledge Graphs for Product’s Damage Assessment and Recycling.png",
+    href: "https://drive.google.com/file/d/1yvKjx0SoMIlBrOZRgHL7TlILZNGqCK48/view?usp=drive_link",
   },
   {
-    title: "Prompt-Based Image Segmentation Using LLM",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-    image: "/relatedResourceCard-2.png",
+    title: "Automated Sorting with Vision Enabled Robotic Arm",
+    desc: "Our Intelligent Robotic Sorting System integrates Omniverse Isaac Sim, ROS2, and NVIDIA GPU-accelerated perception for real-time, high-precision automation in manufacturing. Using YOLO-based object detection, synthetic data, and physics-accurate simulation, it minimizes sorting errors while enhancing speed by 30% in comparison with 3D-Sim inference time. With depth-based 3D pose estimation and adaptive grasping, this solution reduces factory sorting waste, automates enhancements, simplifies defects, transforms manual sorting into an intelligent, scalable automation solution.",
+    image:
+      "/resources-case-studies/Manufacturing/Automated Sorting with Vision Enabled Robotic Arm.png",
+    href: "https://drive.google.com/file/d/1uEiXfMjiHIJ7_Oh-b5azHhyJ3yWbC0fx/view?usp=drive_link",
   },
   {
-    title: "Efficient Vision-Language Models for Edge Computing",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-    image: "/relatedResourceCard-3.png",
+    title:
+      "Physics Accurate Synthetic Data Generation using NVIDIA Omniverse for Training Physical AI Models",
+    desc: "Our Physics-Accurate Synthetic Data Generation system, powered by NVIDIA Omniverse, aids in training AI models for industrial and physical AI applications by creating high-fidelity synthetic data simulations. All data is physics-grounded, simulating interactions with sensors, RGB images, depth maps, LiDAR scans, and object segmentations. This makes AI-based systems more robust for real-world environments, reducing failure rates and optimizing AI decision-making to really accelerate faster, more accurate AI-driven automation for manufacturing and robotics.",
+    image:
+      "/resources-case-studies/Manufacturing/Physics Accurate Synthetic Data Generation using NVIDIA Omniverse for Training Physical AI Models.png",
+    href: "https://drive.google.com/file/d/1ACR3fvlsDPOijlKIYxM0pJcxPMRwN35g/view?usp=drive_link",
+  },
+  {
+    title: "Predictive Maintenance",
+    desc: "Our AI-driven Predictive Maintenance solution leverages sensor analytics, machine learning, and anomaly detection to reduce equipment failures. By analyzing historical and real-time IoT data, vibration patterns, and thermal imaging, it enables proactive maintenance to avoid downtime. This results in reduced repair costs, improved equipment lifespan, and increased manufacturing efficiency. Our solution transforms predictive maintenance for manufacturing and industrial operations.",
+    image: "/resources-case-studies/Manufacturing/Predictive Maintenance.png",
+    href: "https://drive.google.com/file/d/1uIvfJC56C918xNCiBmD6v11PzcjTrjeh/view?usp=drive_link",
+  },
+  {
+    title:
+      "Autonomous Intelligent Robots for RFID Scanning with SLAM-Based Navigation",
+    desc: "Our AI and NVIDIA GPU Scanning Robot, powered by SLAM-based localization and path planning, automates warehouse RFID scanning. With real-time object avoidance, simulation-enhanced precision, and AI-driven tracking, it reduces errors by 40%, increasing inventory tracking autonomy and collision-free operation.",
+    image:
+      "/resources-case-studies/Manufacturing/Autonomous Intelligent Robots for RFID Scanning with SLAM-Based Navigation.png",
+    href: "https://drive.google.com/file/d/1JXuNLC6ZYf1yyMw-6USAnfCIzHGSZoMJ/view?usp=drive_link",
+  },
+  {
+    title:
+      "Simulating Sensor-Based Systems with NVIDIA Omniverse for Material Classification Using AI",
+    desc: "Our AI-driven Material Classification system leverages NVIDIA Omniverse for high-fidelity sensor data simulation, AI-powered classification, and material recognition. This accelerates automation in defect detection, construction, and robotics, making AI-based quality control in manufacturing and logistics more reliable.",
+    image:
+      "/resources-case-studies/Manufacturing/Simulating Sensor-Based Systems with NVIDIA Omniverse for Material Classification Using AI.png",
+    href: "https://drive.google.com/file/d/1uQX39gHA4yWLo-mpEhdI5a0wOlxMbaAs/view?usp=drive_link",
   },
 ];
 
