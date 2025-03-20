@@ -73,13 +73,6 @@ export default function ExploreSectionHealthcare({
                         <p className="leading-tight text-[17px]">
                           {card.content}
                         </p>
-                        <button
-                          className="self-start mt-4"
-                          onClick={() => toggleCard(card.id)}
-                          style={{ color: "#602EEF" }}
-                        >
-                          Read Case Studies {">"}
-                        </button>
                       </div>
                       <div className="flex-1">
                         <Image
