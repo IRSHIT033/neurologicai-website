@@ -2,6 +2,7 @@ import ExploreSectionHealthcare from "@/components/ui/verticals/healthcare/explo
 import HealthcareAICarousel from "@/components/ui/verticals/healthcare/healthcare";
 import Header from "@/components/ui/verticals/healthcare/hero";
 import RelatedResources from "@/components/ui/verticals/related-resources";
+import IndustrySection from "@/components/ui/verticals/why-choose-neurologic";
 
 const manufacturingHeroTexts = {
   primarytext: `Cutting-Edge Artificial Intelligence and Advanced Simulations`,
@@ -115,7 +116,25 @@ const resources = [
     image: "/relatedResourceCard-3.png",
   },
 ];
-
+const industryData = {
+  manufacturing: {
+    heading: "Why Neurologic for Manufacturing:",
+    images :{
+    icons: [
+      { src: "/healthcare/icon-top.png", width: 196, height: 71 },
+      { src: "/healthcare/icon-bottom.png", width: 196, height: 62 },
+    ],
+    flipCards: [
+      { front: "/manufacturing/verticals-flipcard/ai-driven-unflipped.png", back: "/manufacturing/verticals-flipcard/ai-driven-flipped.png", alt: "AI Driven", size: "w-[196px] h-[297px]" },
+      { front: "/manufacturing/verticals-flipcard/sustainability-unflipped.png", back: "/manufacturing/verticals-flipcard/sustainability-flipped.png", alt: "Sustainability", size: "w-[196px] h-[217px]" },
+      { front: "/manufacturing/verticals-flipcard/predictive-unflipped.png", back: "/manufacturing/verticals-flipcard/predictive-flipped.png", alt: "Predictive", size: "w-[417px] h-[297px]" },
+      { front: "/manufacturing/verticals-flipcard/intelligent-unflipped.png", back: "/manufacturing/verticals-flipcard/intelligent-flipped.png", alt: "Future Ready", size: "w-[196px] h-[227px]" },
+      { front: "/manufacturing/verticals-flipcard/future-ready-unflipped.png", back: "/manufacturing/verticals-flipcard/future-ready-flipped.png", alt: "Intelligent", size: "w-[214px] h-[301px]" },
+      { front: "/manufacturing/verticals-flipcard/physics-unflipped.png", back: "/manufacturing/verticals-flipcard/physics-flipped.png", alt: "Accelerated", size: "w-[402px] h-[301px]" },
+    ],
+  }
+  },
+};
 const page = () => {
   return (
     <div className="smooth-scroll">
@@ -125,6 +144,7 @@ const page = () => {
         description={manufacturingHeroTexts.description}
       />
       <HealthcareAICarousel features={caraouselfeature} />
+      <IndustrySection industryName="Manufacturing" {...industryData.manufacturing}/>
       <ExploreSectionHealthcare cards={cards} />
       <RelatedResources resources={resources} />
     </div>

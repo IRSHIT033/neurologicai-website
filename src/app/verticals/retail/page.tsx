@@ -2,6 +2,7 @@ import ExploreSectionHealthcare from "@/components/ui/verticals/healthcare/explo
 import HealthcareAICarousel from "@/components/ui/verticals/healthcare/healthcare";
 import Header from "@/components/ui/verticals/healthcare/hero";
 import RelatedResources from "@/components/ui/verticals/related-resources";
+import IndustrySection from "@/components/ui/verticals/why-choose-neurologic";
 
 const retailHeroTexts = {
   primarytext: `Advanced AI Models, Automation, and Real-Time Intelligence`,
@@ -118,6 +119,27 @@ const resources = [
   },
 ];
 
+
+const industryData = {
+  retail: {
+    heading: "Why Neurologic for Retail:",
+    images :{
+    icons: [
+      { src: "/healthcare/icon-top.png", width: 196, height: 71 },
+      { src: "/healthcare/icon-bottom.png", width: 196, height: 62 },
+    ],
+    flipCards: [
+      { front: "/retail/vertical-flipcard/Domain-specific-unflipped.png", back: "/retail/vertical-flipcard/Domain-specific-flipped.png", alt: "Domain Specific", size: "w-[196px] h-[297px]" },
+      { front: "/retail/vertical-flipcard/Real-time-unflipped.png", back: "/retail/vertical-flipcard/Real-time-flipped.png", alt: "Real Time", size: "w-[196px] h-[217px]" },
+      { front: "/retail/vertical-flipcard/omnichannel-unflipped.png", back: "/retail/vertical-flipcard/omnichannel-flipped.png", alt: "Omnichannel", size: "w-[417px] h-[297px]" },
+      { front: "/retail/vertical-flipcard/exterprise-grade-unflipped.png", back: "/retail/vertical-flipcard/exterprise-grade-flipped.png", alt: "Exterprise Grade", size: "w-[196px] h-[227px]" },
+      { front: "/retail/vertical-flipcard/Predictive-unflipped.png", back: "/retail/vertical-flipcard/Predictive-flipped.png", alt: "Predictive", size: "w-[214px] h-[301px]" },
+      { front: "/retail/vertical-flipcard/accelerated-unflipped.png", back: "/retail/vertical-flipcard/accelerated-flipped.png", alt: "Accelerated", size: "w-[402px] h-[301px]" },
+    ],
+  }
+  },
+};
+
 const page = () => {
   return (
     <div className="smooth-scroll">
@@ -127,6 +149,7 @@ const page = () => {
         description={retailHeroTexts.description}
       />
       <HealthcareAICarousel features={caraouselfeature} />
+      <IndustrySection industryName="retail" {...industryData.retail} ></IndustrySection>
       <ExploreSectionHealthcare cards={cards} />
       <RelatedResources resources={resources} />
     </div>

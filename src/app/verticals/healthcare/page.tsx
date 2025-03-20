@@ -2,6 +2,8 @@ import ExploreSectionHealthcare from "@/components/ui/verticals/healthcare/explo
 import HealthcareAICarousel from "@/components/ui/verticals/healthcare/healthcare";
 import Header from "@/components/ui/verticals/healthcare/hero";
 import RelatedResources from "@/components/ui/verticals/related-resources";
+//import HealthcareSection from "@/components/ui/verticals/why-choose-neurologic";
+import IndustrySection from "@/components/ui/verticals/why-choose-neurologic";
 
 const healthcareHeroTexts = {
   primarytext: "Cutting-Edge AI Models",
@@ -172,6 +174,26 @@ const cards = [
   },
 ];
 
+const industryData = {
+  healthcare: {
+    heading: "Why Neurologic for Healthcare:",
+    images :{
+    icons: [
+      { src: "/healthcare/icon-top.png", width: 196, height: 71 },
+      { src: "/healthcare/icon-bottom.png", width: 196, height: 62 },
+    ],
+    flipCards: [
+      { front: "/healthcare/custom-ai-models.png", back: "/healthcare/custom-ai-models-back.png", alt: "Custom AI Models", size: "w-[196px] h-[297px]" },
+      { front: "/healthcare/fast-model-training.png", back: "/healthcare/fast-model-training-back.png", alt: "Fast Model Training", size: "w-[196px] h-[217px]" },
+      { front: "/healthcare/ai-automation.png", back: "/healthcare/ai-automation-back.png", alt: "AI Automation", size: "w-[417px] h-[297px]" },
+      { front: "/healthcare/proven-impact.png", back: "/healthcare/proven-impact-back.png", alt: "Proven Impact", size: "w-[196px] h-[227px]" },
+      { front: "/healthcare/accurate-diagnostics.png", back: "/healthcare/accurate-diagnostics-back.png", alt: "Accurate Diagnostics", size: "w-[214px] h-[301px]" },
+      { front: "/healthcare/secure-scalable-ai.png", back: "/healthcare/secure-scalable-ai-back.png", alt: "Secure & Scalable AI", size: "w-[402px] h-[301px]" },
+    ],
+  }
+  },
+};
+
 const page = () => {
   return (
     <div className="smooth-scroll">
@@ -180,7 +202,9 @@ const page = () => {
         secondarytext={healthcareHeroTexts.secondarytext}
         description={healthcareHeroTexts.description}
       />
+    
       <HealthcareAICarousel features={caraouselfeature} />
+      <IndustrySection industryName="Healthcare" {...industryData.healthcare} />
       <ExploreSectionHealthcare cards={cards} />
       <RelatedResources resources={resources} />
     </div>
