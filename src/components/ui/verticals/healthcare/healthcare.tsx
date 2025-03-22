@@ -39,9 +39,9 @@ export default function HealthcareAICarousel({
   }, [isAutoPlaying]);
 
   return (
-    <div className="w-screen relative flex flex-col items-center justify-center px-4 py-12 mt-5">
-      <div className="relative w-[95%] overflow-hidden">
-        <div className="relative flex h-[60vh] items-center justify-center ">
+    <div className="relative flex flex-col  items-center justify-center px-4 py-12">
+      <div className="relative w-full  overflow-hidden">
+        <div className="relative flex h-[60vh] items-center justify-center scale-80 md:scale-100 ">
           {features.map((feature, index) => {
             // Calculate position relative to active index
             const position =

@@ -68,6 +68,9 @@ export default function ServicesSection() {
   // const motionY: any = [];
 
   const motionY = cards.map((_, i) => {
+    if (device === "sm") {
+      return useTransform(scrollYProgress, [0, 1], [0, 0]);
+    }
     const start = (i * 0.6) / cards.length; // Start earlier
     const end = (i + 0.7) / cards.length; // End sooner
 
@@ -80,6 +83,7 @@ export default function ServicesSection() {
 
   useEffect(() => {
     const handleScroll = (event: WheelEvent) => {
+      if (device === "sm") return;
       if (!ulRef.current) return;
 
       const rect = ulRef.current.getBoundingClientRect();
@@ -102,7 +106,9 @@ export default function ServicesSection() {
     <section className="">
       <div
         className="max-w-[1537px] mx-auto relative my-20"
-        style={{ height: `${cards.length * 700}vh` }}
+        style={{
+          height: device === "sm" ? "auto" : `${cards.length * 700}vh`,
+        }}
         ref={sectionRef}
       >
         <h1 className="w-fit text-gradient  text-4xl md:text-6xl  bg-gradient-to-r from-blue from-40% to-primary via-60%   bg-clip-text text-transparent mb-10">
@@ -113,7 +119,7 @@ export default function ServicesSection() {
             return (
               <motion.li
                 key={index}
-                className={`px-12 py-14 w-full h-[700px] lg:h-[500px] border border-[#EAD2FF] rounded-2xl relative  bg-background`}
+                className={`px-6 md:px-12 py-14 w-full  lg:h-[500px] border border-[#EAD2FF] rounded-2xl relative  bg-background`}
                 style={{ y: motionY[index], zIndex: index }}
                 ref={(el) => {
                   liRefs.current[index] = el;
@@ -128,7 +134,7 @@ export default function ServicesSection() {
                       {item.description}
                     </p>
                   </div>
-                  <div className=" w-2/4 flex justify-center items-center">
+                  <div className=" lg:w-2/4 flex justify-center items-center">
                     <Image
                       src={item.logo}
                       alt={item.title}
