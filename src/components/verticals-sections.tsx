@@ -4,36 +4,32 @@ import Image from "next/image";
 import { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function VerticalsSection() {
   // Define the content for each vertical
   const verticals = {
     healthcare: {
       title: "HealthCare",
+      href: "/verticals/healthcare",
       content: (
         <>
           <p className="mb-4">
             Neurologic AI reimagines healthcare by pre-training{" "}
-            <span className="font-semibold">
-              foundational generative AI models
-            </span>
+            <span className="font-bold">foundational generative AI models</span>
             , domain-specific{" "}
-            <span className="font-semibold">visual language models (VLMs)</span>
-            , and{" "}
-            <span className="font-semibold">
-              intelligent document processing
-            </span>
-            . For the first time in the world we enabled{" "}
-            <span className="font-semibold">
+            <span className="font-bold">visual language models (VLMs)</span>,
+            and{" "}
+            <span className="font-bold">intelligent document processing</span>.
+            For the first time in the world we enabled{" "}
+            <span className="font-bold">
               prompt-based organ segmentation with LLM
             </span>{" "}
             in radiology, delivering precise, scalable solutions for patient
             diagnosis and treatment. Our advanced LLM-driven approach extracts
             critical findings from radiology reports, streamlining care pathways
             and fueling clinical insights. Meanwhile,{" "}
-            <span className="font-semibold">
-              Automated claim approval systems
-            </span>{" "}
+            <span className="font-bold">Automated claim approval systems</span>{" "}
             are revolutionizing next-generation health insurance workflows, with
             AI-driven prior authorization reducing administrative burdens and
             enhancing claim outcomes. By seamlessly integrating AI-powered
@@ -46,6 +42,7 @@ export default function VerticalsSection() {
     },
     manufacturing: {
       title: "Manufacturing",
+      href: "/verticals/manufacturing",
       content: (
         <>
           <p className="mb-4">
@@ -64,6 +61,7 @@ export default function VerticalsSection() {
     },
     retail: {
       title: "Retail",
+      href: "/verticals/retail",
       content: (
         <>
           <p className="mb-4">
@@ -85,23 +83,29 @@ export default function VerticalsSection() {
   const [selectedVertical, setSelectedVertical] = useState("healthcare");
 
   return (
-    <div className=" text-white h-[60vh] p-40">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-6xl tracking-wider w-[25rem] space-x-0.5 bg-gradient-to-r from-blue from-0% via-primary via-60%  to-white bg-clip-text text-transparent  mb-12">
+    <div className=" text-white min-h-[50vh] p-10 md:p-40 ">
+      <div className="max-w-7xl  mx-auto">
+        <h1 className="text-6xl tracking-wider  space-x-0.5 bg-gradient-to-r from-blue from-0% via-primary via-60%  to-white bg-clip-text text-transparent  mb-12">
           Verticals
         </h1>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-72">
+        <div className="grid md:grid-cols-1 lg:grid-cols-4 gap-x-20 sm:gap-y-20 order-first md:order-last ">
           {/* Left side content */}
-          <div className="lg:col-span-2">
-            <div className="text-white">
+          <div className="lg:col-span-2 order-2 lg:order-1 p-2">
+            <div className="text-white min-h-[30vh] ">
               {verticals[selectedVertical as keyof typeof verticals].content}
             </div>
-            <div className="mt-8 flex h-[10vh] items-center gap-4 font-bold text-white py-2 rounded-md">
-              <div className="text-3xl mt-6">
-                Explore{" "}
-                {verticals[selectedVertical as keyof typeof verticals].title}
-              </div>
+            <div className="mt-8 flex h-[10vh] items-center gap-4 font-bold text-white py-2 rounded-md p-2">
+              <Link
+                href={
+                  verticals[selectedVertical as keyof typeof verticals].href
+                }
+              >
+                <div className="text-3xl mt-6">
+                  Explore{" "}
+                  {verticals[selectedVertical as keyof typeof verticals].title}
+                </div>
+              </Link>
               <button className="cursor-pointer bg-gradient-to-r from-blue from-0% to-primary  mt-6 px-2 py-1 text-lg  text-white  rounded-lg transition flex items-center gap-2">
                 <ChevronRight className="h-8 w-8" />
               </button>
@@ -109,14 +113,14 @@ export default function VerticalsSection() {
           </div>
 
           {/* Right side navigation */}
-          <div className="lg:col-span-1 ">
-            <div className="flex flex-col space-y-16">
+          <div className="lg:col-span-2 order-1 lg:order-2">
+            <div className="flex flex-col space-y-16 w-full justify-end items-end">
               {Object.entries(verticals).map(([key, vertical]) => (
                 <button
                   key={key}
                   onClick={() => setSelectedVertical(key)}
                   className={cn(
-                    "cursor-pointer p-4 py-6 relative text-xl text-center font-medium transition-all duration-300",
+                    "w-full lg:w-60 cursor-pointer p-4 py-6 relative text-xl text-center font-medium transition-all duration-300",
                     selectedVertical === key &&
                       "bg-gradient-to-tr from-blue via-blue via-50% to-primary"
                   )}

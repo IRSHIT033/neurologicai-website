@@ -13,7 +13,7 @@ const links: LinksType = {
 
 export default function FooterLinks() {
   return (
-    <div className="grid grid-cols-4 gap-36">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-36">
       {" "}
       {/* Increased gap between columns */}
       {Object.keys(links).map((category) => (

@@ -3,15 +3,22 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <div className="relative my-0 bg-[url('/mesh.svg')] h-[130vh] bg-cover bg-no-repeat">
-      <div className="relative flex flex-col items-center justify-center h-64 text-white">
-        <div className="text-center mt-48">
-          <h1 className="text-7xl font-bold bg-gradient-to-r from-blue from-0% via-primary via-60%  to-white bg-clip-text text-transparent ">
+    <div
+      className="bg-cover bg-center bg-no-repeat min-h-screen"
+      style={{
+        backgroundImage: "url('/mesh.svg')",
+        backgroundPosition: "center top -120px",
+      }}
+    >
+      {/* Content */}
+      <div className="relative flex flex-col items-center justify-center h-24 text-white z-10 ">
+        <div className="text-center mt-48  p-4 rounded-lg">
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold bg-gradient-to-r from-blue from-0% via-primary via-60% to-white bg-clip-text text-transparent md:leading-20">
             Transforming Business <br /> with Intelligence.
           </h1>
         </div>
         <Link href="/contact">
-          <button className="cursor-pointer relative z-10 text-md bg-gradient-to-r from-blue from-0% via-primary to-primary-dark mt-6 px-6 py-2   text-white  rounded-lg transition flex items-center gap-2">
+          <button className="cursor-pointer relative z-10 text-md bg-gradient-to-r from-blue from-0% via-primary to-primary-dark mt-6 px-6 py-2 text-white rounded-lg transition flex items-center gap-2">
             Talk To Us
             <svg
               width="15"

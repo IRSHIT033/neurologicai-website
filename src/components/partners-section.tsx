@@ -1,6 +1,7 @@
 "use client";
 
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
+
 const logos = [
   "/globus-medical-logo.svg",
   "/hoppr-logo.svg",
@@ -9,6 +10,9 @@ const logos = [
   "/ust-logo.svg",
   "/pentatonic-logo.svg",
   "/fxpay-logo.svg",
+  "/felix.svg",
+  "/upgrad.svg",
+  "/smart-property.svg",
 ];
 
 const PartnerSection = () => {
