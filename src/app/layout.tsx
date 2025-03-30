@@ -30,7 +30,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
         <Navbar />
-        {children}
+        <main className="pt-[1vh] md:pt-[11vh]"> {/* Adjust this padding-top value */}
+      {children}
+    </main>
         <Footer />
       </body>
     </html>

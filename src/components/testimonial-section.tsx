@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 const testimonialsImages = [
   "/testimonials-1.svg",
   "/testimonials-2.svg",
-  "/testimonials-3.svg",
+  // "/testimonials-3.svg",
 ];
 
 const TestimonialSection = () => {

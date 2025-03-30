@@ -1,6 +1,6 @@
 const ContactUsHeader = () => {
   return (
-    <div className="w-full flex flex-col items-center justify-center  text-center">
+    <div className="w-screen flex flex-col items-center justify-center text-center pt-[2vh] md:pt-[4vh] lg:pt-[5vh]">
       <h1 className="text-6xl font-bold  mb-4 bg-gradient-to-r from-blue from-40% to-primary  bg-clip-text text-transparent ">
         Get in touch
       </h1>
