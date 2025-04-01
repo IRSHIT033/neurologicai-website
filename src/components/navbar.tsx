@@ -224,7 +224,7 @@ const Navbar = () => {
   if (device === "lg")
     return (
       <>
-        <div className="flex z-1000 relative bg-background  justify-center items-center space-x-20  h-[15vh]  md:text-lg text-sm  text-white font-bold">
+        <div className="flex z-1000 fixed bg-background justify-between space-x-10 items-center w-screen md:text-lg text-sm  text-white font-bold px-[3vw] py-[1vh] min-h-[10vh]">
           {NavItems.map((navitem) =>
             navitem.navtitle === "Logo" ? (
               <Link key={navitem.navtitle} href="/">
@@ -257,10 +257,10 @@ const Navbar = () => {
         {activeNavItem &&
           createPortal(
             <>
-              <div className="fixed inset-0 bg-black/10 backdrop-blur-sm z-40"></div>
+              {/* <div className="fixed inset-0 bg-black/10 backdrop-blur-sm z-40"></div> */}
               <div
                 ref={dropdownRef}
-                className="bg-background absolute top-[15vh] left-0 w-full z-50 py-12 shadow-lg  border-b-1"
+                className="bg-background fixed top-[10vh] left-0 w-screen z-50 py-12 shadow-lg  border-b-1"
               >
                 <div className="container mx-auto px-4">
                   <div className="flex justify-between">

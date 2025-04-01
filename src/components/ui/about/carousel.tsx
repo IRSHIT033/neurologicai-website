@@ -37,7 +37,6 @@ const AboutUsHeaderCarousel = () => {
       api.off("select", updateIndex);
     };
   }, [api]);
-
   return (
     <Carousel
       plugins={[plugin.current]}
