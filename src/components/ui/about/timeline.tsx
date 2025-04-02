@@ -41,7 +41,7 @@ const Timeline = () => {
       ref={ref}
       className=" flex flex-col lg:flex-row items-center justify-evenly mx-auto h-[60vh] gap-10 overflow-x-hidden"
     >
-      <h1 className="text-gradient text-5xl font-bold bg-gradient-to-r from-blue from-40% to-primary  bg-clip-text text-transparent">
+      <h1 className="text-gradient text-5xl poppinsTextMedium bg-gradient-to-r from-blue from-40% to-primary  bg-clip-text text-transparent">
         Timeline
       </h1>
       <div className="w-3xl relative flex">

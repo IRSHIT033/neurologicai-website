@@ -16,8 +16,8 @@ const contactDetails = [
 
 const DirectContactSection = () => {
   return (
-    <div className="flex flex-col mb-24   gap-8 text-left">
-      <p className="flex-1 text-4xl font-bold ">Want to reach us directly?</p>
+    <div className="flex flex-col mb-24 gap-7 text-left">
+      <p className="flex-1 text-4xl poppinsTextSemiBold ">Want to reach us directly?</p>
       <p className="flex-1 max-w-xs text-lg pt-4 pb-16">
         For business inquiries and partnerships, please connect
       </p>

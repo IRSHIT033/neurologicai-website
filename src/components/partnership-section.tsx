@@ -3,7 +3,7 @@ import Image from "next/image";
 const PartnershipSection = () => {
   return (
     <section className="text-white  text-center my-6">
-      <h2 className="text-center text-[36px] font-semibold leading-[65px] mb-1 text-transparent bg-gradient-to-r from-blue from-40% to-primary via-60% bg-clip-text">
+      <h2 className="text-center text-[38px] poppinsTextSemiBold leading-[65px] mb-1 text-transparent bg-gradient-to-r from-blue from-40% to-primary via-60% bg-clip-text">
         Our Partnership
       </h2>
 
