@@ -103,7 +103,7 @@ export default function ServicesSection() {
   }, []);
 
   return (
-    <section className="">
+    <section className="px-8 py-8">
       <div
         className="max-w-[1537px] mx-auto relative my-20"
         style={{

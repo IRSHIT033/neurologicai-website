@@ -83,9 +83,9 @@ export default function VerticalsSection() {
   const [selectedVertical, setSelectedVertical] = useState("healthcare");
 
   return (
-    <div className=" text-white min-h-[50vh] p-10 md:p-40 ">
+    <div className=" text-white min-h-[50vh] px-8 py-10 ">
       <div className="max-w-7xl  mx-auto">
-        <h1 className="text-6xl tracking-wider  space-x-0.5 bg-gradient-to-r from-blue from-0% via-primary via-60%  to-white bg-clip-text text-transparent  mb-12">
+        <h1 className="text-2xl sm:text-4xl md:text-6xl tracking-wider poppinsTextMedium space-x-0.5 bg-gradient-to-r from-blue from-0% via-primary via-60%  to-white bg-clip-text text-transparent  mb-12">
           Verticals
         </h1>
 
@@ -95,20 +95,21 @@ export default function VerticalsSection() {
             <div className="text-white min-h-[30vh] ">
               {verticals[selectedVertical as keyof typeof verticals].content}
             </div>
-            <div className="mt-8 flex h-[10vh] items-center gap-4 font-bold text-white py-2 rounded-md p-2">
-              <Link
+            <div className="mt-8 flex  h-[10vh] items-center gap-4 font-bold text-white py-2 rounded-md p-2">
+              <Link className="flex gap-4"
                 href={
                   verticals[selectedVertical as keyof typeof verticals].href
                 }
               >
-                <div className="text-3xl mt-6">
+                <div className="text-xl md:text-3xl mt-6">
                   Explore{" "}
                   {verticals[selectedVertical as keyof typeof verticals].title}
                 </div>
-              </Link>
-              <button className="cursor-pointer bg-gradient-to-r from-blue from-0% to-primary  mt-6 px-2 py-1 text-lg  text-white  rounded-lg transition flex items-center gap-2">
-                <ChevronRight className="h-8 w-8" />
+                <button className="cursor-pointer bg-gradient-to-r from-blue from-0% to-primary  mt-6 px-2 py-1 text-lg  text-white  rounded-lg transition flex items-center gap-2">
+                <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
               </button>
+              </Link>
+              
             </div>
           </div>
 
