@@ -160,7 +160,7 @@ export default function ServicesSection() {
           <div className="" style={{
     backgroundImage: `radial-gradient(circle at center, #022730, #0f0224,#0a0a0a)`,
   }}>
-              <div className="px-6 space-y-8 w-full max-w-3xl">
+              <div className="px-6 space-y-8 w-full">
             {cards.map((service, index) => (
               <div
                 key={index}

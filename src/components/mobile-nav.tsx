@@ -31,7 +31,7 @@ export default function MobileNavbar() {
       <div className="h-[10vh]" />
       <header
         className={cn(
-          "fixed w-full z-50 inset-0",
+          "fixed w-screen z-50 inset-0",
           isOpen ? "h-full" : "h-[10vh]"
         )}
       >

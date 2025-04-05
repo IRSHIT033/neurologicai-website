@@ -83,8 +83,8 @@ export default function VerticalsSection() {
   const [selectedVertical, setSelectedVertical] = useState("healthcare");
 
   return (
-    <div className=" text-white min-h-[50vh] px-6 lg:px-8 py-10 ">
-      <div className="max-w-7xl mx-auto">
+    <div className=" text-white min-h-auto lg:min-h-[50vh] px-6 lg:px-8 py-10 ">
+      <div className="w-full lg:max-w-7xl lg:mx-auto">
         <h1 className="text-2xl sm:text-4xl md:text-6xl tracking-wider poppinsTextSemiBold space-x-0.5 bg-gradient-to-r from-blue from-0% via-primary via-60%  to-white bg-clip-text text-transparent lg:mb-12">
           Verticals
         </h1>
@@ -92,7 +92,7 @@ export default function VerticalsSection() {
         <div className="grid md:grid-cols-1 lg:grid-cols-4 gap-2 lg:gap-x-20 sm:gap-y-20 order-first md:order-last">
           {/* Left side content */}
           <div className="lg:col-span-2 order-2 lg:order-1 p-2">
-            <div className="text-white poppinsTextLight text-sm lg:text-lg min-h-auto lg:min-h-[30vh] ">
+            <div className="text-white poppinsTextLight text-[13px] lg:text-lg min-h-auto lg:min-h-[30vh] ">
               {verticals[selectedVertical as keyof typeof verticals].content}
             </div>
             <div className="mt-2 lg:mt-8 flex h-[5vh] lg:h-[10vh] items-center gap-4 font-bold text-white py-2 rounded-md p-2">
@@ -121,12 +121,12 @@ export default function VerticalsSection() {
                   key={key}
                   onClick={() => setSelectedVertical(key)}
                   className={cn(
-                    "w-full lg:w-60 cursor-pointer lg:p-4 pt-0.5 lg:py-6 relative text-lg lg:text-xl text-center poppinsTextMedium transition-all duration-300",
+                    "w-full lg:w-60 cursor-pointer lg:p-4 pt-0.5 lg:py-6 relative text-md lg:text-xl text-center poppinsTextMedium transition-all duration-300",
                     selectedVertical === key &&
                       "bg-gradient-to-tr from-blue via-blue via-50% to-primary"
                   )}
                 >
-                  <div className="relative text-center lg:absolute flex gap-4 justify-between px-1 lg:px-4 poppinsTextMedium p-2 top-0.5 lg:right-0.5 w-full h-full bg-background ">
+                  <div className="relative text-center lg:absolute flex gap-2 lg:gap-4 justify-between px-1 lg:px-4 poppinsTextMedium p-2 top-0.5 lg:right-0.5 h-full bg-background ">
                     <Image
                       src="/arrow-left.svg"
                       alt={key}
