@@ -83,29 +83,29 @@ export default function VerticalsSection() {
   const [selectedVertical, setSelectedVertical] = useState("healthcare");
 
   return (
-    <div className=" text-white min-h-[50vh] px-8 py-10 ">
-      <div className="max-w-7xl  mx-auto">
-        <h1 className="text-2xl sm:text-4xl md:text-6xl tracking-wider poppinsTextMedium space-x-0.5 bg-gradient-to-r from-blue from-0% via-primary via-60%  to-white bg-clip-text text-transparent  mb-12">
+    <div className=" text-white min-h-[50vh] px-6 lg:px-8 py-10 ">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-2xl sm:text-4xl md:text-6xl tracking-wider poppinsTextSemiBold space-x-0.5 bg-gradient-to-r from-blue from-0% via-primary via-60%  to-white bg-clip-text text-transparent lg:mb-12">
           Verticals
         </h1>
 
-        <div className="grid md:grid-cols-1 lg:grid-cols-4 gap-x-20 sm:gap-y-20 order-first md:order-last ">
+        <div className="grid md:grid-cols-1 lg:grid-cols-4 gap-2 lg:gap-x-20 sm:gap-y-20 order-first md:order-last">
           {/* Left side content */}
           <div className="lg:col-span-2 order-2 lg:order-1 p-2">
-            <div className="text-white min-h-[30vh] ">
+            <div className="text-white poppinsTextLight text-sm lg:text-lg min-h-auto lg:min-h-[30vh] ">
               {verticals[selectedVertical as keyof typeof verticals].content}
             </div>
-            <div className="mt-8 flex  h-[10vh] items-center gap-4 font-bold text-white py-2 rounded-md p-2">
+            <div className="mt-2 lg:mt-8 flex h-[5vh] lg:h-[10vh] items-center gap-4 font-bold text-white py-2 rounded-md p-2">
               <Link className="flex gap-4"
                 href={
                   verticals[selectedVertical as keyof typeof verticals].href
                 }
               >
-                <div className="text-xl md:text-3xl mt-6">
+                <div className="text-lg sm:text-xl md:text-3xl mt-1 lg:mt-6 lg:items-center poppinsTextRegular">
                   Explore{" "}
                   {verticals[selectedVertical as keyof typeof verticals].title}
                 </div>
-                <button className="cursor-pointer bg-gradient-to-r from-blue from-0% to-primary  mt-6 px-2 py-1 text-lg  text-white  rounded-lg transition flex items-center gap-2">
+                <button className="cursor-pointer bg-gradient-to-r from-blue from-0% to-primary mt-1 lg:mt-6 px-2 py-1 text-lg  text-white  rounded-lg transition flex items-center gap-2">
                 <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
               </button>
               </Link>
@@ -114,26 +114,26 @@ export default function VerticalsSection() {
           </div>
 
           {/* Right side navigation */}
-          <div className="lg:col-span-2 order-1 lg:order-2">
-            <div className="flex flex-col space-y-16 w-full justify-end items-end">
+          <div className="lg:col-span-2 order-1 lg:order-2 mt-3 lg:mt-0">
+            <div className="flex flex-row gap-2 lg:flex-col space-y-1 lg:space-y-16 w-full justify-between lg:justify-end lg:items-end">
               {Object.entries(verticals).map(([key, vertical]) => (
                 <button
                   key={key}
                   onClick={() => setSelectedVertical(key)}
                   className={cn(
-                    "w-full lg:w-60 cursor-pointer p-4 py-6 relative text-xl text-center font-medium transition-all duration-300",
+                    "w-full lg:w-60 cursor-pointer lg:p-4 pt-0.5 lg:py-6 relative text-lg lg:text-xl text-center poppinsTextMedium transition-all duration-300",
                     selectedVertical === key &&
                       "bg-gradient-to-tr from-blue via-blue via-50% to-primary"
                   )}
                 >
-                  <div className="absolute  flex justify-between px-4 font-bold p-2 top-0.5 right-0.5 w-full h-full bg-background ">
+                  <div className="relative text-center lg:absolute flex gap-4 justify-between px-1 lg:px-4 poppinsTextMedium p-2 top-0.5 lg:right-0.5 w-full h-full bg-background ">
                     <Image
                       src="/arrow-left.svg"
                       alt={key}
                       width={50}
                       height={10}
                       className={cn(
-                        "opacity-0",
+                        "opacity-0 hidden lg:block",
                         selectedVertical === key && "opacity-100"
                       )}
                     />

@@ -35,11 +35,11 @@ const cardData = [
 
 const BusinessHelpSection = () => {
   return (
-    <section className=" py-16 text-center text-white">
-      <h2 className="text-4xl  md:text-4xl text-center  mb-4 bg-gradient-to-r from-blue from-40% via-primary via-60%  to-white bg-clip-text text-transparent  ">
+    <section className="py-8 lg:py-16 text-center text-white px-6 lg:px-8">
+      <h2 className="text-2xl md:text-3xl lg:text-4xltext-center mb-4 bg-gradient-to-r from-blue from-40% via-primary via-60%  to-white bg-clip-text text-transparent poppinsTextSemiBold">
         How We Help Businesses
       </h2>
-      <div className="flex mt-10 justify-center gap-6 flex-wrap">
+      <div className="flex mt-2 lg:mt-10 justify-center gap-2 lg:gap-6 flex-wrap">
         {cardData.map((card, index) => (
           <FlipCard
             key={index}

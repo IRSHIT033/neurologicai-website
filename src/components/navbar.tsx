@@ -260,7 +260,7 @@ const Navbar = () => {
               {/* <div className="fixed inset-0 bg-black/10 backdrop-blur-sm z-40"></div> */}
               <div
                 ref={dropdownRef}
-                className="bg-background fixed top-[10vh] left-0 w-screen z-50 py-12 shadow-lg  border-b-1"
+                className="bg-background fixed top-[10vh] left-0 w-full z-50 py-12 shadow-lg  border-b-1"
               >
                 <div className="container mx-auto px-4">
                   <div className="flex justify-between">

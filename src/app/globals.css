@@ -44,13 +44,6 @@
 }
 
 
-
-@font-face {
-  font-family: 'interLight';
-  src: url(/fonts/inter/Inter-Light-BETA.otf) format('truetype');
-  font-weight: 300;
-  font-style: normal;  
-}
 @font-face {
   font-family: 'interLight';
   src: url(/fonts/inter/Inter-Light-BETA.otf) format('truetype');
@@ -78,6 +71,12 @@
 @font-face {
   font-family: 'interBold';
   src: url(/fonts/inter/Inter-Bold.otf) format('truetype');
+  font-weight: 300;
+  font-style: normal;  
+}
+@font-face {
+  font-family: 'poppinsLight';
+  src: url(/fonts/poppins/Poppins-Light.ttf) format('truetype');
   font-weight: 300;
   font-style: normal;  
 }
@@ -118,11 +117,21 @@ body {
   font-family: 'interRegular';
 }
 
+.interTextLight{
+  font-family: 'interLight' !important;
+}
+
 .interTextSemiBold{
   font-family: 'interSemiBold' ;
 }
 .interTextBold{
   font-family: 'interBold';
+}
+.poppinsTextLight{
+  font-family: 'poppinsLight';
+}
+.poppinsTextRegular{
+  font-family: 'poppinsRegular';
 }
 .poppinsTextMedium{
   font-family: 'poppinsMedium';

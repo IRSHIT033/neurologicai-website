@@ -22,12 +22,13 @@ export default function CounterSection() {
   }, [inView, controls]);
 
   return (
-    <section ref={ref} className="  py-16 text-center text-white">
-      <div className="max-w-7xl text-lg mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+    <section ref={ref} className="px-5 py-6 lg:py-16 text-center text-white bg-background">
+      <div className="w-full lg:max-w-7xl text-sm lg:text-lg mx-auto flex flex-row justify-between md:grid  md:grid-cols-4 lg:gap-8"
+      >
         {stats.map((stat, index) => (
           <motion.div
             key={index}
-            className="flex flex-col items-center"
+            className="flex flex-col items-center w-[110px] md:w-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={controls}
             transition={{ duration: 1, delay: index * 0.2 }}
@@ -37,7 +38,7 @@ export default function CounterSection() {
             }}
           >
             <Counter value={stat.value} suffix={stat.suffix} />
-            <p className="text-2xl mt-3 bg-gradient-to-r from-blue from-0% to-primary via-70%   bg-clip-text text-transparent">
+            <p className="text-[14px] lg:text-2xl mt-1 lg:mt-3 bg-gradient-to-r from-blue from-0% to-primary via-70%   bg-clip-text text-transparent">
               {stat.label}
             </p>
           </motion.div>
@@ -72,10 +73,10 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
   return (
     <h2
       ref={ref}
-      className="text-4xl mt-20 flex justify-center items-center tracking-wider text-white font-bold"
+      className="text-xl lg:text-4xl lg:mt-12 flex text-center justify-center items-center tracking-wider text-white poppinsTextMedium"
     >
       {count}
-      <span className="ml-1 text-2xl">{suffix}</span>
+      <span className="text-md lg:text-2xl mt-1">{suffix}</span>
     </h2>
   );
 }
