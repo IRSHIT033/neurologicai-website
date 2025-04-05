@@ -103,51 +103,77 @@ export default function ServicesSection() {
   }, []);
 
   return (
-    <section className="">
+    <section className="lg:px-8 lg:py-10">
       <div
-        className="max-w-[1537px] mx-auto relative my-20"
+        className="max-w-screen lg:max-w-[1537px] mx-auto relative my-20 hidden lg:block"
         style={{
           height: device === "sm" ? "auto" : `${cards.length * 700}vh`,
         }}
         ref={sectionRef}
       >
-        <h1 className="w-fit text-gradient  text-4xl md:text-6xl  bg-gradient-to-r from-blue from-40% to-primary via-60%   bg-clip-text text-transparent mb-10">
-          Services
-        </h1>
-        <ul className="sticky top-0" ref={ulRef}>
-          {cards.map((item, index) => {
-            return (
-              <motion.li
-                key={index}
-                className={`px-6 md:px-12 py-14 w-full  lg:h-[500px] border border-[#EAD2FF] rounded-2xl relative  bg-background`}
-                style={{ y: motionY[index], zIndex: index }}
-                ref={(el) => {
-                  liRefs.current[index] = el;
-                }}
-              >
-                <div className="w-full h-full flex flex-col md:flex-row justify-between items-center">
-                  <div className="w-full md:w-2/4 h-full flex flex-col justify-between">
-                    <h3 className="text-4xl font-medium self-start">
-                      {item.title}
-                    </h3>
-                    <p className=" my-12 text-sm md:text-lg whitespace-break-spaces">
-                      {item.description}
-                    </p>
+          <h1 className="w-fit text-gradient text-4xl md:text-6xl  bg-gradient-to-r from-blue from-40% to-primary via-60%   bg-clip-text text-transparent mb-10">
+            Services
+          </h1>
+          <ul className="sticky top-0" ref={ulRef}>
+            {cards.map((item, index) => {
+              return (
+                <motion.li
+                  key={index}
+                  className={`px-6 md:px-12 py-14 w-full  lg:h-[500px] border border-[#EAD2FF] rounded-2xl relative  bg-background`}
+                  style={{ y: motionY[index], zIndex: index }}
+                  ref={(el) => {
+                    liRefs.current[index] = el;
+                  }}
+                >
+                  <div className="w-full h-full flex flex-col md:flex-row justify-between items-center">
+                    <div className="w-full md:w-2/4 h-full flex flex-col justify-between">
+                      <h3 className="text-4xl font-medium self-start">
+                        {item.title}
+                      </h3>
+                      <p className=" my-12 text-sm md:text-lg whitespace-break-spaces">
+                        {item.description}
+                      </p>
+                    </div>
+                    <div className=" lg:w-2/4 flex justify-center items-center">
+                      <Image
+                        src={item.logo}
+                        alt={item.title}
+                        height={400}
+                        width={400}
+                      />
+                    </div>
                   </div>
-                  <div className=" lg:w-2/4 flex justify-center items-center">
-                    <Image
-                      src={item.logo}
-                      alt={item.title}
-                      height={400}
-                      width={400}
-                    />
-                  </div>
-                </div>
-              </motion.li>
-            );
-          })}
-        </ul>
+                </motion.li>
+              );
+            })}
+          </ul>
+        
       </div>
+
+      <div className="block lg:hidden mt-6 mb-6">
+          <div className="px-6">
+            <h1 className="w-fit  poppinsTextSemiBold text-gradient text-2xl sm:text-4xl md:text-6xl  bg-gradient-to-r from-blue from-40% to-primary via-60%   bg-clip-text text-transparent mb-10">
+                Services
+              </h1>
+          </div>
+
+          <div className="" style={{
+    backgroundImage: `radial-gradient(circle at center, #022730, #0f0224,#0a0a0a)`,
+  }}>
+              <div className="px-6 space-y-8 w-full max-w-3xl">
+            {cards.map((service, index) => (
+              <div
+                key={index}
+                className="relative bg-transparent
+                p-6 rounded-xl border-2  border-[rgba(34,34,47,0.61)]  shadow-lg hover:bg-opacity-20 transition duration-300"
+              >
+                <h3 className="text-white bg-black text-md poppinsTextMedium mb-5 p-2 border-2 rounded-xl shadow-lg  border-[rgba(47,47,68,0.61)] ">{service.title}</h3>
+                <p className="text-white text-xs bg-transparent">{service.description}</p>
+              </div>
+            ))}
+            </div>
+          </div>
+        </div>
     </section>
   );
 }

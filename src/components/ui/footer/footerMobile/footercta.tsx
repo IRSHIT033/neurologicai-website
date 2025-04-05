@@ -4,7 +4,7 @@ export default function FooterCTA() {
   return (
     <div className="w-full flex flex-col items-start text-white px-4 py-6">
       {/* Logo (Flexible Width) */}
-      <div className="w-full max-w-[180px]">
+      <div className="w-full max-w-[150px] lg:max-w-[180px] ">
         <Image
           src="/Logo.svg"
           alt="Neurologic Logo"
@@ -15,7 +15,7 @@ export default function FooterCTA() {
       </div>
 
       {/* Heading (Flexible & Responsive) */}
-      <h2 className="font-montserrat font-light text-[28px] sm:text-xl text-white mt-4 leading-tight w-full">
+      <h2 className="font-montserrat font-light text-2xl lg:text-[28px]  text-gray-300 mt-4 leading-tight w-full poppinsTextMedium">
         Looking to Push <br /> Boundaries with Us?
       </h2>
 

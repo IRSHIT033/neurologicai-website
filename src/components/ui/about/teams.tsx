@@ -147,8 +147,8 @@ export default function TeamDirectory() {
   ];
 
   return (
-    <div className="bg-background min-h-screen p-4 md:p-6">
-      <h2 className="text-5xl py-10  text-center font-bold mb-4 bg-gradient-to-r from-blue from-40% via-primary via-60%  to-white bg-clip-text text-transparent  ">
+    <div className="bg-background min-h-screen pt-4 md:p-6 px-8">
+      <h2 className="text-5xl py-10 text-center poppinsTextSemiBold mb-4 bg-gradient-to-r from-blue from-40% via-primary via-60%  to-white bg-clip-text text-transparent  ">
         Team Neurologicai
       </h2>
       <div className="max-w-7xl mx-auto">

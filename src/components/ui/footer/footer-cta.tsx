@@ -1,11 +1,11 @@
 export default function FooterCTA() {
   return (
-    <div className="min-w-full px-4 py-6 flex flex-col justify-center items-center text-white">
-      <h2 className="text-2xl sm:text-4xl md:text-4xl font-bold text-white opacity-70 leading-[120%] mb-4 text-left mx-4">
+    <div className="min-w-full py-6 flex flex-col justify-center text-white">
+      <h2 className="text-2xl sm:text-4xl md:text-4xl font-bold text-white opacity-70 leading-[120%] mb-4 text-left">
         Looking to Push Boundaries with Us?
       </h2>
 
-      <div className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-sm">
+      <div className="flex flex-col sm:flex-row gap-4 w-full max-w-sm">
         <input
           type="text"
           placeholder="Enter your email here..."

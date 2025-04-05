@@ -43,11 +43,107 @@
   }
 }
 
+
+@font-face {
+  font-family: 'interLight';
+  src: url(/fonts/inter/Inter-Light-BETA.otf) format('truetype');
+  font-weight: 300;
+  font-style: normal;  
+}
+@font-face {
+  font-family: 'interRegular';
+  src: url(/fonts/inter/Inter-Regular.otf) format('truetype');
+  font-weight: 300;
+  font-style: normal;  
+}
+@font-face {
+  font-family: 'interMedium';
+  src: url(/fonts/inter/Inter-Medium.otf) format('truetype');
+  font-weight: 300;
+  font-style: normal;  
+}
+@font-face {
+  font-family: 'interSemiBold';
+  src: url(/fonts/inter/Inter-SemiBold.otf) format('truetype');
+  font-weight: 300;
+  font-style: normal;  
+}
+@font-face {
+  font-family: 'interBold';
+  src: url(/fonts/inter/Inter-Bold.otf) format('truetype');
+  font-weight: 300;
+  font-style: normal;  
+}
+@font-face {
+  font-family: 'poppinsLight';
+  src: url(/fonts/poppins/Poppins-Light.ttf) format('truetype');
+  font-weight: 300;
+  font-style: normal;  
+}
+@font-face {
+  font-family: 'poppinsRegular';
+  src: url(/fonts/poppins/Poppins-Regular.ttf) format('truetype');
+  font-weight: 300;
+  font-style: normal;  
+}
+@font-face {
+  font-family: 'poppinsMedium';
+  src: url(/fonts/poppins/Poppins-Medium.ttf) format('truetype');
+  font-weight: 300;
+  font-style: normal;  
+}
+@font-face {
+  font-family: 'poppinsSemiBold';
+  src: url(/fonts/poppins/Poppins-SemiBold.ttf) format('truetype');
+  font-weight: 300;
+  font-style: normal;  
+}
+@font-face {
+  font-family: 'poppinsBold';
+  src: url(/fonts/poppins/Poppins-Bold.ttf) format('truetype');
+  font-weight: 300;
+  font-style: normal;  
+}
+@font-face {
+  font-family: 'poppinsExtraBold';
+  src: url(/fonts/poppins/Poppins-ExtraBold.ttf) format('truetype');
+  font-weight: 300;
+  font-style: normal;  
+}
 body {
   overflow-x: hidden;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'interRegular';
+}
+
+.interTextLight{
+  font-family: 'interLight' !important;
+}
+
+.interTextSemiBold{
+  font-family: 'interSemiBold' ;
+}
+.interTextBold{
+  font-family: 'interBold';
+}
+.poppinsTextLight{
+  font-family: 'poppinsLight';
+}
+.poppinsTextRegular{
+  font-family: 'poppinsRegular';
+}
+.poppinsTextMedium{
+  font-family: 'poppinsMedium';
+}
+.poppinsTextSemiBold{
+  font-family: 'poppinsSemiBold';
+}
+.poppinsTextBold{
+  font-family: 'poppinsBold';
+}
+.poppinsTextExtraBold{
+  font-family: 'poppinsExtraBold';
 }
 
 @keyframes scroll {
@@ -88,3 +184,4 @@ body {
   animation: scroll var(--animation-duration) var(--animation-direction) linear
     infinite;
 }
+

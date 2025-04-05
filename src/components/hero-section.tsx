@@ -3,22 +3,25 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <div
-      className="bg-cover bg-center bg-no-repeat min-h-screen"
+    <div 
+      className="bg-cover bg-center bg-no-repeat min-h-[38vh] sm:min-h-[60vh] lg:min-h-screen bg-[url('/default.svg')] lg:bg-[url('/mesh.svg')]"
       style={{
-        backgroundImage: "url('/mesh.svg')",
-        backgroundPosition: "center top -120px",
+        // backgroundImage: "url('/mesh.svg')",
+        // backgroundPosition: "center top -120px",
+        backgroundSize: "cover",  // Ensures the image covers the full area
+        backgroundPosition: "center top",  // Positions image properly
+        backgroundRepeat: "no-repeat"
       }}
     >
       {/* Content */}
       <div className="relative flex flex-col items-center justify-center h-24 text-white z-10 ">
         <div className="text-center mt-20 lg:mt-48  p-4 rounded-lg">
-          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold bg-gradient-to-r from-blue from-0% via-primary via-60% to-white bg-clip-text text-transparent md:leading-20">
-            Transforming Business <br /> with Intelligence.
+          <h1 className="text-xl sm:text-2xl  md:text-5xl lg:text-7xl font-bold bg-gradient-to-r from-blue from-0% via-primary via-60% to-white bg-clip-text text-transparent md:leading-20">
+            Transforming Business <br /> <span className="text-md sm:text-2xl md:text-5xl lg:text-6xl">with Intelligence.</span>
           </h1>
         </div>
         <Link href="/contact">
-          <button className="cursor-pointer relative z-10 text-md bg-gradient-to-r from-blue from-0% via-primary to-primary-dark mt-6 px-6 py-2 text-white rounded-lg transition flex items-center gap-2">
+          <button className="cursor-pointer relative z-10 text-[10px] sm:text-sm md:text-md bg-gradient-to-r from-blue from-0% via-primary to-primary-dark mt-1 md:mt-6 px-2 py-1 sm:px-3 sm:py-1 md:px-6 md:py-2 text-white rounded-lg transition flex items-center gap-2">
             Talk To Us
             <svg
               width="15"
