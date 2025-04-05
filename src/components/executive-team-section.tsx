@@ -59,7 +59,7 @@ export default function ExecutiveTeam() {
 
   return (
     <section className=" px-6 lg:px-8 mt-10  text-white h-auto lg:min-h-[70vh]">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-auto lg:max-w-7xl mx-auto">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-center poppinsTextSemiBold  mb-4 bg-gradient-to-r from-blue from-40% via-primary via-60%  to-white bg-clip-text text-transparent ">
           Senior Team
         </h1>
@@ -68,9 +68,9 @@ export default function ExecutiveTeam() {
           frontiers and creating transformative results
         </p>
 
-        <div className="flex flex-row flex-wrap justify-between md:grid md:grid-cols-2 lg:grid-cols-5 gap-2 lg:gap-8 justify-items-center">
+        <div className="flex flex-row flex-wrap justify-center md:grid md:grid-cols-2 lg:grid-cols-5 gap-2 lg:gap-8 justify-items-center">
           {teamMembers.map((member, index) => (
-            <div key={index} className="flex flex-col items-center">
+            <div key={index} className="flex flex-col items-center w-[85px] md:w-auto">
               <div className="relative mb-4 lg:mb-6">
                 <div className="absolute inset-0 rounded-full bg-purple-900/50 blur-md transform scale-110"></div>
                 <div className="relative w-11 h-12 sm:w-20 sm:h-20 md:w-30 md:h-30 lg:w-48 lg:h-48 rounded-full overflow-hidden ">

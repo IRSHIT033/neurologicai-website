@@ -4,7 +4,7 @@ import Link from "next/link";
 const HeroSection = () => {
   return (
     <div 
-      className="bg-cover bg-center bg-no-repeat min-h-[38vh] sm:min-h-[60vh] lg:min-h-screen bg-[url('/default.svg')] lg:bg-[url('/mesh.svg')]"
+      className="bg-cover bg-center bg-no-repeat min-h-[38vh] lg:min-h-screen bg-[url('/Default.svg')] lg:bg-[url('/mesh.svg')]"
       style={{
         // backgroundImage: "url('/mesh.svg')",
         // backgroundPosition: "center top -120px",

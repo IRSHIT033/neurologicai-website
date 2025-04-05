@@ -15,20 +15,20 @@ const FlipCard = ({
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleMouseEnter = () => {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 1024) {
       setIsFlipped(true);
     }
   };
   
   const handleMouseLeave = () => {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 1024) {
       setIsFlipped(false);
     }
   };
 
   return (
     <div
-      className="relative w-[102px] h-[95px]  lg:w-[251px] lg:h-[328px] perspective-1000 cursor-pointer "
+      className="relative w-[102px] h-[95px] md:w-[140px] md:h-[105px]   lg:w-[251px] lg:h-[328px] perspective-1000 cursor-pointer "
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -44,7 +44,7 @@ const FlipCard = ({
               {number}
             </div>
           </div>
-          <p className="pb-[3px] px-[2px] lg:p-2 flex-1 text-[11px] lg:text-2xl text-left poppinsTextMedium mx-1">
+          <p className="pb-[3px] px-[2px] lg:p-2 flex-1 text-[11px] md:text-[13px] lg:text-2xl text-left poppinsTextMedium mx-1">
             {title}
           </p>
         </div>
