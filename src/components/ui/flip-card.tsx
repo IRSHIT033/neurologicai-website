@@ -28,23 +28,23 @@ const FlipCard = ({
 
   return (
     <div
-      className="relative w-[102px] h-[95px] md:w-[140px] md:h-[105px]   lg:w-[251px] lg:h-[328px] perspective-1000 cursor-pointer "
+      className="relative w-[91px] h-[91px] md:w-[140px] md:h-[105px]   lg:w-[251px] lg:h-[328px] perspective-1000 cursor-pointer "
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <motion.div
-        className="absolute w-full h-full transition-transform duration-75 preserve-3d border-1 rounded-2xl"
+        className="absolute w-full h-full transition-transform duration-75 preserve-3d border-1 rounded-xl md:rounded-2xl"
         animate={{ rotateY: isFlipped ? 180 : 0 }}
         style={{ transformStyle: "preserve-3d" }}
       >
         {/* Front Side */}
-        <div className="absolute  w-full h-full bg-gradient-to-b from-black via-purple-dark via-50% to-purple-lighter text-white rounded-2xl flex flex-col items-start justify-evenly shadow-lg backface-hidden">
+        <div className="absolute  w-full h-full bg-gradient-to-b from-black via-purple-dark via-50% to-purple-lighter text-white rounded-xl md:rounded-2xl flex flex-col items-start justify-evenly shadow-lg backface-hidden">
           <div className="flex-1 m-1 p-[2px] lg:p-2">
-            <div className="text-[11px] md:text-lg lg:text-3xl text-primary-dark w-4 h-4 md:w-6 md:h-6  lg:w-15 lg:h-15 flex items-center justify-center  font-bold bg-purple-lightest rounded-full">
+            <div className="text-[13px] md:text-lg lg:text-3xl text-primary-dark w-4 h-4 md:w-6 md:h-6  lg:w-15 lg:h-15 flex items-center justify-center  font-bold bg-purple-lightest rounded-full">
               {number}
             </div>
           </div>
-          <p className="pb-[3px] px-[2px] lg:p-2 flex-1 text-[11px] md:text-[13px] lg:text-2xl text-left poppinsTextMedium mx-1">
+          <p className="pb-[3px] px-[2px] lg:p-2 flex-1 text-[7.5px] md:text-[13px] lg:text-2xl text-left poppinsTextMedium mx-1">
             {title}
           </p>
         </div>
