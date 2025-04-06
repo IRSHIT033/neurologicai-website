@@ -83,30 +83,32 @@ export default function VerticalsSection() {
   const [selectedVertical, setSelectedVertical] = useState("healthcare");
 
   return (
-    <div className=" text-white min-h-auto lg:min-h-[50vh] px-6 lg:px-8 py-10 ">
+    <div className=" text-white min-h-auto lg:min-h-[50vh] px-6 py-8 md:px-8 md:py-10 ">
       <div className="w-full lg:max-w-7xl lg:mx-auto">
-        <h1 className="text-2xl sm:text-4xl md:text-6xl tracking-wider poppinsTextSemiBold space-x-0.5 bg-gradient-to-r from-blue from-0% via-primary via-60%  to-white bg-clip-text text-transparent lg:mb-12">
+        <h1 className="text-[10px] sm:text-2xl md:text-4xl lg:text-6xl tracking-wider poppinsTextSemiBold space-x-0.5 bg-gradient-to-r from-blue from-0% via-primary via-60%  to-white 
+        bg-clip-text text-transparent lg:mb-12">
           Verticals
         </h1>
 
-        <div className="grid md:grid-cols-1 lg:grid-cols-4 gap-2 lg:gap-x-20 sm:gap-y-20 order-first md:order-last">
+        <div className="grid md:grid-cols-1 lg:grid-cols-4 gap-2 lg:gap-x-20 lg:gap-y-20 order-first md:order-last">
           {/* Left side content */}
-          <div className="lg:col-span-2 order-2 lg:order-1 p-2">
-            <div className="text-white poppinsTextLight text-[13px] lg:text-lg min-h-auto lg:min-h-[30vh] ">
+          <div className="lg:col-span-2 order-2 lg:order-1 py-2 lg:p-2 ">
+            <div className="text-white poppinsTextLight text-[6px] lg:text-lg min-h-auto lg:min-h-[30vh] ">
               {verticals[selectedVertical as keyof typeof verticals].content}
             </div>
-            <div className="mt-2 lg:mt-8 flex h-[5vh] lg:h-[10vh] items-center gap-4 font-bold text-white py-2 rounded-md p-2">
+            <div className="lg:mt-8 flex lg:h-[10vh] items-center gap-4 font-bold text-white lg:py-2 rounded-md lg:p-2">
               <Link className="flex gap-4"
                 href={
                   verticals[selectedVertical as keyof typeof verticals].href
                 }
               >
-                <div className="text-lg sm:text-xl md:text-3xl mt-1 lg:mt-6 lg:items-center poppinsTextRegular">
+                <div className="text-[8px] sm:text-xl md:text-3xl mt-1 lg:mt-6 items-center poppinsTextRegular">
                   Explore{" "}
                   {verticals[selectedVertical as keyof typeof verticals].title}
                 </div>
-                <button className="cursor-pointer bg-gradient-to-r from-blue from-0% to-primary mt-1 lg:mt-6 px-2 py-1 text-lg  text-white  rounded-lg transition flex items-center gap-2">
-                <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
+                <button className="cursor-pointer bg-gradient-to-r from-blue from-0% to-primary mt-1 lg:mt-6 px-[4px] lg:px-2 lg:py-1 
+                text-lg text-white  rounded-sm lg:rounded-lg transition flex items-center gap-2 h-[12px] lg:h-auto">
+                <ChevronRight className="h-2 w-2 md:h-8 md:w-8" />
               </button>
               </Link>
               
@@ -115,18 +117,22 @@ export default function VerticalsSection() {
 
           {/* Right side navigation */}
           <div className="lg:col-span-2 order-1 lg:order-2 mt-3 lg:mt-0">
-            <div className="flex flex-row gap-2 lg:flex-col space-y-1 lg:space-y-16 w-full justify-between lg:justify-end lg:items-end">
+            <div className="flex flex-row justify-between lg:flex-col space-y-1 lg:space-y-16 w-full  lg:justify-end lg:items-end">
               {Object.entries(verticals).map(([key, vertical]) => (
                 <button
                   key={key}
                   onClick={() => setSelectedVertical(key)}
                   className={cn(
-                    "w-full lg:w-60 cursor-pointer lg:p-4 pt-0.5 lg:py-6 relative text-md lg:text-xl text-center poppinsTextMedium transition-all duration-300",
+                    "w-auto lg:w-60 cursor-pointer lg:p-4 pt-[1px] lg:pt-0.5 lg:py-6 relative text-[8px] md:text-sm lg:text-xl text-center poppinsTextMedium transition-all duration-300",
                     selectedVertical === key &&
                       "bg-gradient-to-tr from-blue via-blue via-50% to-primary"
                   )}
+                 
                 >
-                  <div className="relative text-center lg:absolute flex gap-2 lg:gap-4 justify-between px-1 lg:px-4 poppinsTextMedium p-2 top-0.5 lg:right-0.5 h-full bg-background ">
+                  <div className="relative lg:absolute flex flex-row  justify-between lg:gap-4 px-0.5 lg:px-4 poppinsTextMedium 
+                  pt-1 lg:p-2 right-[1px] lg:top-0.5 lg:right-0.5 h-full w-full  bg-background "
+                 
+                 >
                     <Image
                       src="/arrow-left.svg"
                       alt={key}

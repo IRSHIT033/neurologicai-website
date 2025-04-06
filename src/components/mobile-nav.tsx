@@ -28,10 +28,11 @@ export default function MobileNavbar() {
 
   return (
     <>
-      <div className="h-[10vh]" />
+      <div className="h-[5vh]"
+      />
       <header
         className={cn(
-          "fixed w-screen z-50 inset-0",
+          "fixed w-screen z-50 inset-0 ",
           isOpen ? "h-full" : "h-[10vh]"
         )}
       >
@@ -44,6 +45,7 @@ export default function MobileNavbar() {
                 alt="Neurologicai logo"
                 width={150}
                 height={150}
+                className="w-[100] md:w-[150] lg:w-auto"
               />
             </Link>
           </div>

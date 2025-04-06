@@ -12,9 +12,9 @@ export default function FooterContact() {
             alt="Location"
             width={20}
             height={20}
-            className="w-[40px] h-[40px]"
+            className="w-[24px] h-[24px]"
           />
-          <p className="text-[10px] leading-[16px]">
+          <p className="text-[7px] leading-[16px]">
             254 Chapman Rd, Ste 208
             <br />
             #17957, Newark, Delaware
@@ -30,14 +30,14 @@ export default function FooterContact() {
             alt="Email"
             width={20}
             height={20}
-            className="w-[25px] h-[25px]"
+            className="w-[17px] h-[17px]"
           />
-          <p className="text-[10px] whitespace-nowrap">info@neurologicai.com</p>
+          <p className="text-[7px] whitespace-nowrap">info@neurologicai.com</p>
         </div>
       </div>
 
       {/* Copyright Text (Bottom Center) */}
-      <div className="w-full text-center text-[#FFFFFF] opacity-32 poppinsTextLight text-sm mt-8 italic">
+      <div className="w-full text-center text-[#FFFFFF] opacity-32 poppinsTextLight text-[10px] mt-8 italic">
         <p>Copyright©2025 Neurologic AI</p>
       </div>
     </div>

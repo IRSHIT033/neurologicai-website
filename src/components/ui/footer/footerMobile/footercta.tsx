@@ -4,7 +4,7 @@ export default function FooterCTA() {
   return (
     <div className="w-full flex flex-col items-start text-white px-4 py-6">
       {/* Logo (Flexible Width) */}
-      <div className="w-full max-w-[150px] lg:max-w-[180px] ">
+      <div className="w-full max-w-[115px] h-[29px] md:max-w-[180px] md:h-auto ">
         <Image
           src="/Logo.svg"
           alt="Neurologic Logo"
@@ -15,7 +15,7 @@ export default function FooterCTA() {
       </div>
 
       {/* Heading (Flexible & Responsive) */}
-      <h2 className="font-montserrat font-light text-2xl lg:text-[28px]  text-gray-300 mt-4 leading-tight w-full poppinsTextMedium">
+      <h2 className="font-montserrat font-light text-[16px] lg:text-[28px]  text-gray-300 mt-4 leading-tight w-full poppinsTextMedium">
         Looking to Push <br /> Boundaries with Us?
       </h2>
 
@@ -23,11 +23,11 @@ export default function FooterCTA() {
       <input
         type="text"
         placeholder="Enter your email here..."
-        className="w-full py-2 px-4 text-[#B3B3B3] bg-white rounded-lg outline-none text-[14px] mt-3"
+        className="w-full py-2 px-4 text-[#B3B3B3] bg-white rounded-lg outline-none text-[10px] mt-3"
       />
 
       {/* Contact Us Button */}
-      <button className="w-full mt-3 py-2 px-4 rounded-lg bg-gradient-to-b from-[#5323EC] to-[#A400FF] text-white text-[14px] font-medium transition">
+      <button className="w-full mt-3 py-2 px-4 rounded-lg bg-gradient-to-b from-[#5323EC] to-[#A400FF] text-white text-[10px] font-medium transition">
         Contact us
       </button>
     </div>

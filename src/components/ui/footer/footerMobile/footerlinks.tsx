@@ -23,15 +23,15 @@ export default function FooterLinks() {
       <div className="flex flex-col gap-7">
         {/* Verticals */}
         <div>
-          <h3 className="text-md font-bold border-l-4 border-purple-500 pl-2">
+          <h3 className="text-[13px] font-bold border-l-4 border-purple-500 pl-2">
             Verticals
           </h3>
-          <ul className="space-y-1.5 lg:space-y-3 mt-3">
+          <ul className="space-y-1 lg:space-y-3 mt-3">
             {links["Verticals"].map((link) => (
               <li key={link}>
                 <Link
                   href={`/verticals/${link.toLowerCase().replace(/ /g, "-")}`}
-                  className="text-[#FFFFFF] opacity-50 text-sm hover:text-white transition"
+                  className="text-[#FFFFFF] opacity-50 text-[10px] hover:text-white transition"
                 >
                   {link}
                 </Link>
@@ -42,15 +42,15 @@ export default function FooterLinks() {
 
         {/* Resources */}
         <div>
-          <h3 className="text-md font-bold border-l-4 border-purple-500 pl-2">
+          <h3 className="text-[13px] font-bold border-l-4 border-purple-500 pl-2">
             Resources
           </h3>
-          <ul className="space-y-1.5 lg:space-y-3 mt-3 text-[15px]">
+          <ul className="space-y-1 lg:space-y-3 mt-3">
             {links["Resources"].map((link) => (
               <li key={link}>
                 <Link
                   href={`/resources/${link.toLowerCase().replace(/ /g, "-")}`}
-                  className="text-[#FFFFFF] opacity-50 text-sm hover:text-white transition"
+                  className="text-[#FFFFFF] opacity-50 text-[10px] hover:text-white transition"
                 >
                   {link}
                 </Link>
@@ -61,15 +61,15 @@ export default function FooterLinks() {
 
         {/* Career */}
         <div>
-          <h3 className="text-md font-bold border-l-4 border-purple-500 pl-2">
+          <h3 className="text-[13px] font-bold border-l-4 border-purple-500 pl-2">
             Career
           </h3>
-          <ul className="space-y-1.5 lg:space-y-3 mt-3">
+          <ul className="space-y-1 lg:space-y-3 mt-3">
             {links["Career"].map((link) => (
               <li key={link}>
                 <Link
                   href={`/career/${link.toLowerCase().replace(/ /g, "-")}`}
-                  className="text-[#FFFFFF] opacity-50 text-sm hover:text-white transition"
+                  className="text-[#FFFFFF] opacity-50 text-[10px] hover:text-white transition"
                   style={{ lineHeight: 1.3 }}
                 >
                   {link}
@@ -81,9 +81,9 @@ export default function FooterLinks() {
 
         {/* Awards & LinkedIn Images */}
         <div className="flex gap-4 items-center">
-          <Image src="/business-award.svg" alt="Award" width={80} height={80} />
+          <Image src="/business-award.svg" alt="Award" width={64} height={30} />
           <Link href="https://linkedin.com" target="_blank">
-            <Image src="/LinkedIn.svg" alt="LinkedIn" width={50} height={50} />
+            <Image src="/Linkedin.svg" alt="LinkedIn" width={30} height={30} />
           </Link>
         </div>
       </div>
@@ -92,15 +92,15 @@ export default function FooterLinks() {
       <div className="flex flex-col gap-6">
         {/* Services (Written Differently) */}
         <div>
-          <h3 className="text-md font-bold border-l-4 border-purple-500 pl-2">
+          <h3 className="text-[13px] font-bold border-l-4 border-purple-500 pl-2">
             Services
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
             {links["Services"].map((link) => (
               <Link
                 key={link}
                 href={`/services/${link.toLowerCase().replace(/ /g, "-")}`}
-                className="text-[#FFFFFF] opacity-50 text-sm hover:text-white transition"
+                className="text-[#FFFFFF] opacity-50 text-[10px] hover:text-white transition"
                 style={{ lineHeight: 1.3 }}
               >
                 {link}
@@ -111,15 +111,15 @@ export default function FooterLinks() {
 
         {/* Company */}
         <div>
-          <h3 className="text-md font-bold border-l-4 border-purple-500 pl-2 mt-3">
+          <h3 className="text-[13px] font-bold border-l-4 border-purple-500 pl-2 mt-3">
             Company
           </h3>
-          <ul className="space-y-1.5 lg:space-y-3 mt-3">
+          <ul className="space-y-1 lg:space-y-3 mt-3">
             {links["Company"].map((link) => (
               <li key={link}>
                 <Link
                   href={`/company/${link.toLowerCase().replace(/ /g, "-")}`}
-                  className="text-[#FFFFFF] opacity-50 text-sm hover:text-white transition"
+                  className="text-[#FFFFFF] opacity-50 text-[10px] hover:text-white transition"
                 >
                   {link}
                 </Link>

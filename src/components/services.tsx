@@ -150,26 +150,39 @@ export default function ServicesSection() {
         
       </div>
 
-      <div className="block lg:hidden mt-6 mb-6">
+      <div className="block lg:hidden">
           <div className="px-6">
-            <h1 className="w-fit  poppinsTextSemiBold text-gradient text-2xl sm:text-4xl md:text-6xl  bg-gradient-to-r from-blue from-40% to-primary via-60%   bg-clip-text text-transparent mb-10">
+            <h1 className="w-fit mb-4  poppinsTextSemiBold text-gradient text-[10px] md:text-4xl lg:text-6xl  bg-gradient-to-r from-blue from-40% to-primary via-60%   bg-clip-text text-transparent">
                 Services
               </h1>
           </div>
 
-          <div className="" style={{
-    backgroundImage: `radial-gradient(circle at center, #022730, #0f0224,#0a0a0a)`,
-  }}>
-              <div className="px-6 space-y-8 w-full">
+          <div className="bg-blend-multiply" 
+          // style={{backgroundImage: `radial-gradient(circle at center, #022730, #0f0224,#0a0a0a)`}}
+          style={{
+            // backgroundImage: `linear-gradient(75deg,#0a0a0a, #021d24,#0c031c,#0a0a0a)`,
+           
+              backgroundImage: `linear-gradient(75deg, #0a0a0a 0%, #021d24 35%, #0c031c 70%, #0a0a0a 100%),
+              radial-gradient(circle at top left, rgba(0,0,0,0.6), transparent 10%),
+              radial-gradient(circle at bottom right, rgba(0,0,0,0.6), transparent 10%)`,
+            
+            backgroundBlendMode: 'multiply, normal',
+          }}
+        
+         >
+              <div className="w-full px-6 space-y-8">
             {cards.map((service, index) => (
+              // <div  className="">
               <div
                 key={index}
                 className="relative bg-transparent
                 p-6 rounded-xl border-2  border-[rgba(34,34,47,0.61)]  shadow-lg hover:bg-opacity-20 transition duration-300"
+               
               >
-                <h3 className="text-white bg-black text-md poppinsTextMedium mb-5 p-2 border-2 rounded-xl shadow-lg  border-[rgba(47,47,68,0.61)] ">{service.title}</h3>
-                <p className="text-white text-xs bg-transparent">{service.description}</p>
+                <h3 className="text-white bg-black text-[13px] md:text-md poppinsTextMedium mb-5 py-1.5 px-2 border-2 rounded-xl shadow-lg  border-[rgba(47,47,68,0.61)] ">{service.title}</h3>
+                <p className="text-white text-[6px] bg-transparent">{service.description}</p>
               </div>
+              // </div>
             ))}
             </div>
           </div>
