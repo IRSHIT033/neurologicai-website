@@ -38,7 +38,7 @@ const TestimonialSection = () => {
   }, [api]);
 
   return (
-    <section className="px-6 lg:px-8 pt-10 pb-2 md:py-10  text-center flex flex-col justify-center items-center text-white bg-background">
+    <section className="px-6 md:px-7 lg:px-8 pt-10 pb-2 md:py-10  text-center flex flex-col justify-center items-center text-white bg-background">
       <h1 className="text-[10px] sm:text-2xl md:text-4xl min-w-[40vw] md:min-w-full text-center mb-2 md:mb-4 bg-gradient-to-r from-blue from-40% to-primary via-60%  bg-clip-text text-transparent
       poppinsTextSemiBold">
         Clients Who Trust Us, Heres Why
