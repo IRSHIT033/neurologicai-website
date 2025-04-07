@@ -4,28 +4,35 @@ import HoverDots from "./ui/dots-hover";
 import Link from "next/link";
 
 const HeroSection = () => {
-
-  const [width, setWidth] = useState(window.innerWidth);
+  //useMounted 
+  const [width, setWidth] = useState(0); // Start with 0 or a safe fallback
+  const [mounted, setMounted] = useState(false); // Track if component is mounted
 
   useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
+    if (typeof window !== 'undefined') {
+      setMounted(true);
+      setWidth(window.innerWidth);
 
-    // Cleanup
-    return () => window.removeEventListener('resize', handleResize);
+      const handleResize = () => setWidth(window.innerWidth);
+      window.addEventListener('resize', handleResize);
+
+      return () => window.removeEventListener('resize', handleResize);
+    }
   }, []);
   const getStyle = () => {
+    if (!mounted) return {}; // Don't return any style until mounted
+
     if (width >= 1024) {
       return { height: '100vh' };
     } else if (width >= 768) {
-      return { height: '55vh' };
+      return { height: '465px' };
     } else if (width >= 425) {
-      return { height: '37vh' };
+      return { height: '265px' };
     }
     else if (width >= 375) {
-      return { height: '35vh' };
+      return { height: '230px' }; //35vh
     } else {
-      return { height: '27vh' };
+      return { height: '195px' }; //27vh
     }
   };
 
