@@ -83,9 +83,9 @@ export default function VerticalsSection() {
   const [selectedVertical, setSelectedVertical] = useState("healthcare");
 
   return (
-    <div className=" text-white min-h-auto lg:min-h-[50vh] px-6 py-8 md:px-8 md:py-10 ">
+    <div className=" text-white min-h-auto lg:min-h-[50vh] px-6 py-8 md:px-8 md:py-10">
       <div className="w-full lg:max-w-7xl lg:mx-auto">
-        <h1 className="text-[10px] sm:text-2xl md:text-4xl lg:text-6xl tracking-wider poppinsTextSemiBold space-x-0.5 bg-gradient-to-r from-blue from-0% via-primary via-60%  to-white 
+        <h1 className="text-[16px] sm:text-2xl md:text-4xl lg:text-6xl tracking-wider poppinsTextSemiBold space-x-0.5 bg-gradient-to-r from-blue from-0% via-primary via-60%  to-white 
         bg-clip-text text-transparent lg:mb-12">
           Verticals
         </h1>
@@ -93,7 +93,7 @@ export default function VerticalsSection() {
         <div className="grid md:grid-cols-1 lg:grid-cols-4 gap-2 lg:gap-x-20 lg:gap-y-20 order-first md:order-last">
           {/* Left side content */}
           <div className="lg:col-span-2 order-2 lg:order-1 py-2 lg:p-2 ">
-            <div className="text-white poppinsTextLight text-[6px] lg:text-lg min-h-auto lg:min-h-[30vh] ">
+            <div className="text-white poppinsTextLight text-[10px] lg:text-lg min-h-auto lg:min-h-[30vh] text-justify lg:text-left ">
               {verticals[selectedVertical as keyof typeof verticals].content}
             </div>
             <div className="lg:mt-8 flex lg:h-[10vh] items-center gap-4 font-bold text-white lg:py-2 rounded-md lg:p-2">
@@ -102,13 +102,13 @@ export default function VerticalsSection() {
                   verticals[selectedVertical as keyof typeof verticals].href
                 }
               >
-                <div className="text-[8px] sm:text-xl md:text-3xl mt-1 lg:mt-6 items-center poppinsTextRegular">
+                <div className="text-[12px] sm:text-xl md:text-3xl mt-1 lg:mt-6 items-center poppinsTextRegular">
                   Explore{" "}
                   {verticals[selectedVertical as keyof typeof verticals].title}
                 </div>
-                <button className="cursor-pointer bg-gradient-to-r from-blue from-0% to-primary mt-1 lg:mt-6 px-[4px] lg:px-2 lg:py-1 
-                text-lg text-white  rounded-sm lg:rounded-lg transition flex items-center gap-2 h-[12px] lg:h-auto">
-                <ChevronRight className="h-2 w-2 md:h-8 md:w-8" />
+                <button className="cursor-pointer bg-gradient-to-r from-blue from-0% to-primary mt-1.5 lg:mt-6 px-[3px] lg:px-2 lg:py-1 
+                text-lg text-white  rounded-sm lg:rounded-lg transition flex items-center gap-2 h-[14px] lg:h-auto">
+                <ChevronRight className="h-3 w-3 md:h-8 md:w-8" />
               </button>
               </Link>
               
@@ -123,7 +123,7 @@ export default function VerticalsSection() {
                   key={key}
                   onClick={() => setSelectedVertical(key)}
                   className={cn(
-                    "w-auto lg:w-60 cursor-pointer lg:p-4 pt-[1px] lg:pt-0.5 lg:py-6 relative text-[8px] md:text-sm lg:text-xl text-center poppinsTextMedium transition-all duration-300",
+                    "w-auto lg:w-60 cursor-pointer lg:p-4 pt-[1px] lg:pt-0.5 lg:py-6 relative text-[12px] md:text-sm lg:text-xl text-center poppinsTextMedium transition-all duration-300",
                     selectedVertical === key &&
                       "bg-gradient-to-tr from-blue via-blue via-50% to-primary"
                   )}
