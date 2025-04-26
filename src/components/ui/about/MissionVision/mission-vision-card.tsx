@@ -10,10 +10,10 @@ export default function MissionCard({
 
   return (
     <div
-      className={`w-[400px] h-[143px] flex-shrink-0 border rounded-[20px] flex items-center justify-center text-center px-4 ${textColor}`}
+      className={`w-full h-auto lg:w-[400px] lg:h-[143px] flex-shrink-0 border rounded-[20px] flex items-center justify-center text-center px-4 py-4 ${textColor}`}
       style={{ borderColor: borderColor }}
     >
-      <p className="text-[16px]  leading-[24px]">{text}</p>
+      <p className="text-[12px] leading-[18px] lg:text-[16px]  lg:leading-[24px]">{text}</p>
     </div>
   );
 }

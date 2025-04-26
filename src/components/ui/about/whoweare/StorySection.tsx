@@ -1,10 +1,10 @@
 export default function StorySection() {
   return (
     <div className="text-center mt-8 max-w-4xl mx-auto">
-      <h3 className="text-[36px] text-center poppinsTextSemiBold bg-gradient-to-r from-[#5323EC] to-[#AA48FE] bg-clip-text text-transparent mb-4">
+      <h3 className="text-md md:text-xl lg:text-[36px] text-center poppinsTextSemiBold bg-gradient-to-r from-[#5323EC] to-[#AA48FE] bg-clip-text text-transparent mb-4">
         Our Story
       </h3>
-      <p className="flex flex-col justify-center min-h-[95px]  text-white text-[16px] font-inter font-normal leading-[24px]">
+      <p className="flex flex-col justify-center min-h-[95px]  text-white text-xs leading-4 lg:text-[16px] font-inter font-normal lg:leading-[24px]">
         Neurologic AI was founded by Nishan Ali in 2021 with an ambition to
         democratize AI&apos;s power. The company’s first client was Routine AI
         and that became a stepping stone for acquisition of additional customers

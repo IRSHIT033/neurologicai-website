@@ -48,12 +48,12 @@ const ContactFormSection = () => {
   };
 
   return (
-    <div className="flex items-center justify-center py-2 px-3 w-full md:w-2/4">
+    <div className="flex items-center justify-center py-2 px-6 lg:px-3 w-full md:w-2/4 text-xs md:text-[16px]">
       <Toaster position="bottom-center" reverseOrder={false} />
 
       <div className="w-full ">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          <div className="min-w-80 md:w-full grid grid-cols-1 md:grid-cols-2 gap-4 gap-x-20">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 gap-x-20">
             {/* Name */}
             <div className="space-y-2">
               <label
@@ -176,10 +176,10 @@ const ContactFormSection = () => {
             <button
               type="submit"
               disabled={loading}
-              className="relative cursor-pointer inline-flex items-center justify-center w-40 h-10 font-bold rounded-2xl mt-4 md:mt-20 bg-gradient-to-br from-primary to-blue text-white uppercase"
+              className="relative cursor-pointer inline-flex items-center justify-center w-34 lg:w-40 h-10 font-bold rounded-2xl mt-4 md:mt-20 bg-gradient-to-br from-primary to-blue text-white uppercase"
             >
               {loading ? (
-                <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                <span className="w-2 lg:w-5 lg:h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
               ) : (
                 "Connect"
               )}

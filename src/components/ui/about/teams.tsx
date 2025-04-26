@@ -148,52 +148,110 @@ export default function TeamDirectory() {
 
   return (
     <div className="bg-background min-h-screen pt-4 md:p-6 px-8">
-      <h2 className="text-5xl py-10 text-center poppinsTextSemiBold mb-4 bg-gradient-to-r from-blue from-40% via-primary via-60%  to-white bg-clip-text text-transparent  ">
+      <h2 className="text-[18px] lg:text-5xl py-10 text-center poppinsTextSemiBold mb-4 bg-gradient-to-r from-blue from-40% via-primary via-60%  to-white bg-clip-text text-transparent">
         Team Neurologicai
       </h2>
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4">
           {teamMembers.map((member, index) => (
-            <Card
-              key={index}
-              className="bg-gray-100 overflow-hidden border-0 rounded-lg"
-            >
+            // <Card
+            //   key={index}
+            //   className="bg-gray-100 overflow-hidden border-0 rounded-lg"
+            // >
+            //   <CardContent className="p-0 flex h-full">
+            //     <div className="w-1/3 m-2 relative rounded-lg bg-gray-200 overflow-hidden">
+            //       <Image
+            //         src={member.image || "/placeholder.svg"}
+            //         alt={`Photo of ${member.name}`}
+            //         layout="fill"
+            //         className="h-full w-full object-center object-cover"
+            //       />
+            //     </div>
+            //     <div className="w-2/3 p-1 lg:p-4 flex flex-col justify-between">
+            //       <div className="h-[90%] flex flex-col ">
+            //         <h3 className="font-bold text-[12px] lg:text-lg text-background">
+            //           {member.name}
+            //         </h3>
+            //         <p className="text-primary-light text-[10px] lg:text-sm font-medium">
+            //           {member.title}
+            //         </p>
+            //         <div className="mt-2 space-y-0.5">
+            //           {member.education.map((edu, eduIndex) => (
+            //             <p key={eduIndex} className="text-gray-600 text-[8px] lg:text-xs">
+            //               {edu}
+            //             </p>
+            //           ))}
+            //         </div>
+            //       </div>
+            //       <div className="h-[10%]">
+            //         <a
+            //           href="#"
+            //           className="inline-block text-gray-400 hover:text-gray-600"
+            //         >
+            //           <Linkedin size={18} />
+            //         </a>
+            //       </div>
+            //     </div>
+            //   </CardContent>
+            // </Card>
+            <Card key={index} className="bg-gray-100 overflow-hidden border-0 rounded-lg">
               <CardContent className="p-0 flex h-full">
-                <div className="w-1/3 m-2 relative rounded-lg bg-gray-200 overflow-hidden">
-                  <Image
-                    src={member.image || "/placeholder.svg"}
-                    alt={`Photo of ${member.name}`}
-                    layout="fill"
-                    className="h-full w-full object-center object-cover"
-                  />
-                </div>
-                <div className="w-2/3 p-4 flex flex-col justify-between">
-                  <div className="h-[90%] flex flex-col ">
-                    <h3 className="font-bold text-lg text-background">
-                      {member.name}
-                    </h3>
-                    <p className="text-primary-light text-sm font-medium">
-                      {member.title}
-                    </p>
-                    <div className="mt-2  space-y-0.5">
-                      {member.education.map((edu, eduIndex) => (
-                        <p key={eduIndex} className="text-gray-600 text-xs">
-                          {edu}
-                        </p>
-                      ))}
+                {/* Desktop layout */}
+                <div className="hidden md:flex w-full">
+                  <div className="w-1/3 m-2 relative rounded-lg bg-gray-200 overflow-hidden">
+                    <Image
+                      src={member.image || "/placeholder.svg"}
+                      alt={`Photo of ${member.name}`}
+                      layout="fill"
+                      className="h-full w-full object-center object-cover"
+                    />
+                  </div>
+                  <div className="w-2/3 p-1 lg:p-4 flex flex-col justify-between">
+                    <div className="h-[90%] flex flex-col">
+                      <h3 className="font-bold text-[12px] lg:text-lg text-background">{member.name}</h3>
+                      <p className="text-primary-light text-[10px] lg:text-sm font-medium">{member.title}</p>
+                      <div className="mt-2 space-y-0.5">
+                        {member.education.map((edu, eduIndex) => (
+                          <p key={eduIndex} className="text-gray-600 text-[8px] lg:text-xs">{edu}</p>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="h-[10%]">
+                      <a href={member.linkedinurl} className="inline-block text-gray-400 hover:text-gray-600">
+                        <Linkedin size={18} />
+                      </a>
                     </div>
                   </div>
-                  <div className="h-[10%]">
-                    <a
-                      href="#"
-                      className="inline-block text-gray-400 hover:text-gray-600"
-                    >
-                      <Linkedin size={18} />
+                </div>
+
+                {/* Mobile layout */}
+                <div className="flex flex-col md:hidden w-full p-2">
+                  <div className="flex items-center space-x-3">
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden bg-gray-200">
+                      <Image
+                        src={member.image || "/placeholder.svg"}
+                        alt={`Photo of ${member.name}`}
+                        layout="fill"
+                        className="object-cover"
+                      />
+                    </div>
+                    <h3 className="font-bold text-[12px] text-background">{member.name}</h3>
+                  </div>
+                  <p className="text-primary-light text-[11px] font-medium mb-0">{member.title}</p>
+                  <div className="mt-2 space-y-1">
+                    {member.education.map((edu, eduIndex) => (
+                      <p key={eduIndex} className="text-gray-600 text-[10px]">{edu}</p>
+                    ))}
+                  </div>
+                  <div className="mt-2 bottom-1">
+                    <a href={member.linkedinurl} className="inline-block text-gray-400 hover:text-gray-600">
+                      <Linkedin size={16} />
                     </a>
                   </div>
                 </div>
               </CardContent>
             </Card>
+
           ))}
         </div>
       </div>

@@ -35,7 +35,7 @@ const features = [
 
 export default function FeatureList() {
   return (
-    <div className="space-y-6 w-full">
+    <div className="space-y-3 lg:space-y-6 w-full">
       {features.map((feature, index) => (
         <FeatureCard
           key={index}

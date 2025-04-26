@@ -4,13 +4,13 @@ import React from "react";
 export default function WhoWeAreHeader() {
   return (
     <div className="flex flex-col justify-center items-center my-8">
-      <h2 className=" poppinsTextSemiBold text-4xl lg:text-6xl md:text-[64px] font-bold leading-normal tracking-[-1.28px] text-transparent bg-clip-text bg-gradient-to-r from-[#5025FF] via-[#5A138E] to-[#F5F5F5]">
+      <h2 className=" poppinsTextSemiBold text-2xl lg:text-6xl md:text-[64px] font-bold leading-normal tracking-[-1.28px] text-transparent bg-clip-text bg-gradient-to-r from-[#5025FF] via-[#5A138E] to-[#F5F5F5]">
         Who We Are
       </h2>
-      <p className="text-[#FFF]  text-[16px] font-normal text-center font-inter leading-[21px] ">
+      <p className="text-[#FFF]  text-xs leading-3 lg:text-[16px] font-normal text-center font-inter lg:leading-[21px] ">
         Know More About Us
       </p>
-      <button className="cursor-pointer relative z-10 text-md bg-gradient-to-r from-blue from-0% via-primary to-primary-dark mt-6 px-6 py-2   text-white  rounded-lg transition flex items-center gap-2">
+      <button className="cursor-pointer relative z-10 text-xs lg:text-md bg-gradient-to-r from-blue from-0% via-primary to-primary-dark mt-6 px-4 lg:px-6 py-1.5 lg:py-2   text-white  rounded-lg transition flex items-center gap-2">
         Talk To Us
         <svg
           width="15"

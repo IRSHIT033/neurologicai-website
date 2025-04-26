@@ -36,18 +36,18 @@ export default function ImageSlider() {
   }, [isAutoPlaying]);
 
   return (
-    <div className="  relative flex flex-col items-center mb-8 h-[60vh]">
-      <div className=" relative border-[2px] border-[#7F36F5] rounded-[20px] w-sm md:w-4xl h-[520px] flex items-center justify-center overflow-hidden ">
+    <div className="relative flex flex-col items-center mb-8 lg:h-[60vh]">
+      <div className=" relative border-0 lg:border-[2px] lg:border-[#7F36F5] rounded-[20px] w-[90vw] h-[58vw] md:w-4xl md:h-[520px] flex items-center justify-center overflow-hidden ">
         <button
           onClick={handlePrev}
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
-          className="absolute left-12 bg-gradient-to-r from-[#7F36F5] to-[#5323EC] rounded-full p-2 cursor-pointer shadow-lg"
+          className="absolute left-[2px] lg:left-12 bg-gradient-to-r from-[#7F36F5] to-[#5323EC] rounded-full p-2 cursor-pointer shadow-lg"
         >
-          <ArrowLeft />
+          <ArrowLeft className="h-1.5 w-1.5 lg:h-5 lg:w-5" />
         </button>
 
-        <div className="border-[1px] border-[#7F36F5] rounded-[20px] overflow-hidden w-xs lg:w-2xl h-[370px]">
+        <div className="border-[1px] border-[#7F36F5] rounded-[20px] overflow-hidden w-[82%] h-[86%] lg:w-2xl lg:h-[370px]">
           {images[activeIndex] && (
             <Image
               src={images[activeIndex]}
@@ -55,7 +55,7 @@ export default function ImageSlider() {
               priority
               width={816}
               height={490}
-              className="object-cover w-full h-full"
+              className={`${activeIndex === 0? 'object-cover':'object-contain'}  w-full h-full`}
             />
           )}
         </div>
@@ -64,13 +64,13 @@ export default function ImageSlider() {
           onClick={handleNext}
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
-          className="absolute right-8 bg-gradient-to-r from-[#7F36F5] to-[#5323EC] rounded-full p-2 cursor-pointer shadow-lg"
+          className="absolute right-[1px] lg:right-8 bg-gradient-to-r from-[#7F36F5] to-[#5323EC] rounded-full p-2 cursor-pointer shadow-lg"
         >
-          <ArrowRight />
+          <ArrowRight className="h-1.5 w-1.5 lg:h-5 lg:w-5" />
         </button>
       </div>
 
-      <div className="absolute bottom-4 flex justify-center items-center gap-2 w-full">
+      <div className="relative bottom-4 flex justify-center items-center gap-2 w-full mt-4 lg:mt-7">
         {images.map((_, index) => (
           <button
             key={index}
