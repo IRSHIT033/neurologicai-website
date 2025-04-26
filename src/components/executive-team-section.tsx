@@ -49,7 +49,8 @@ export default function ExecutiveTeam() {
     },
     {
       name: "Aditya Bhattachariya",
-      title: "Principal Data Science & Engineering Advisor",
+      // title: "Principal Data Science & Engineering Advisor",
+      title : "Co-Founder & CTO",
       titleColor: "text-purple-500",
       education: ["MS (Machine Learning)", "Georgia Institute of Tech"],
       experience: "9 Years",
@@ -58,22 +59,22 @@ export default function ExecutiveTeam() {
   ];
 
   return (
-    <section className=" px-6 lg:px-8 lg:mt-10  text-white h-auto lg:min-h-[70vh]">
+    <section className=" px-6 lg:px-8 mt-4 lg:mt-10  text-white h-auto lg:min-h-[70vh]">
       <div className="max-w-auto lg:max-w-7xl mx-auto">
-        <h1 className="text-[10px] sm:text-2xl md:text-4xl lg:text-center poppinsTextSemiBold mb-3 lg:mb-4 bg-gradient-to-r from-blue from-40% via-primary via-60%  to-white bg-clip-text text-transparent ">
+        <h1 className="text-[16px] sm:text-2xl md:text-4xl lg:text-center poppinsTextSemiBold mb-3 lg:mb-4 bg-gradient-to-r from-blue from-40% via-primary via-60%  to-white bg-clip-text text-transparent ">
           Senior Team
         </h1>
-        <p className="text-[7px] sm:text-sm lg:text-lg lg:text-center max-w-3xl mx-auto mb-4 lg:mb-16 poppinsTextLight">
+        <p className="text-[10px] sm:text-sm lg:text-lg lg:text-center max-w-3xl mx-auto mb-4 lg:mb-16 poppinsTextLight">
           Discover the visionaries leading our team, committed to pioneering new
           frontiers and creating transformative results
         </p>
 
-        <div className="flex flex-row flex-wrap justify-between md:justify-center md:grid md:grid-cols-2 lg:grid-cols-5 lg:gap-8 justify-items-center">
+        <div className="flex flex-row flex-wrap lg:justify-between justify-center md:grid md:grid-cols-2 lg:grid-cols-5 lg:gap-8 justify-items-center space-x-4">
           {teamMembers.map((member, index) => (
-            <div key={index} className="flex flex-col items-center w-[50px] md:w-auto">
+            <div key={index} className="flex flex-col items-center w-auto">
               <div className="relative mb-4 lg:mb-6">
                 <div className="absolute inset-0 rounded-full bg-purple-900/50 blur-md transform scale-110"></div>
-                <div className="relative w-7 h-7 sm:w-20 sm:h-20 md:w-30 md:h-30 lg:w-48 lg:h-48 rounded-full overflow-hidden ">
+                <div className="relative w-15 h-15 sm:w-20 sm:h-20 md:w-30 md:h-30 lg:w-48 lg:h-48 rounded-full overflow-hidden items-center ">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -82,19 +83,20 @@ export default function ExecutiveTeam() {
                   />
                 </div>
               </div>
-
-              <h3 className="text-[4px] sm:text-sm md:text-xl font-semibold text-center mb-1 ">
+              <div className="w-20vw">
+              <h3 className="text-[9px] sm:text-sm md:text-xl font-semibold text-center mb-0.5 md:mb-1">
                 {member.name}
               </h3>
-              <p className=" font-bold text-primary-bright tracking-tighter text-[4px] sm:text-sm md:text-base text-center min-h-auto lg:min-h-10 ">
+              <p className=" font-bold text-primary-bright tracking-tighter text-[8px] sm:text-sm md:text-base text-center min-h-auto lg:min-h-10 ">
                 {member.title}
               </p>
 
-              <div className="text-[4px] sm:text-sm text-gray-300 text-center mb-3 h-8">
+              <div className="text-[7px] sm:text-sm text-gray-300 text-center mb-3 h-8">
                 {member.education.map((line, i) => (
                   <p key={i}>{line}</p>
                 ))}
               </div>
+            </div>
             </div>
           ))}
         </div>

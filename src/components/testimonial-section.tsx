@@ -38,12 +38,12 @@ const TestimonialSection = () => {
   }, [api]);
 
   return (
-    <section className="px-6 md:px-7 lg:px-8 pt-10 pb-2 md:py-10  text-center flex flex-col justify-center items-center text-white bg-background">
-      <h1 className="text-[10px] sm:text-2xl md:text-4xl min-w-[40vw] md:min-w-full text-center mb-2 md:mb-4 bg-gradient-to-r from-blue from-40% to-primary via-60%  bg-clip-text text-transparent
+    <section className="px-6 md:px-7 lg:px-8 py-8 mt-4 md:py-10  text-center flex flex-col justify-center items-center text-white bg-background">
+      <h1 className="text-[16px] sm:text-2xl md:text-4xl min-w-[40vw] md:min-w-full text-center mb-2 md:mb-4 bg-gradient-to-r from-blue from-40% to-primary via-60%  bg-clip-text text-transparent
       poppinsTextSemiBold">
         Clients Who Trust Us, Heres Why
       </h1>
-      <p className="text-[7px] md:text-sm text-center max-w-5xl px-2 md:px-4 md:mx-auto mb-3 md:mb-6 lg:mb-16 poppinsTextLight">
+      <p className="text-[10px] md:text-sm text-center max-w-5xl px-1 md:px-4 md:mx-auto mb-3 md:mb-6 lg:mb-16 poppinsTextLight">
         Client satisfaction is the backbone of our business. It&apos;not just
         about providing a satisfactory experience, but going above and beyond to
         exceed the expectations of our clients. This requires having a deep

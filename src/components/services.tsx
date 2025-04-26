@@ -150,9 +150,9 @@ export default function ServicesSection() {
         
       </div>
 
-      <div className="block lg:hidden">
-          <div className="px-6">
-            <h1 className="w-fit mb-4  poppinsTextSemiBold text-gradient text-[10px] md:text-4xl lg:text-6xl  bg-gradient-to-r from-blue from-40% to-primary via-60%   bg-clip-text text-transparent">
+      <div className="block lg:hidden py-8 mt-4">
+          <div className="px-6 ">
+            <h1 className="w-fit mb-3 poppinsTextSemiBold text-gradient text-[16px] md:text-4xl lg:text-6xl  bg-gradient-to-r from-blue from-40% to-primary via-60%   bg-clip-text text-transparent">
                 Services
               </h1>
           </div>
@@ -179,8 +179,8 @@ export default function ServicesSection() {
                 p-6 rounded-xl border-2  border-[rgba(34,34,47,0.61)]  shadow-lg hover:bg-opacity-20 transition duration-300"
                
               >
-                <h3 className="text-white bg-black text-[13px] md:text-md poppinsTextMedium mb-5 py-1.5 px-2 border-2 rounded-xl shadow-lg  border-[rgba(47,47,68,0.61)] ">{service.title}</h3>
-                <p className="text-white text-[6px] bg-transparent">{service.description}</p>
+                <h3 className="text-white bg-black text-[14px] sm:text-[13px] md:text-md  poppinsTextMedium mb-5 py-1.5 px-2 border-2 rounded-xl shadow-lg  border-[rgba(47,47,68,0.61)] *:leading-tight break-words hyphens-auto max-w-full">{service.title}</h3>
+                <p className="text-white text-[10px] bg-transparent">{service.description}</p>
               </div>
               // </div>
             ))}
