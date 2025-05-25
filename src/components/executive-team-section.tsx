@@ -48,13 +48,16 @@ export default function ExecutiveTeam() {
       image: "/Indranil-basu.png?height=200&width=200",
     },
     {
-      name: "Aditya Bhattachariya",
+      name: "Subhodip Bandyopadhyay",
       // title: "Principal Data Science & Engineering Advisor",
-      title : "Co-Founder & CTO",
+      title: "Principle Advisor Business Development & Marketing",
       titleColor: "text-purple-500",
-      education: ["MS (Machine Learning)", "Georgia Institute of Tech"],
-      experience: "9 Years",
-      image: "/aditya.png?height=200&width=200",
+      education: [
+        "The Institute of Chartered Accountants of India",
+        "St Xavier's College , Calcutta",
+      ],
+      experience: "11 Years",
+      image: "/subho.png?height=200&width=200",
     },
   ];
 
@@ -84,23 +87,23 @@ export default function ExecutiveTeam() {
                 </div>
               </div>
               <div className="w-20vw">
-              <h3 className="text-[9px] sm:text-sm md:text-xl font-semibold text-center mb-0.5 md:mb-1">
-                {member.name}
-              </h3>
-              <p className=" font-bold text-primary-bright tracking-tighter text-[8px] sm:text-sm md:text-base text-center min-h-auto lg:min-h-10 ">
-                {member.title}
-              </p>
+                <h3 className="text-[12px] sm:text-sm md:text-xl font-semibold text-center mb-0.5 md:mb-1 lg:min-h-14">
+                  {member.name}
+                </h3>
+                <p className=" font-bold text-primary-bright tracking-tighter text-[8px] sm:text-sm md:text-base text-center min-h-auto lg:min-h-14 ">
+                  {member.title}
+                </p>
 
-              <div className="text-[7px] sm:text-sm text-gray-300 text-center mb-3 h-8">
-                {member.education.map((line, i) => (
-                  <p key={i}>{line}</p>
-                ))}
+                <div className="text-[7px] sm:text-sm text-gray-300 text-center mb-3 h-8">
+                  {member.education.map((line, i) => (
+                    <p key={i}>{line}</p>
+                  ))}
+                </div>
               </div>
-            </div>
             </div>
           ))}
         </div>
-        
+
         {/* <div className="flex flex-row flex-wrap justify-between md:grid md:grid-cols-2 lg:grid-cols-5 gap-2 md:gap-8 lg:justify-start overflow-x-auto px-1 md:px-2">
   {teamMembers.map((member, index) => (
     <div
@@ -134,7 +137,6 @@ export default function ExecutiveTeam() {
     </div>
   ))}
 </div> */}
-
       </div>
     </section>
   );
