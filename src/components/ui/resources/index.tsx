@@ -11,7 +11,7 @@ export default function Resources() {
     {
       id: 1,
       category: "Healthcare",
-      image: "/resources-case-studies/foundational-generative-ai.png", // Replace with actual image URL
+      image: "/resources-case-studies/Healthcare/Foundational-Gen-AI.png",
       title: "Foundational Generative AI Model Building for Healthcare",
       href: "https://drive.google.com/file/d/1wbG9CX0I8VW9VRSOY80f0SgIXaeKrZOl/view?usp=drive_link",
       description:
@@ -20,7 +20,7 @@ export default function Resources() {
     {
       id: 2,
       category: "Retail",
-      image: "/resources-case-studies/voice-chat.png", // Replace with actual image URL
+      image: "/resources-case-studies/Retail/Voice-&-Chat.png", // Replace with actual image URL
       title: "Voice & Chat-Based Conversational Recommendation Engine",
       href: "https://drive.google.com/file/d/1hfB1_y1RC2OitpH-AO5-PXTCatvvPVHH/view?usp=drive_link",
       description:
@@ -29,7 +29,7 @@ export default function Resources() {
     {
       id: 3,
       category: "Retail",
-      image: "/resources-case-studies/realtime-retail.png", // Replace with actual image URL
+      image: "/resources-case-studies/Retail/Ai transformation purple.png", // Replace with actual image URL
       title: "Real-Time AI-Powered Detection for Retail Inventory Optimization",
       href: "https://drive.google.com/file/d/1iIn37eeCf6UVdWkfgdlnWKcLDIcEMM8P/view?usp=drive_link",
       description:

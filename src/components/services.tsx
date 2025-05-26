@@ -77,7 +77,7 @@ export default function ServicesSection() {
     return useTransform(
       scrollYProgress,
       [start, end],
-      [1, -i * (device === "sm" ? 300 : 400)] // Increased displacement for faster movement
+      [1, -i * (device === "sm" ? 300 : 450)] // Increased displacement for faster movement
     );
   });
 
@@ -103,15 +103,15 @@ export default function ServicesSection() {
   }, []);
 
   return (
-    <section className="lg:px-8 lg:py-10">
+    <section className="lg:px-8 lg:pt-10">
       <div
-        className="max-w-screen lg:max-w-[1537px] mx-auto relative my-20 hidden lg:block"
+        className="max-w-screen lg:max-w-[1537px] mx-auto relative hidden lg:block"
         style={{
-          height: device === "sm" ? "auto" : `${cards.length * 700}vh`,
+          height: device === "sm" ? "auto" : `${cards.length * 800}vh`,
         }}
         ref={sectionRef}
       >
-          <h1 className="w-fit text-gradient text-4xl md:text-6xl  bg-gradient-to-r from-blue from-40% to-primary via-60%   bg-clip-text text-transparent mb-10">
+          <h1 className="w-fit text-gradient text-4xl md:text-6xl  bg-gradient-to-r from-blue from-40% to-primary via-60% bg-clip-text text-transparent mb-10">
             Services
           </h1>
           <ul className="sticky top-0" ref={ulRef}>
@@ -119,14 +119,14 @@ export default function ServicesSection() {
               return (
                 <motion.li
                   key={index}
-                  className={`px-6 md:px-12 py-14 w-full  lg:h-[500px] border border-[#EAD2FF] rounded-2xl relative  bg-background`}
+                  className={`px-6 md:px-12 py-7 w-full  lg:h-[550px] border border-[#EAD2FF] rounded-2xl relative  bg-background`}
                   style={{ y: motionY[index], zIndex: index }}
                   ref={(el) => {
                     liRefs.current[index] = el;
                   }}
                 >
-                  <div className="w-full h-full flex flex-col md:flex-row justify-between items-center">
-                    <div className="w-full md:w-2/4 h-full flex flex-col justify-between">
+                  <div className="w-full flex flex-col md:flex-row justify-between items-center">
+                    <div className="w-full md:w-2/4 flex flex-col justify-between">
                       <h3 className="text-4xl font-medium self-start">
                         {item.title}
                       </h3>
