@@ -48,16 +48,15 @@ export default function ExecutiveTeam() {
       image: "/Indranil-basu.png?height=200&width=200",
     },
     {
-      name: "Subhodip Bandyopadhyay",
-      // title: "Principal Data Science & Engineering Advisor",
-      title: "Principle Advisor Business Development & Marketing",
+      name: "Aditya Bhattacharya",
+      title: "Principal Data Science & Engineering Advisor",
       titleColor: "text-purple-500",
       education: [
-        "The Institute of Chartered Accountants of India",
-        "St Xavier's College , Calcutta",
+        "MS (Computer Science, Specialization in ML)",
+        "Georgia Institute of Technology",
       ],
-      experience: "11 Years",
-      image: "/subho.png?height=200&width=200",
+      experience: "10 Years",
+      image: "/aditya.png?height=200&width=200",
     },
   ];
 
